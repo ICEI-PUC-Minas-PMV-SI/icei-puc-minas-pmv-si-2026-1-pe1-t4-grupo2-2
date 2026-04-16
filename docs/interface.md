@@ -29,9 +29,7 @@ Todos os usuários autenticados poderão acessar a seção de transações, onde
 
 Por fim, usuários do tipo “solicitante” terão acesso aos botões de confirmar ou reportar a entrega. Essa funcionalidade visa garantir o recebimento correto dos itens e aumentar a confiabilidade da plataforma. Doadores que forem reportados mais de cinco vezes por solicitantes diferentes poderão ser banidos do sistema.
 
-<figure style="text-align: center;">
-    <img src="docs/img/userflow.svg" width="100%">
-</figure>
+![User Flow](img/userflow.png)
 
 ## Wireframes
 
