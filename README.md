@@ -7,7 +7,7 @@
 
 `SEMESTRE: 1º`
 
-O projeto se baseia em uma plataforma digital que conecta doadores a ONGs e pessoas em situação de vulnerabilidade social, abordando a dificuldade de muitas ONGs em manter uma presença digial e eficaz. A plataforma oferecerá um ambiente simples e inclusivo para doações confiáveis, visando aumentar a visibilidade das ONGs, apoiar pessoas vulneráveis e fortalecer a credibilidade das transações, promovendo uma sociedade mais solidária.
+O projeto se baseia em uma plataforma digital que conecta doadores a ONGs e pessoas em situação de vulnerabilidade social, abordando a dificuldade de muitas ONGs em manter uma presença digital e eficaz. A plataforma oferecerá um ambiente simples e inclusivo para doações confiáveis, visando aumentar a visibilidade das ONGs, apoiar pessoas vulneráveis e fortalecer a credibilidade das transações, promovendo uma sociedade mais solidária.
 
 ## Integrantes
 
