@@ -33,10 +33,43 @@ Por fim, usuários do tipo “solicitante” terão acesso aos botões de confir
 
 ## Wireframes
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface e é fundamental sempre relacionar cada wireframe com o(s) requisito(s) que ele atende.
+O projeto contará com 8 telas principais e 2 modais, totalizando cerca de 11 componentes, incluindo menu, rodapé, cards, botões e campos de texto. Entre as telas, 2 apresentarão variações de acordo com o perfil do usuário logado (doador ou solicitante).
 
-### Exemplo
+Serão utilizados aproximadamente 10 ícones gratuitos provenientes do Font Awesome (https://fontawesome.com/) e uma imagem gerada pelo Gemini AI.
 
-A tela inicial apresenta um menu lateral com as principais seções do portal, enquanto a navigation bar, ao topo, apresenta informações de envio de imagens ou navegação pela galeria de fotos. A área central apresenta a galeria de fotos na forma de uma grade. Nesta tela, são apresentados os seguintes requisitos
+O menu do usuário não autenticado permitirá a navegação pelas seguintes seções:
 
-![Exemplo de Wireframe](img/wireframe.png)
+* Pagina Inicial (Pedidos)
+* Sobre
+* Login
+
+Já o menu do usuário autenticado variará conforme o perfil:
+
+Solicitante:
+
+* Criar Pedido
+* Pedidos
+* Transações
+* Sair
+
+Doador:
+
+* Pedidos
+* Transações
+* Sair
+
+Na seção de transações, será possível acompanhar o status dos pedidos. Caso o pedido já tenha sido enviado, ao clicar nele o usuário poderá acessar informações como a localização. Se o usuário for um solicitante, também terá a opção de confirmar a entrega ou reportar o pedido.
+
+Se o pedido estiver pendente, o usuário classificado como doador deverá acessá-lo para abrir um modal de edição e inserir o código de rastreio em até 7 dias úteis. Caso contrário, perderá a reserva do pedido, que retornará à aba de pedidos do site. Por meio desse modal, também será possível enviar uma mensagem ao recebedor.
+
+A cor amarela será utilizada para indicar pedidos pendentes, enquanto a cor verde representará pedidos em processo de entrega.
+
+A página “Sobre” contará com dados atualizados em tempo real, com base nas estatísticas disponíveis na base de dados.
+
+Para criar uma conta, o usuário deverá informar: nome, data de nascimento, cidade, estado, perfil (doador ou solicitante), documento (obrigatório apenas para ONGs, que deverão informar o CNPJ), e-mail e senha.
+
+No cabeçalho (header), a logo (versão 1.1) ficará posicionada no extremo esquerdo, enquanto o menu estará localizado no lado direito.
+
+No rodapé (footer), será utilizada a versão 1.0 da logo, posicionada no canto esquerdo. No lado direito, haverá uma mensagem destacando o propósito do projeto e reforçando que não há qualquer ganho financeiro por parte dos responsáveis pelo gerenciamento do CareConnect.
+
+![Wireframe](img/wireframe.png)
