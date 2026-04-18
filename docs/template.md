@@ -47,7 +47,8 @@ A tipografia do projeto será baseada na fonte Raleway, com variações de peso 
 
 ## Iconografia
 
-Para os ícones, serão utilizados os recursos gratuitos disponibilizados pelo Font Awesome, por meio do site https://fontawesome.com/search
-. A escolha se deve à facilidade de uso, à compatibilidade com SVGs e à possibilidade de personalização das cores, permitindo alinhamento com a paleta definida para o projeto.
+Para os ícones, serão utilizados recursos gratuitos disponibilizados pelo Font Awesome, por meio do site https://fontawesome.com/search. A escolha se deve à facilidade de uso, à compatibilidade com SVGs e à possibilidade de personalização de cores, permitindo alinhamento com a paleta definida para o projeto.
+
+A imagem abaixo ilustra os itens que serão utilizados, bem como suas respectivas cores.
 
 ![Iconografia](img/iconografia.png)
