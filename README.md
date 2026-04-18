@@ -24,7 +24,7 @@ O foco principal da solução é oferecer um meio prático para doações e prop
 
 ## Orientador
 
-* Caroline Rhaian da Silva Jandre
+* Caroline Rhaian da Silva Jandre 1 semestre
 
 # Planejamento
 
