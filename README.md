@@ -7,15 +7,19 @@
 
 `SEMESTRE: 1º`
 
-O projeto se baseia em uma plataforma digital que conecta doadores a ONGs e pessoas em situação de vulnerabilidade social, abordando a dificuldade de muitas ONGs em manter uma presença digital e eficaz. A plataforma oferecerá um ambiente simples e inclusivo para doações confiáveis, visando aumentar a visibilidade das ONGs, apoiar pessoas vulneráveis e fortalecer a credibilidade das transações, promovendo uma sociedade mais solidária.
+![CareConnect - Logo](docs/img/logo-1_0.png)
+
+O projeto propõe a criação de uma plataforma digital que conecta ONGs, pessoas em situação de vulnerabilidade e potenciais doadores, facilitando a visibilidade dessas instituições e o acesso a contribuições. A proposta é reunir tudo em um único ambiente, tornando mais fácil encontrar quem precisa de ajuda e quem deseja contribuir.
+
+O foco principal da solução é oferecer um meio prático para doações e proporcionar um ambiente acolhedor para os usuários, independentemente do seu nível de familiaridade com tecnologia. Além disso, a plataforma busca garantir uma experiência clara e confiável durante todo o processo.
 
 ## Integrantes
 
-* Anna Sophia Lopes Peres
-* Lucas Daniel Nocce
+* Anna Sophia Lopes Peres 
+* Lucas Daniel Nocce 
 * Rafael Martins Lopes
-* Rafael Souza Inácio
-* Yuri Christian da Silva Barbosa
+* Rafael Souza Inácio 
+* Yuri Christian da Silva Barbosa 
 
 
 ## Orientador
