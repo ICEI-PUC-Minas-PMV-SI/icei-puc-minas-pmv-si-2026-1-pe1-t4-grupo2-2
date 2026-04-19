@@ -8,37 +8,102 @@ Caso deseje atribuir uma imagem a sua persona, utilize o site https://thisperson
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+### 1. João Carlos (Doador)
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+João Carlos tem 34 anos, é analista de sistemas e mora em Belo Horizonte. Possui renda estável e utiliza a internet diariamente, principalmente pelo celular. Costuma acompanhar notícias e causas sociais pelas redes sociais e já realizou algumas doações pontuais via Pix, mas ficou receoso após ver notícias de golpes envolvendo falsas campanhas.
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+Ele deseja ajudar pessoas e instituições de forma mais frequente, mas busca uma plataforma que ofereça segurança, transparência e praticidade no processo de doação. João valoriza soluções rápidas, confiáveis e que permitam acompanhar o destino de sua contribuição.
 
-## Histórias de Usuários
+---
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+### 2. Maria Aparecida (Pessoa em Situação de Vulnerabilidade)
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+Maria Aparecida tem 42 anos, mora na periferia e está desempregada. Possui ensino fundamental incompleto e utiliza um celular simples com acesso limitado à internet. Seu principal uso digital é para mensagens (como WhatsApp) e redes sociais básicas.
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+Ela enfrenta dificuldades para suprir necessidades básicas, como alimentação e roupas para sua família. Maria gostaria de uma forma simples de solicitar ajuda, sem burocracia e sem precisar de conhecimentos técnicos avançados. Ela precisa de uma plataforma acessível, fácil de usar e que aumente a visibilidade da sua situação.
 
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+---
+
+### 3. Ana Souza (Coordenadora de ONG)
+
+Ana Souza tem 38 anos, é coordenadora de uma ONG que atua na distribuição de alimentos para famílias carentes. Sua organização possui poucos recursos e uma presença digital limitada, com redes sociais pouco atualizadas e sem site próprio.
+
+Ela utiliza o computador e o celular para gerenciar atividades da ONG, mas enfrenta dificuldades para alcançar novos doadores e manter uma comunicação eficiente com o público. Ana busca uma plataforma que aumente a visibilidade da instituição, facilite a captação de doações e transmita credibilidade para possíveis apoiadores.
+
+---
+
+## Histórias de Usuário
+
+Com base na análise das personas, foram identificadas as seguintes histórias de usuário, organizadas por contexto:
+
+---
+
+### 🔹 Contexto: Cadastro e Acesso
+
+| EU COMO...                        | QUERO/PRECISO...                          | PARA...                           |
+| --------------------------------- | ----------------------------------------- | --------------------------------- |
+| Doador (João)                     | me cadastrar na plataforma                | começar a realizar doações        |
+| Pessoa em vulnerabilidade (Maria) | me cadastrar facilmente                   | poder solicitar ajuda             |
+| ONG (Ana)                         | cadastrar minha instituição com validação | garantir credibilidade            |
+| Usuário                           | fazer login no sistema                    | acessar minha conta com segurança |
+| Usuário                           | recuperar minha senha                     | não perder acesso à plataforma    |
+
+---
+
+### 🔹 Contexto: Doação
+
+| EU COMO...    | QUERO/PRECISO...                  | PARA...                        |
+| ------------- | --------------------------------- | ------------------------------ |
+| Doador (João) | visualizar pedidos de ajuda       | escolher quem ajudar           |
+| Doador (João) | filtrar solicitações por região   | encontrar causas próximas      |
+| Doador (João) | visualizar informações detalhadas | tomar decisões com confiança   |
+| Doador (João) | realizar doações de forma rápida  | não perder tempo no processo   |
+| Doador (João) | acompanhar a entrega da doação    | garantir que chegou ao destino |
+
+---
+
+### 🔹 Contexto: Solicitação de Ajuda
+
+| EU COMO...                        | QUERO/PRECISO...              | PARA...                          |
+| --------------------------------- | ----------------------------- | -------------------------------- |
+| Pessoa em vulnerabilidade (Maria) | criar um pedido de ajuda      | receber doações                  |
+| Pessoa em vulnerabilidade (Maria) | descrever minhas necessidades | receber ajuda adequada           |
+| Pessoa em vulnerabilidade (Maria) | ser encontrada facilmente     | aumentar minhas chances de ajuda |
+| Pessoa em vulnerabilidade (Maria) | confirmar recebimento         | informar que fui atendida        |
+
+---
+
+### 🔹 Contexto: ONG
+
+| EU COMO... | QUERO/PRECISO...              | PARA...               |
+| ---------- | ----------------------------- | --------------------- |
+| ONG (Ana)  | divulgar minha organização    | aumentar visibilidade |
+| ONG (Ana)  | publicar pedidos de doação    | captar recursos       |
+| ONG (Ana)  | comprovar minha autenticidade | transmitir confiança  |
+| ONG (Ana)  | me comunicar com doadores     | manter relacionamento |
+
+---
+
+### 🔹 Contexto: Segurança e Confiança
+
+| EU COMO...    | QUERO/PRECISO...                     | PARA...                      |
+| ------------- | ------------------------------------ | ---------------------------- |
+| Doador (João) | ter dados verificados dos receptores | evitar fraudes               |
+| Usuário       | ter meus dados protegidos            | garantir privacidade         |
+| Usuário       | confiar na plataforma                | utilizá-la com tranquilidade |
+
+---
+
+## Considerações
+
+As histórias de usuário refletem diretamente as necessidades dos diferentes perfis identificados, garantindo que a aplicação seja:
+
+* Simples e acessível (especialmente para usuários com baixa familiaridade digital)
+* Segura e confiável (reduzindo riscos de fraude)
+* Eficiente na conexão entre doadores e receptores
+
+Esses elementos são fundamentais para o sucesso da solução proposta.
+
 
 ## Requisitos
 

@@ -41,14 +41,103 @@ O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estat�
 > **Links Úteis**:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
+
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+A aplicação proposta é voltada para três perfis principais de usuários: doadores, receptores (pessoas físicas em situação de vulnerabilidade) e organizações não governamentais (ONGs). Esses grupos apresentam diferentes níveis de acesso à tecnologia, necessidades específicas e objetivos distintos dentro da plataforma.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+### 1. Doadores (Pessoas Físicas)
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Os doadores são indivíduos maiores de 18 anos, de diferentes perfis socioeconômicos, que possuem interesse em contribuir com causas sociais. Em geral, já utilizam a internet e dispositivos móveis no dia a dia, mesmo que com conhecimento técnico básico.
+
+* **Características:**
+
+  * Usuários com acesso à internet (principalmente via smartphone)
+  * Familiaridade com redes sociais e aplicativos
+  * Buscam praticidade e rapidez em ações digitais
+
+* **Objetivos:**
+
+  * Realizar doações de forma simples, rápida e segura
+  * Encontrar pessoas ou instituições confiáveis para ajudar
+  * Acompanhar o destino de suas doações
+
+* **Principais dores:**
+
+  * Medo de fraudes ou golpes (como casos já registrados no Brasil)
+  * Falta de transparência sobre o uso das doações
+  * Processos complexos ou demorados para contribuir
+
+* **Nível de conhecimento tecnológico:**
+
+  * Básico a intermediário (uso de e-mail, navegação web, apps)
+
+---
+
+### 2. Receptores (Pessoas Físicas em Situação de Vulnerabilidade)
+
+Este grupo é composto por pessoas maiores de 18 anos que se encontram em situação de vulnerabilidade social e necessitam de apoio para suprir necessidades básicas.
+
+* **Características:**
+
+  * Baixa renda e, muitas vezes, baixo nível de escolaridade
+  * Acesso limitado à internet ou uso intermitente
+  * Uso predominante de dispositivos móveis
+
+* **Objetivos:**
+
+  * Solicitar ajuda de forma simples e acessível
+  * Tornar suas necessidades visíveis para potenciais doadores
+  * Receber doações de itens essenciais (alimentos, roupas, etc.)
+
+* **Principais dores:**
+
+  * Dificuldade de acesso e uso de plataformas digitais
+  * Baixa visibilidade de sua situação
+  * Barreiras tecnológicas e de conectividade
+
+* **Nível de conhecimento tecnológico:**
+
+  * Baixo (necessita de interfaces simples, intuitivas e acessíveis)
+
+---
+
+### 3. ONGs (Organizações Não Governamentais)
+
+As ONGs são instituições sem fins lucrativos que atuam em causas sociais e necessitam de apoio contínuo para manter suas atividades.
+
+* **Características:**
+
+  * Possuem atuação social comprovada e endereço fixo
+  * Contam com equipe organizacional (mesmo que reduzida)
+  * Já possuem algum nível de presença digital (ainda que limitada ou desatualizada)
+
+* **Objetivos:**
+
+  * Aumentar sua visibilidade no ambiente digital
+  * Captar doações e recursos com maior facilidade
+  * Estabelecer comunicação direta com doadores
+
+* **Principais dores:**
+
+  * Dificuldade de manter presença digital ativa e eficiente
+  * Baixo alcance nas redes sociais
+  * Falta de credibilidade percebida por novos doadores
+
+* **Nível de conhecimento tecnológico:**
+
+  * Básico a intermediário (uso de sistemas web e redes sociais)
+
+---
+
+### Considerações Gerais sobre o Público
+
+De forma geral, a plataforma deve ser projetada considerando:
+
+* Usuários com **baixo a médio nível de alfabetização digital**
+* Possível acesso à internet **limitado ou instável**
+* Necessidade de uma interface **simples, intuitiva e responsiva**
+* Importância de **transparência, segurança e validação de informações**
+
+Dessa forma, a aplicação deve priorizar a inclusão digital, reduzindo barreiras de uso e promovendo um ambiente confiável para conexão entre quem deseja ajudar e quem precisa de apoio.
+
