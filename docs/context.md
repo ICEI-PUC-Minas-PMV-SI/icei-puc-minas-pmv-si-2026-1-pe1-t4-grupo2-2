@@ -27,14 +27,7 @@ As organizações não governamentais (ONGs) enfrentam diversos desafios que imp
 
 Tais dificuldades refletem diretamente na população em situação de vulnerabilidade, que frequentemente necessita de atendimento imediato, seja por meio da oferta de alimentos, vestuário, moradia ou outros recursos essenciais à sua subsistência.
 
-
-
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
-
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Nesse contexto, a solução proposta consiste na criação de um ambiente digital que funcione como um “aconchego virtual”, destinado a ampliar a visibilidade das organizações sociais por meio de sua integração em nossa plataforma dedicada. O projeto busca mitigar a competição por espaço com influenciadores e grandes empresas, a partir do desenvolvimento de uma aplicação web front-end específica para esse público. Essa plataforma atuará como elo entre ONGs, indivíduos em situação de vulnerabilidade e potenciais apoiadores, promovendo maior eficiência, agilidade e acessibilidade na prestação de auxílio.
 
 ## Justificativa
 
