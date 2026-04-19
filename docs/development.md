@@ -19,21 +19,21 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 
 | RF-01 | O sistema deve permitir o cadastro de usuários.                                                                                                       | Anna        | cadastro-usuario.html    |
 
-| RF-02 | O sistema deve permitir o login de usuários.                                                                                                          | Anna        | login.html               |
+| RF-02 | O sistema deve permitir o login de usuários.                                                                                                          | Rafael        | login.html               |
 
-| RF-03 | O sistema deve armazenar os dados de cadastro do usuário.                                                                                             | Anna        | script.js                |
+| RF-03 | O sistema deve armazenar os dados de cadastro do usuário.                                                                                             | Lucas        | script.js                |
 
-| RF-04 | O sistema deve armazenar as solicitações feitas pelos usuários.                                                                                       | Anna        | script.js                |
+| RF-04 | O sistema deve armazenar as solicitações feitas pelos usuários.                                                                                       | Yuri       | script.js                |
 
-| RF-05 | O sistema deve disponibilizar uma lista de pedidos/solicitações para que os doadores possam visualizar e escolher qual desejam atender.               | Anna        | lista-solicitacoes.html  |
+| RF-05 | O sistema deve disponibilizar uma lista de pedidos/solicitações para que os doadores possam visualizar e escolher qual desejam atender.               | Rafael        | lista-solicitacoes.html  |
 
-| RF-06 | O sistema deve exigir o envio de dados de validação (endereço, telefone ou CPF/CNPJ) no momento do cadastro para garantir a procedência dos usuários. | Anna        | cadastro-usuario.html    |
+| RF-06 | O sistema deve exigir o envio de dados de validação (endereço, telefone ou CPF/CNPJ) no momento do cadastro para garantir a procedência dos usuários. | Lucas        | cadastro-usuario.html    |
 
 | RF-07 | O sistema deve permitir que o usuário acompanhe a entrega do produto via código de rastreio.                                                          | Anna        | acompanhamento.html      |
 
-| RF-08 | O sistema deve permitir que o receptor confirme o recebimento do produto.                                                                             | Anna        | confirmacao-entrega.html |
+| RF-08 | O sistema deve permitir que o receptor confirme o recebimento do produto.                                                                             | Yuri        | confirmacao-entrega.html |
 
-| RF-09 | O sistema deve permitir a redefinição de senha e e-mail do usuário.                                                                                   | Anna        | perfil.html              |
+| RF-09 | O sistema deve permitir a redefinição de senha e e-mail do usuário.                                                                                   | Rafael        | perfil.html              |
 
 | RF-10 | O sistema deve permitir filtrar as doações disponíveis por região.                                                                                    | Anna        | lista-solicitacoes.html  |
                                                                                 |
