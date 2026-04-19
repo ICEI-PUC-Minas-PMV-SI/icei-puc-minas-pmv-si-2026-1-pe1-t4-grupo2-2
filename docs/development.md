@@ -28,7 +28,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 |ID    | Descrição do requisito   | Responsável | Artefato criado |
 |------|--------------------------|-------------|-----------------|
 
-|RF-001| A aplicação deve permitir o cadrasto de usuário (doador ou receptor)    | João | index.html |
+|RF-001| A aplicação deve permitir o cadastro de usuário (doador ou receptor)    | João | index.html |
 |RF-002| A aplicação deve permitir o usuário a fazer o login                     | Ana Paula | cadastro-noticia.html |
 |RF-003 A aplicação deve permitir o acesso das solicitações de doação            | João | index.html |
 |RF-004| A aplicação deve permitir o aceso ao status da doação                   | Ana Paula | cadastro-noticia.html |
