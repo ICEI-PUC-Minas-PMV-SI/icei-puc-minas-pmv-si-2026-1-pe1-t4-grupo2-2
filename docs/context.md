@@ -1,45 +1,38 @@
 # Introdução
 
-Imagine que você deseja apresentar este projeto para investidores que deverão decidir se investem ou não no desenvolvimento da sua ferramenta.
+Com o avanço tecnológico e a intensificação da globalização, a internet consolidou-se como uma das principais ferramentas de conexão entre pessoas, organizações e comunidades ao redor do mundo. Plataformas digitais passaram a facilitar a troca de informações, a criação de redes de apoio e o desenvolvimento de iniciativas colaborativas, permitindo que indivíduos com interesses em comum se encontrem com mais facilidade. Nesse cenário, empresas e influenciadores têm explorado amplamente o potencial do ambiente digital para ampliar sua visibilidade e alcance, utilizando estratégias estruturadas de comunicação e marketing.
 
-A **Introdução** consiste das etapas: *Contextualização -- Definição do problema -- Definição dos Objetivos -- Justificativa*, e tem como função situar o seu trabalho dentro de um contexto de mercado e mostrar a importância da sua proposta para resolver a dor de um usuário.
+Entretanto, apesar dessas oportunidades, instituições sem fins lucrativos ainda enfrentam desafios significativos para se estabelecer de forma consistente nesse meio. Muitas organizações carecem de recursos financeiros, conhecimento técnico ou planejamento estratégico para manter uma presença digital ativa, atualizada e eficiente. Como resultado, acabam perdendo visibilidade e deixando de alcançar potenciais apoiadores, o que impacta diretamente sua capacidade de atuação e de captação de recursos.
 
-A Contextualização deve situar sem projeto em um determinado contexto de mercado, a fim de fornecer informações adicionais que possam ajudar a entender melhor o assunto que você irá abordar. Serve também para definir a relevância do seu assunto, uma vez que mostra o tamanho do mercado em que se está inserido. Ela pode envolver a análise de vários aspectos, como o ambiente histórico, cultural, político e social em que o problema a ser atacado surgiu.
-
-Escreva de 2 a 3 parágrafos para contetualizar o seu projeto.
+Além disso, a desigualdade no acesso à tecnologia agrava esse cenário, especialmente entre populações em situação de vulnerabilidade social, que muitas vezes possuem acesso limitado à internet ou baixo nível de letramento digital. Essa combinação de fatores cria uma lacuna importante no ambiente digital, onde tanto quem precisa de ajuda quanto quem deseja contribuir encontram dificuldades para se conectar. Diante desse contexto, torna-se essencial pensar em soluções inclusivas e acessíveis que promovam a aproximação entre esses públicos, fortalecendo o impacto social por meio da tecnologia.
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, **não** é a hora de comentar sobre a solução/aplicação.
+De acordo com pesquisa promovida pela Fundação Salvador Arena, considerando entidades que atuam nas regiões da Baixada Santista e da Grande São Paulo, cerca de 50% das ONGs enfrentam dificuldades para se comunicar e dialogar com seu público de interesse. Segundo Sérgio Loyola, “95% das ONGs não possuem site ou mantêm páginas desatualizadas, e 30% não estão presentes nas redes sociais ou apresentam perfis igualmente desatualizados”. 
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+Sem uma presença digital consistente e de impacto, a maioria das organizações sem fins lucrativos não consegue atingir um de seus principais objetivos: estabelecer conexão com potenciais colaboradores. 
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Além disso, um levantamento realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE) em 2023 apontou que aproximadamente 12% da população brasileira, o equivalente a 22,4 milhões de pessoas com mais de 10 anos, não utilizava a internet. Um fator ainda mais preocupante é que 75,5% desse grupo não possuía instrução ou tinha apenas o ensino fundamental incompleto. 
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Esses dados evidenciam que tanto as ONGs quanto as populações de baixa renda enfrentam dificuldades para se manterem ativamente conectadas, o que limita o uso dos meios digitais como ferramenta de visibilidade, mobilização e captação de contribuições
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Compreendendo que uma das maiores dificuldades das ONGs e de pessoas em situação de vulnerabilidade é serem encontradas no ambiente digital, a aplicação proposta tem como objetivo central reunir esses grupos em uma única plataforma, facilitando sua visibilidade e promovendo a conexão com potenciais contribuintes de forma simples e acessível. 
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Outro ponto fundamental é garantir maior segurança para os colaboradores. Atualmente, qualquer pessoa pode solicitar doações por meio das redes sociais, o que abre espaço para fraudes. Em 2023, por exemplo, a Polícia Civil desmascarou uma organização criminosa denominada “Alimentando Necessidades”, que vitimou cerca de 16,6 mil pessoas. O grupo alegava utilizar as doações para a produção de marmitas destinadas a pessoas carentes, mas as investigações revelaram que se tratava de um esquema fraudulento. 
+
+Diante desse cenário, a proposta da aplicação é oferecer um ambiente estruturado e confiável, que valorize a transparência e a credibilidade de ambas as partes. Dessa forma, busca-se proporcionar mais segurança nas transações, permitindo que os usuários realizem doações com maior tranquilidade e confiança quanto à veracidade das informações apresentadas. 
+
+Por fim, a solução visa criar um verdadeiro “aconchego virtual” para pessoas e organizações que buscam visibilidade. O projeto propõe reduzir a competição por espaço com influenciadores e grandes empresas, promovendo um ambiente digital dedicado, inclusivo e acolhedor, voltado especialmente para atender ONGs, pessoas em situação de vulnerabilidade e seus potenciais apoiadores
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+Em 2023, o Instituto de Pesquisa Econômica Aplicada (Ipea) apontou que o Brasil possui mais de 879 mil organizações da sociedade civil ativas, representando um crescimento de 7,8% em relação a 2021. 
 
-Lembre-se de pesquisar e utilizar números que justifiquem por que é importante que tal problema seja resolvido ou que mostrem o impacto do problema na vida das pessoas.
+Em consonância com esse aumento, a pesquisa Doação Brasil indicou que, em 2024, 78% dos brasileiros com mais de 18 anos e renda familiar superior a um salário mínimo realizaram ao menos um tipo de doação. 
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Diante desse cenário, a proposta do grupo é facilitar o encontro entre essas duas partes. De um lado, busca-se oferecer um espaço que amplie a visibilidade das organizações. De outro, pretende-se simplificar o processo para quem deseja contribuir, reduzindo barreiras que muitas vezes levam à desistência do doador durante a tentativa de realizar uma doação. 
 
 
 ## Público-Alvo
