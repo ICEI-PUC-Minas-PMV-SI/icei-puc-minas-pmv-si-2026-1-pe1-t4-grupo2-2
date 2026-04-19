@@ -18,6 +18,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ID    | Descrição                                                                                                                                             | Responsável | Artefato Criado          |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------ |
+
 | RF-01 | O sistema deve permitir o cadastro de usuários.                                                                                                       | Anna        | cadastro-usuario.html    |
 
 | RF-02 | O sistema deve permitir o login de usuários.                                                                                                          | Anna        | login.html               |
