@@ -1,8 +1,6 @@
-# Especificações do Projeto
+# Especificações CareConnect
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto.
+Esta seção apresenta a programação das funcionalidades da aplicação web desenvolvida para conectar doadores a pessoas afetadas por desastres naturais. Serão descritas as implementações realizadas com base nos requisitos definidos, as funcionalidades e os artefatos criados.
 
 ## Personas
 
@@ -49,8 +47,12 @@ Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Cla
 |--|-------------------------------------------------------|
 
 |01| O sistema deve ser desenvolvido utilizando a tríade de tecnologias web: HTML5, CSS3 e JavaScript. |
+
 |02| O sistema deve ser hospedado em um servidor gratuito (ex: GitHub Pages ou o próprio deploy do Apps Script). |
+
 |03| O sistema deve priorizar o uso de APIs gratuitas e seguras para funcionalidades externas. |
+
 |04| O sistema deve ser leve, evitando o uso excessivo de mídias (imagens/vídeos) para garantir carregamento rápido em conexões lentas. |
+
 |05| O sistema deve utilizar Google Sheets (Planilhas) como base de dados para o armazenamento das informações. |
 
