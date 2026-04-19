@@ -4,18 +4,7 @@ Implementação das funcionalidades da aplicação web voltada para conectar doa
 
 Para cada requisito funcional, pode ser entregue um artefato desse tipo.
 
-O professor Rommel Carneiro apresenta alguns exemplos prontos para serem utilizados como referência:
-- Login do sistema: [https://repl.it/@rommelpuc/LoginApp](https://repl.it/@rommelpuc/LoginApp) 
-- Cadastro de Contatos: [https://repl.it/@rommelpuc/Cadastro-de-Contatos](https://repl.it/@rommelpuc/Cadastro-de-Contatos)
 
-
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
 
 ## Exemplo
 
@@ -25,15 +14,23 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do requisito   | Responsável | Artefato criado |
-|------|--------------------------|-------------|-----------------|
+|ID    | Descrição do requisito   | Responsável | Artefato criado |                 
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ID    | Descrição                                                                                                                                             | Responsável | Artefato Criado          |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------------ |
+| RF-01 | O sistema deve permitir o cadastro de usuários.                                                                                                       | Anna        | cadastro-usuario.html    |
+| RF-02 | O sistema deve permitir o login de usuários.                                                                                                          | Anna        | login.html               |
+| RF-03 | O sistema deve armazenar os dados de cadastro do usuário.                                                                                             | Anna        | script.js                |
+| RF-04 | O sistema deve armazenar as solicitações feitas pelos usuários.                                                                                       | Anna        | script.js                |
+| RF-05 | O sistema deve disponibilizar uma lista de pedidos/solicitações para que os doadores possam visualizar e escolher qual desejam atender.               | Anna        | lista-solicitacoes.html  |
+| RF-06 | O sistema deve exigir o envio de dados de validação (endereço, telefone ou CPF/CNPJ) no momento do cadastro para garantir a procedência dos usuários. | Anna        | cadastro-usuario.html    |
+| RF-07 | O sistema deve permitir que o usuário acompanhe a entrega do produto via código de rastreio.                                                          | Anna        | acompanhamento.html      |
+| RF-08 | O sistema deve permitir que o receptor confirme o recebimento do produto.                                                                             | Anna        | confirmacao-entrega.html |
+| RF-09 | O sistema deve permitir a redefinição de senha e e-mail do usuário.                                                                                   | Anna        | perfil.html              |
+| RF-10 | O sistema deve permitir que o doador confirme que o produto foi entregue/recebido.                                                                    | Anna        | confirmacao-entrega.html |
+| RF-11 | O sistema deve permitir filtrar as doações disponíveis por região.                                                                                    | Anna        | lista-solicitacoes.html  |
+                                                                                |
 
-|RF-001| A aplicação deve permitir o cadastro de usuário (doador ou receptor)    | João | index.html |
-|RF-002| A aplicação deve permitir o usuário a fazer o login                     | Ana Paula | cadastro-noticia.html |
-|RF-003 A aplicação deve permitir o acesso das solicitações de doação            | João | index.html |
-|RF-004| A aplicação deve permitir o aceso ao status da doação                   | Ana Paula | cadastro-noticia.html |
-|RF-005| A aplicação deve permitir que usuários visualizem solicitações de ajuda | João | index.html |
-|RF-006| A aplicação deve permitir que usuários encontrem doadores e receptores  | João | index.html |
 
 
 
