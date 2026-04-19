@@ -31,14 +31,11 @@ Nesse contexto, a solução proposta consiste na criação de um ambiente digita
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+Em 2023, o Instituto de Pesquisa Econômica Aplicada (Ipea) apontou que o Brasil possui mais de 879 mil organizações da sociedade civil ativas, representando um crescimento de 7,8% em relação a 2021. Em consonância com esse aumento, a pesquisa Doação Brasil indicou que, em 2024, 78% dos brasileiros com mais de 18 anos e renda familiar superior a um salário mínimo realizaram ao menos um tipo de doação. 
 
-Lembre-se de pesquisar e utilizar números que justifiquem por que é importante que tal problema seja resolvido ou que mostrem o impacto do problema na vida das pessoas.
+Outro ponto fundamental é garantir maior segurança para os colaboradores. Atualmente, qualquer pessoa pode solicitar doações por meio das redes sociais, o que abre espaço para fraudes. Em 2023, por exemplo, a Polícia Civil desmascarou uma organização criminosa denominada “Alimentando Necessidades”, que vitimou cerca de 16,6 mil pessoas. O grupo alegava utilizar as doações para a produção de marmitas destinadas a pessoas carentes, mas as investigações revelaram que se tratava de um esquema fraudulento. 
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Diante desse cenário, a proposta da aplicação consiste em oferecer um ambiente estruturado e confiável que promova a conexão entre organizações que buscam ampliar sua visibilidade e doadores que, frequentemente, desistem durante o processo de realização de doações. A plataforma tem como finalidade proporcionar maior agilidade e segurança nas transações. Dessa forma, tanto os usuários quanto as ONGs poderão interagir de maneira mais segura, transparente e confiável.
 
 ## Público-Alvo
 
