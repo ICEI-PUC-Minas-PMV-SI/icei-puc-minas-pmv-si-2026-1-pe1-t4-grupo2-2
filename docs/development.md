@@ -1,6 +1,6 @@
-# Programação de Funcionalidades
+# Programação de Funcionalidades na Aplicação
 
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
+Implementação das funcionalidades da aplicação web voltada para conectar doadores e pessoas afetadas por desastres naturais. As funcionalidades foram desenvolvidas com base nos requisitos funcionais definidos no projeto, e são essenciais no processo de realização do cadastro de usuários, registro de doações, solicitações de ajuda e o status do pedido.
 
 Para cada requisito funcional, pode ser entregue um artefato desse tipo.
 
@@ -25,18 +25,25 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito | Responsável | Artefato Criado |
-|------|------------------------|------------|-----------------|
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | João | index.html |
-|RF-002| A aplicação deve permitir a emissão de um relatório de tarefas realizadas no mês | Ana Paula | cadastro-noticia.html |
+|ID    | Descrição do requisito   | Responsável | Artefato criado |
+|------|--------------------------|-------------|-----------------|
+
+|RF-001| A aplicação deve permitir o cadrasto de usuário (doador ou receptor)    | João | index.html |
+|RF-002| A aplicação deve permitir o usuário a fazer o login                     | Ana Paula | cadastro-noticia.html |
+|RF-003 A aplicação deve permitir o acesso das solicitações de doação            | João | index.html |
+|RF-004| A aplicação deve permitir o aceso ao status da doação                   | Ana Paula | cadastro-noticia.html |
+|RF-005| A aplicação deve permitir que usuários visualizem solicitações de ajuda | João | index.html |
+|RF-006| A aplicação deve permitir que usuários encontrem doadores e receptores  | João | index.html |
+
+
 
 ## Descrição das estruturas:
 
-## Notícia
+## Doação
 |  **Nome**      | **Tipo**          | **Descrição**                             | **Exemplo**                                    |
 |:--------------:|-------------------|-------------------------------------------|------------------------------------------------|
-| Id             | Numero (Inteiro)  | Identificador único da notícia            | 1                                              |
-| Título         | Texto             | Título da notícia                         | Sistemas de Informação PUC Minas é o melhor                                   |
-| Conteúdo       | Texto             | Conteúdo da notícia                       | Sistemas de Informação da PUC Minas é eleito o melhor curso do Brasil                            |
-| Id do usuário  | Numero (Inteiro)  | Identificador do usuário autor da notícia | 1                                              |
+| Quantidade     | Numero (Inteiro)  | Número de itens a serem doados            | 10                                             |
+| Id do usuário  | Numero (Inteiro)  | Doador ou Receptor                        | Doador                                         |
+| Id da doação   | Roupas            | Conteúdo do item                          | Casacos de inverno para adultos                |
+| Status         | ...               | Pendente, Enviado ou Entregue             | Entregue                                       |
 
