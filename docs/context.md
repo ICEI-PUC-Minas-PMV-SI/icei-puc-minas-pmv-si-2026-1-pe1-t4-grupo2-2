@@ -6,7 +6,7 @@ A **Introdução** consiste das etapas: *Contextualização -- Definição do pr
 
 A Contextualização deve situar sem projeto em um determinado contexto de mercado, a fim de fornecer informações adicionais que possam ajudar a entender melhor o assunto que você irá abordar. Serve também para definir a relevância do seu assunto, uma vez que mostra o tamanho do mercado em que se está inserido. Ela pode envolver a análise de vários aspectos, como o ambiente histórico, cultural, político e social em que o problema a ser atacado surgiu. !!
 
-Escreva de 2 a 3 parágrafos para contetualizar o seu projeto. 
+Escreva de 2 a 3 parágrafos para contetualizar o seu projeto. 11
 
 ## Problema
 
