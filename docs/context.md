@@ -34,12 +34,103 @@ Em consonância com esse aumento, a pesquisa Doação Brasil indicou que, em 202
 
 Diante desse cenário, a proposta do grupo é facilitar o encontro entre essas duas partes. De um lado, busca-se oferecer um espaço que amplie a visibilidade das organizações. De outro, pretende-se simplificar o processo para quem deseja contribuir, reduzindo barreiras que muitas vezes levam à desistência do doador durante a tentativa de realizar uma doação. 
 
+
 ## Público-Alvo
 
-Os atores envolvidos no problema abrangem dois perfis principais de usuários: doadores e receptores, cada um com características, necessidades e níveis de experiência distintos no ambiente digital. 
+A aplicação proposta é voltada para três perfis principais de usuários: doadores, receptores (pessoas físicas em situação de vulnerabilidade) e organizações não governamentais (ONGs). Esses grupos apresentam diferentes níveis de acesso à tecnologia, necessidades específicas e objetivos distintos dentro da plataforma.
 
-O primeiro grupo é composto pelos doadores, que são pessoas físicas, homens ou mulheres, maiores de 18 anos. Em geral, trata-se de indivíduos interessados em contribuir com causas sociais, seja de forma pontual ou recorrente. Suas principais necessidades envolvem praticidade, segurança e confiança no processo de doação, além de transparência sobre o destino dos recursos ou itens doados. Em relação à tecnologia, espera-se um nível básico de conhecimento, sendo suficiente possuir um e-mail ativo e acesso à internet para utilizar a plataforma. 
+### 1. Doadores (Pessoas Físicas)
 
-O segundo grupo é formado pelos receptores, que podem ser tanto pessoas físicas maiores de 18 anos em situação de vulnerabilidade quanto organizações não governamentais sem fins lucrativos. No caso das ONGs, é necessário que sejam instituições comprovadas e com endereço fixo, garantindo maior credibilidade. As necessidades desse público estão relacionadas ao acesso a recursos essenciais, como roupas, alimentos e itens básicos para subsistência. Assim como os doadores, os receptores podem possuir experiência limitada com tecnologia, sendo fundamental que a solução proposta seja acessível, intuitiva e de fácil utilização, exigindo apenas conhecimentos básicos, como uso de e-mail e navegação na internet. 
+Os doadores são indivíduos maiores de 18 anos, de diferentes perfis socioeconômicos, que possuem interesse em contribuir com causas sociais. Em geral, já utilizam a internet e dispositivos móveis no dia a dia, mesmo que com conhecimento técnico básico.
 
-Dessa forma, a plataforma deve ser projetada para atender usuários com baixa familiaridade tecnológica, priorizando uma interface simples, inclusiva e eficiente, capaz de conectar de maneira segura e direta quem deseja ajudar com quem precisa de apoio. 
+* **Características:**
+
+  * Usuários com acesso à internet (principalmente via smartphone)
+  * Familiaridade com redes sociais e aplicativos
+  * Buscam praticidade e rapidez em ações digitais
+
+* **Objetivos:**
+
+  * Realizar doações de forma simples, rápida e segura
+  * Encontrar pessoas ou instituições confiáveis para ajudar
+  * Acompanhar o destino de suas doações
+
+* **Principais dores:**
+
+  * Medo de fraudes ou golpes (como casos já registrados no Brasil)
+  * Falta de transparência sobre o uso das doações
+  * Processos complexos ou demorados para contribuir
+
+* **Nível de conhecimento tecnológico:**
+
+  * Básico a intermediário (uso de e-mail, navegação web, apps)
+
+---
+
+### 2. Receptores (Pessoas Físicas em Situação de Vulnerabilidade)
+
+Este grupo é composto por pessoas maiores de 18 anos que se encontram em situação de vulnerabilidade social e necessitam de apoio para suprir necessidades básicas.
+
+* **Características:**
+
+  * Baixa renda e, muitas vezes, baixo nível de escolaridade
+  * Acesso limitado à internet ou uso intermitente
+  * Uso predominante de dispositivos móveis
+
+* **Objetivos:**
+
+  * Solicitar ajuda de forma simples e acessível
+  * Tornar suas necessidades visíveis para potenciais doadores
+  * Receber doações de itens essenciais (alimentos, roupas, etc.)
+
+* **Principais dores:**
+
+  * Dificuldade de acesso e uso de plataformas digitais
+  * Baixa visibilidade de sua situação
+  * Barreiras tecnológicas e de conectividade
+
+* **Nível de conhecimento tecnológico:**
+
+  * Baixo (necessita de interfaces simples, intuitivas e acessíveis)
+
+---
+
+### 3. ONGs (Organizações Não Governamentais)
+
+As ONGs são instituições sem fins lucrativos que atuam em causas sociais e necessitam de apoio contínuo para manter suas atividades.
+
+* **Características:**
+
+  * Possuem atuação social comprovada e endereço fixo
+  * Contam com equipe organizacional (mesmo que reduzida)
+  * Já possuem algum nível de presença digital (ainda que limitada ou desatualizada)
+
+* **Objetivos:**
+
+  * Aumentar sua visibilidade no ambiente digital
+  * Captar doações e recursos com maior facilidade
+  * Estabelecer comunicação direta com doadores
+
+* **Principais dores:**
+
+  * Dificuldade de manter presença digital ativa e eficiente
+  * Baixo alcance nas redes sociais
+  * Falta de credibilidade percebida por novos doadores
+
+* **Nível de conhecimento tecnológico:**
+
+  * Básico a intermediário (uso de sistemas web e redes sociais)
+
+---
+
+### Considerações Gerais sobre o Público
+
+De forma geral, a plataforma deve ser projetada considerando:
+
+* Usuários com **baixo a médio nível de alfabetização digital**
+* Possível acesso à internet **limitado ou instável**
+* Necessidade de uma interface **simples, intuitiva e responsiva**
+* Importância de **transparência, segurança e validação de informações**
+
+Dessa forma, a aplicação deve priorizar a inclusão digital, reduzindo barreiras de uso e promovendo um ambiente confiável para conexão entre quem deseja ajudar e quem precisa de apoio.
+
