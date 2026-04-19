@@ -27,8 +27,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 | RF-07 | O sistema deve permitir que o usuário acompanhe a entrega do produto via código de rastreio.                                                          | Anna        | acompanhamento.html      |
 | RF-08 | O sistema deve permitir que o receptor confirme o recebimento do produto.                                                                             | Anna        | confirmacao-entrega.html |
 | RF-09 | O sistema deve permitir a redefinição de senha e e-mail do usuário.                                                                                   | Anna        | perfil.html              |
-| RF-10 | O sistema deve permitir que o doador confirme que o produto foi entregue/recebido.                                                                    | Anna        | confirmacao-entrega.html |
-| RF-11 | O sistema deve permitir filtrar as doações disponíveis por região.                                                                                    | Anna        | lista-solicitacoes.html  |
+| RF-10 | O sistema deve permitir filtrar as doações disponíveis por região.                                                                                    | Anna        | lista-solicitacoes.html  |
                                                                                 |
 
 
