@@ -25,6 +25,9 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 As organizações não governamentais (ONGs) enfrentam diversos desafios que impactam diretamente sua atuação e sustentabilidade. Dentre esses, destacam-se as dificuldades na captação de doações, essenciais para a manutenção de suas atividades; os entraves na mensuração de impacto, que dificultam a demonstração clara e objetiva dos resultados alcançados perante a sociedade e potenciais financiadores; a dependência de trabalho voluntário, que impõe desafios relacionados à retenção e à continuidade das atividades; e as limitações em comunicação e marketing, que comprometem o engajamento do público, a visibilidade institucional e a efetiva transmissão de seus propósitos. 
 
+Tais dificuldades refletem diretamente na população em situação de vulnerabilidade, que frequentemente necessita de atendimento imediato, seja por meio da oferta de alimentos, vestuário, moradia ou outros recursos essenciais à sua subsistência.
+
+
 
 Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
 
