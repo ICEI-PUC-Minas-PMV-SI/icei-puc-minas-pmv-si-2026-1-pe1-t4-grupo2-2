@@ -8,14 +8,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 
 | ID | Descrição do Requisito | Responsável | Artefato Criado |
 |:---|:---|:---:|:---|
-| RF-01 | **Cadastro de Usuários** - O sistema deve permitir que novos usuários se registrem fornecendo dados básicos para acesso. | João | `tela_cadastro.html`, `script.js` |
-| RF-02 | **Login de Usuários** - O sistema deve permitir o acesso seguro de usuários cadastrados através de e-mail e senha. | Ana Paula | `tela_login.html`, `script.js` |
-| RF-05 | **Listagem de Pedidos** - Exibição de uma lista de solicitações para que doadores visualizem e escolham quais atender. | João | `tela_pedidos.html`, `pedidos.json` |
-| RF-06 | **Validação de Dados** - Exigir o envio de documentos (CPF/CNPJ) e endereço no cadastro para garantir a procedência. | Ana Paula | `tela_cadastro.html`, `valida_dados.js` |
-| RF-07 | **Rastreio de Entrega** - O sistema deve permitir que o usuário acompanhe o status da entrega via código de rastreio. | João | `tela_rastreio.html`, `api_entrega.js` |
-| RF-08 | **Confirmação de Recebimento** - Interface para que o receptor confirme formalmente que recebeu o produto doado. | Ana Paula | `confirmacao.html`, `script.js` |
-| RF-09 | **Redefinição de Perfil** - Funcionalidade para que o usuário realize a troca de sua senha e e-mail cadastrados. | João | `perfil.html`, `redefinir.js` |
-| RF-10 | **Filtro por Região** - Sistema de busca avançada que permite filtrar as doações disponíveis por localização. | Ana Paula | `tela_pedidos.html`, `filtros.js` |
+| RF-01 | **Cadastro de Usuários** - O sistema deve permitir que novos usuários se registrem fornecendo dados básicos para acesso. | Rafael Martins | `cadastro.html`, `cadastro.js` |
+| RF-02 | **Login de Usuários** - O sistema deve permitir o acesso seguro de usuários cadastrados através de e-mail e senha. | Anna Sophia | `tela_login.html`, `login.js` |
+| RF-05 | **Listagem de Pedidos** - Exibição de uma lista de solicitações para que doadores visualizem e escolham quais atender. | Rafael Inácio | `tela_pedidos.html`, `pedidos.json` |
+| RF-06 | **Validação de Dados** - Exigir o envio de documentos (CPF/CNPJ) e endereço no cadastro para garantir a procedência. | Lucas Nocce | `tela_cadastro.html`, `valida_dados.js` |
+| RF-07 | **Rastreio de Entrega** - O sistema deve permitir que o usuário acompanhe o status da entrega via código de rastreio. | Rafael Inácio| `tela_transações.html`, `fetch_transacoes.js` |
+| RF-08 | **Confirmação de Recebimento** - Interface para que o receptor confirme formalmente que recebeu o produto doado. | Yuri Christian | `confirmar-transacao.js` |
+| RF-09 | **Redefinição de Perfil** - Funcionalidade para que o usuário realize a troca de sua senha. | Anna Sophia | `tela_redefinir_senha.html`, `redefinir_senha.js` |
+| RF-10 | **Filtro por Região** - Sistema de busca avançada que permite filtrar as doações disponíveis por localização. | Rafael Martins | `filtros_busca.js` |
 
 ## Descrição das estruturas:
 
