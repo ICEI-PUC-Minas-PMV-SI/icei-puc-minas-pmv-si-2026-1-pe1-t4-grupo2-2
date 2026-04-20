@@ -18,22 +18,19 @@ Esses dados evidenciam que tanto as ONGs quanto as populações de baixa renda e
 
 ## Objetivos
 
-Compreendendo que uma das maiores dificuldades das ONGs e de pessoas em situação de vulnerabilidade é serem encontradas no ambiente digital, a aplicação proposta tem como objetivo central reunir esses grupos em uma única plataforma, facilitando sua visibilidade e promovendo a conexão com potenciais contribuintes de forma simples e acessível. 
+As organizações não governamentais (ONGs) enfrentam diversos desafios que impactam diretamente sua atuação e sustentabilidade. Dentre esses, destacam-se as dificuldades na captação de doações, essenciais para a manutenção de suas atividades; os entraves na mensuração de impacto, que dificultam a demonstração clara e objetiva dos resultados alcançados perante a sociedade e potenciais financiadores; a dependência de trabalho voluntário, que impõe desafios relacionados à retenção e à continuidade das atividades; e as limitações em comunicação e marketing, que comprometem o engajamento do público, a visibilidade institucional e a efetiva transmissão de seus propósitos. 
 
-Outro ponto fundamental é garantir maior segurança para os colaboradores. Atualmente, qualquer pessoa pode solicitar doações por meio das redes sociais, o que abre espaço para fraudes. Em 2023, por exemplo, a Polícia Civil desmascarou uma organização criminosa denominada “Alimentando Necessidades”, que vitimou cerca de 16,6 mil pessoas. O grupo alegava utilizar as doações para a produção de marmitas destinadas a pessoas carentes, mas as investigações revelaram que se tratava de um esquema fraudulento. 
+Tais dificuldades refletem diretamente na população em situação de vulnerabilidade, que frequentemente necessita de atendimento imediato, seja por meio da oferta de alimentos, vestuário, moradia ou outros recursos essenciais à sua subsistência.
 
-Diante desse cenário, a proposta da aplicação é oferecer um ambiente estruturado e confiável, que valorize a transparência e a credibilidade de ambas as partes. Dessa forma, busca-se proporcionar mais segurança nas transações, permitindo que os usuários realizem doações com maior tranquilidade e confiança quanto à veracidade das informações apresentadas. 
-
-Por fim, a solução visa criar um verdadeiro “aconchego virtual” para pessoas e organizações que buscam visibilidade. O projeto propõe reduzir a competição por espaço com influenciadores e grandes empresas, promovendo um ambiente digital dedicado, inclusivo e acolhedor, voltado especialmente para atender ONGs, pessoas em situação de vulnerabilidade e seus potenciais apoiadores
+Nesse contexto, a solução proposta consiste na criação de um ambiente digital que funcione como um “aconchego virtual”, destinado a ampliar a visibilidade das organizações sociais por meio de sua integração em nossa plataforma dedicada. O projeto busca mitigar a competição por espaço com influenciadores e grandes empresas, a partir do desenvolvimento de uma aplicação web front-end específica para esse público. Essa plataforma atuará como elo entre ONGs, indivíduos em situação de vulnerabilidade e potenciais apoiadores, promovendo maior eficiência, agilidade e acessibilidade na prestação de auxílio.
 
 ## Justificativa
 
-Em 2023, o Instituto de Pesquisa Econômica Aplicada (Ipea) apontou que o Brasil possui mais de 879 mil organizações da sociedade civil ativas, representando um crescimento de 7,8% em relação a 2021. 
+Em 2023, o Instituto de Pesquisa Econômica Aplicada (Ipea) apontou que o Brasil possui mais de 879 mil organizações da sociedade civil ativas, representando um crescimento de 7,8% em relação a 2021. Em consonância com esse aumento, a pesquisa Doação Brasil indicou que, em 2024, 78% dos brasileiros com mais de 18 anos e renda familiar superior a um salário mínimo realizaram ao menos um tipo de doação. 
 
-Em consonância com esse aumento, a pesquisa Doação Brasil indicou que, em 2024, 78% dos brasileiros com mais de 18 anos e renda familiar superior a um salário mínimo realizaram ao menos um tipo de doação. 
+Outro ponto fundamental é garantir maior segurança para os colaboradores. Atualmente, qualquer pessoa pode solicitar doações por meio das redes sociais, o que abre espaço para fraudes. Em 2023, por exemplo, a Polícia Civil desmascarou uma organização criminosa denominada “Alimentando Necessidades”, que vitimou cerca de 16,6 mil pessoas. O grupo alegava utilizar as doações para a produção de marmitas destinadas a pessoas carentes, mas as investigações revelaram que se tratava de um esquema fraudulento. 
 
-Diante desse cenário, a proposta do grupo é facilitar o encontro entre essas duas partes. De um lado, busca-se oferecer um espaço que amplie a visibilidade das organizações. De outro, pretende-se simplificar o processo para quem deseja contribuir, reduzindo barreiras que muitas vezes levam à desistência do doador durante a tentativa de realizar uma doação. 
-
+Diante desse cenário, a proposta da aplicação consiste em oferecer um ambiente estruturado e confiável que promova a conexão entre organizações que buscam ampliar sua visibilidade e doadores que, frequentemente, desistem durante o processo de realização de doações. A plataforma tem como finalidade proporcionar maior agilidade e segurança nas transações. Dessa forma, tanto os usuários quanto as ONGs poderão interagir de maneira mais segura, transparente e confiável.
 
 ## Público-Alvo
 
