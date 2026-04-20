@@ -1,10 +1,6 @@
-# Especificações do Projeto
+# Especificações CareConnect
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto.
-
-Caso deseje atribuir uma imagem a sua persona, utilize o site https://thispersondoesnotexist.com/
+Esta seção apresenta a programação das funcionalidades da aplicação web desenvolvida para conectar doadores a pessoas afetadas por desastres naturais. Serão descritas as implementações realizadas com base nos requisitos definidos, as funcionalidades e os artefatos criados.
 
 ## Personas
 
@@ -113,44 +109,33 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade | 
 |------|-----------------------------------------|----| 
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | ALTA |  
-|RF-002| A aplicação deve permitir a emissão de um relatório de tarefas realizadas no mês   | MÉDIA | 
-
+|RF-001| O sistema deve permitir o cadastro de usuários. | Alta |
+|RF-002| O sistema deve permitir o login de usuários. | Alta |
+|RF-003| O sistema deve disponibilizar uma lista de pedidos/solicitações para que os doadores possam visualizar e escolher qual desejam atender. | Alta |
+|RF-004| O sistema deve exigir o envio de dados de validação (endereço, telefone ou CPF/CNPJ) no momento do cadastro para garantir a procedência dos usuários. | Alta |
+|RF-005| O sistema deve permitir que o usuário acompanhe a entrega do produto via código de rastreio. | Média |
+|RF-006| O sistema deve permitir que o receptor confirme o recebimento do produto. | Média |
+|RF-007| O sistema deve permitir a redefinição de senha e e-mail do usuário. | Média |
+|RF-008| O sistema deve permitir filtrar as doações disponíveis por região. | Média |
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|ID    | Descrição do Requisito  | Prioridade | 
+|------|-----------------------------------------|----| 
+|RNF-001| O sistema deve ser responsivo, garantindo o acesso e usabilidade em dispositivos móveis (telas menores). | Alta |
+|RNF-002| O sistema deve criptografar as informações sensíveis dos usuários armazenadas no banco de dados. | Alta |
+|RNF-003| O sistema deve possuir uma interface intuitiva, focada na facilidade de navegação para o usuário final. | Alta |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
-O projeto está restrito pelos itens apresentados na tabela a seguir.
-
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|01| O sistema deve ser desenvolvido utilizando a tríade de tecnologias web: HTML5, CSS3 e JavaScript. |
+|02| O sistema deve ser hospedado em um servidor gratuito (ex: GitHub Pages ou o próprio deploy do Apps Script). |
+|03| O sistema deve priorizar o uso de APIs gratuitas e seguras para funcionalidades externas. |
+|04| O sistema deve ser leve, evitando o uso excessivo de mídias (imagens/vídeos) para garantir carregamento rápido em conexões lentas. |
+|05| O sistema deve utilizar Google Sheets (Planilhas) como base de dados para o armazenamento das informações. |
 
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
