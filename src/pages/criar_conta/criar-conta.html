@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="style-conta.css">
+</head>
+
+<header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="/img/logo-1.1.png" alt="CareConnect Logo" class="logo-img">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">Pedidos</a>
+                <a href="#" class="nav-link">Sobre</a>
+                <a href="../login.html" class="nav-link">Login</a>
+            </nav>
+        </div>
+    </header>
+
+<body>
+    <div class="container">
+        <h2>Criar Conta</h2>
+        
+        <label for="user">Nome Completo</label>
+        <input type="text" placeholder="Digite seu nome completo" id="user" required> 
+
+        <label for="user">CPF ou CNPJ</label>
+        <input type="text" placeholder="Ex: 123.456.789-11 ou 12.345.678/123-45" id="user" required> 
+
+        <label for="date">Data de Nascimento</label>
+        <input type="date" id="data-nascimento" name="nascimento" required>
+
+    
+<div class="row-3colunas">      
+    <div class="coluna">    
+        <label for="cidade">Cidade</label>
+        <select id="cidade" name="cidade">
+            <option value="cidade" disabled selected></option>
+            <option value="contagem">Contagem</option>
+            <option value="belo-horizonte">Belo Horizonte</option>
+            <option value="sao-paulo">São Paulo</option>
+            <option value="rio">Rio de Janeiro</option>
+            <option value="espirito-santo">Vitória</option>
+        </select>
+    </div>
+
+    <div class="coluna">   
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado">
+            <option value="estado" disabled selected></option>
+            <option value="mg">Minas Gerais</option>
+            <option value="es">Espírito Santo</option>
+            <option value="sao-paulo">São Paulo</option>
+            <option value="rio">Rio de Janeiro</option>
+        </select>
+    </div>
+
+    <div class="coluna">
+        <label for="perfil">Perfil</label>
+        <select id="perfil" name="perfil">
+            <option value="perfil"></option>
+            <option value="beneficiarios">Beneficiário</option>
+            <option value="ong">ONG</option>
+            <option value="doador">Doador</option>
+        </select>
+    </div>
+</div>
+
+
+        <label for="email">E-mail</label>
+        <input type="text" placeholder="user@gmail.com" id="user" required> 
+
+        <label for="password">Senha</label>
+            <div class="password-container">
+            <input type="password" placeholder="***********" id="password" required>
+        </div>
+
+        
+
+
+        <button type="submit">Cadastrar</button>
+
+        <div class="voltar">
+            <a href="../login.html">Voltar para a tela de login</a>
+        </div>
+
+    </div>
+</body>
+</html>

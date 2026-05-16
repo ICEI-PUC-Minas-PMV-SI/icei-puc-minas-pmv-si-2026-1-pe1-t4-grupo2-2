@@ -1,0 +1,225 @@
+@import url('/src/styles/global.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============ HEADER ============ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 5%;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #548C1C;
+    font-family: "Raleway", sans-serif;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #548C1C;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    font-family: "Raleway", sans-serif;
+}
+
+.nav-link:hover {
+    color: #3a6b0f;
+}
+
+/* ============ CORPO DA PÁGINA ============ */
+body {
+    font-family: "Raleway", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 20px 20px;
+}
+
+.container select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    background-color: white;
+    color: #262626;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+}
+
+.container select:focus {
+    border-color: #262626;
+    box-shadow: 0 0 0 3px rgba(84, 140, 28, 0.1);
+}
+
+.row-3colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+}
+
+.coluna label {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    background: #548C1C;
+    color: white;
+    font-weight: 700;
+    padding: 14px;
+    border-radius: 12px;
+    margin-top: 30px;
+    font-family: "Raleway", sans-serif;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    transform: translateY(-1.5px);
+    box-shadow: 0 5px 15px rgba(84, 140, 28, 0.4);
+
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.voltar {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.voltar a {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.voltar a:hover {
+    text-decoration: underline;
+}
+
+/* ============ RESPONSIVIDADE HEADER ============ */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 5%;
+    }
+
+    .header-container {
+        flex-direction: row; /* mantém tudo na mesma linha */
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+}
