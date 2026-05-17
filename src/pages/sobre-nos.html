@@ -1,0 +1,459 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>CareConnect - Sobre Nós</title>
+
+
+<style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap');
+
+
+:root{
+    --color-bg:#f2f2f2;
+    --color-primary:#548C1C;
+    --color-primary-hover:#4a6b2c;
+    --color-dark:#262626;
+    --color-white:#ffffff;
+    --color-border:#d9ece0;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Raleway", sans-serif;
+}
+
+
+body{
+    background:var(--color-bg);
+    min-height:100vh;
+}
+
+
+
+
+
+
+
+
+header{
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    padding:20px 40px;
+    margin-bottom:40px;
+}
+
+
+nav{
+    max-width:1200px;
+    margin:auto;
+
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.links{
+    display:flex;
+    gap:35px;
+}
+
+
+nav a{
+    text-decoration:none;
+    color:var(--color-primary);
+    font-size:20px;
+    font-weight:700;
+}
+
+
+nav a:hover{
+    color:var(--color-primary-hover);
+}
+
+
+
+
+
+
+
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+
+h1{
+    text-align:center;
+    font-size:52px;
+    margin-bottom:40px;
+    color:var(--color-dark);
+}
+
+
+
+
+
+
+.sobre-card{
+
+
+    background:white;
+
+
+    border:8px solid var(--color-border);
+
+
+    border-radius:25px;
+
+
+    padding:40px;
+
+
+    margin-bottom:30px;
+
+
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+
+.sobre-card p{
+
+
+    font-size:20px;
+
+
+    line-height:1.8;
+
+
+    margin-bottom:25px;
+
+
+    color:#444;
+}
+
+
+
+
+
+
+
+
+footer{
+
+
+    margin-top:50px;
+
+
+    background:white;
+
+
+    box-shadow:0 -2px 10px rgba(0,0,0,.08);
+
+
+    padding:20px 40px;
+
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.text-footer{
+    font-weight:600;
+    color:#444;
+}
+
+
+
+
+
+
+@media (max-width: 900px) {
+    .header {
+        padding: 1.2rem 4%;
+    }
+
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+
+    .nav-link {
+        font-size: var(--font-size-label);
+    }
+
+
+    .logo-img {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1.2rem 2rem;
+    }
+
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+
+
+    .logo-img {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+
+    .logo-text {
+        font-size: 1.8rem;
+    }
+
+
+    .logo-img-footer {
+        display: none;
+    }
+
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+
+    .nav-link {
+        font-size: var(--font-size-label);
+    }
+
+
+    .section-page {
+        padding: 3rem;
+        max-width: 40rem;
+    }
+}
+
+
+
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .logo-img {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+
+    .logo-text {
+        font-size: var(--font-size-text);
+    }
+
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+
+    .nav-link {
+        font-size: var(--font-size-small);
+    }
+
+
+    .container h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+
+    .container label {
+        font-size: var(--font-size-small);
+        margin-top: 1.5rem;
+    }
+
+
+    .container input {
+        padding: 1rem 1.2rem;
+        font-size: var(--font-size-small);
+    }
+
+
+    button {
+        padding: 1rem;
+        font-size: var(--font-size-label);
+        margin-top: 2rem;
+    }
+}
+
+
+
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+
+<header>
+
+
+<nav>
+
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-SI/icei-puc-minas-pmv-si-2026-1-pe1-t4-grupo2-2/blob/main/docs/img/logo-1.1.png?raw=true"
+width="90">
+
+
+
+
+<div class="links">
+<a href="#">Home</a>
+<a href="#">Pedidos</a>
+<a href="#">Entrar</a>
+</div>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+<div class="container">
+
+
+<h1>Sobre Nós</h1>
+
+
+
+
+<div class="sobre-card">
+
+
+<p>
+Seja muito bem-vindo(a)! Nós acreditamos que a tecnologia só faz sentido
+quando serve para aproximar as pessoas e transformar realidades.
+</p>
+
+
+<p>
+Nossa história começou com uma pergunta simples:
+como podemos usar o digital para fortalecer a corrente do bem?
+Percebemos que muita gente quer ajudar, mas não sabe como.
+Ao mesmo tempo, muitas ONGs incríveis fazem um trabalho duro,
+mas não conseguem ser vistas.
+</p>
+
+
+<p>
+Foi para unir esses pontos que criamos esta plataforma.
+Nosso propósito é ser esse ponto de encontro único,
+onde a solidariedade não encontra barreiras.
+</p>
+
+
+<p>
+Aqui, você não precisa ser um expert em tecnologia para fazer a diferença.
+Desenvolvemos um ambiente pensado para ser acolhedor,
+simples e intuitivo, para que o foco seja sempre
+o impacto humano.
+</p>
+
+
+<p>
+Trabalhamos para que cada conexão feita aqui seja baseada
+na confiança e na transparência.
+Queremos que você sinta a segurança de que sua contribuição
+está chegando onde realmente precisa.
+</p>
+
+
+<p>
+Mais do que um site de doações,
+somos uma infraestrutura de empatia
+feita por pessoas e para pessoas.
+
+
+Vamos juntos?
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<footer>
+
+
+<div class="text-footer">
+
+
+© 2026 CareConnect. Todos os direitos reservados.
+<br>
+Desenvolvido por Grupo 2 - PUC Minas
+
+
+</div>
+
+
+
+
+<img src="https://github.com/ICEI-PUC-Minas-PMV-SI/icei-puc-minas-pmv-si-2026-1-pe1-t4-grupo2-2/blob/main/docs/img/logo-1_0.png?raw=true"
+width="200">
+
+
+</footer>
+
+
+
+
+</body>
+</html>
