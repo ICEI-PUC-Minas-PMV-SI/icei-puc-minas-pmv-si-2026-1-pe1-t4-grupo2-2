@@ -1,0 +1,43 @@
+@import url('/src/styles/global.css');
+@import url('/src/styles/responsive.css');
+
+.cria-conta {
+    text-align: left;
+    font-size: 1.4rem;
+    flex: 1;
+}
+
+.cria-conta a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cria-conta:hover {
+    text-decoration: none;
+}
+
+.recupera-senha {
+    text-align: right;
+    font-size: 1.4rem;
+    flex: 1;
+
+}
+
+.recupera-senha a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.recupera-senha:hover {
+    text-decoration: none;
+}
+
+button {
+    font-weight: var(--font-weight-semibold);
+    margin-top: 2rem;
+    text-transform: none;
+}
+

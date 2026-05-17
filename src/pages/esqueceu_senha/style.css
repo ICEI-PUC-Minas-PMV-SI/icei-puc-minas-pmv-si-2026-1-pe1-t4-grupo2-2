@@ -1,0 +1,89 @@
+@import url('/src/styles/global.css');
+@import url('/src/styles/responsive.css');
+
+
+.logo-img {
+    width: 6rem;
+    height: 6rem;
+}
+
+.container label {
+    margin-bottom: 0.5rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.descricao {
+    color: var(--color-dark);
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 3rem;
+    font-size: var(--font-size-label);
+}
+
+.container input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+button {
+    font-weight: var(--font-weight-semibold);
+    margin-top: 2rem;
+    text-transform: none;
+}
+
+.mensagem-ajuda {
+    background-color: var(--color-bg);
+    padding: 1.2rem;
+    border-radius: var(--border-radius-sm);
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    text-align: center;
+    font-weight: var(--font-weight-medium);
+}
+
+.voltar {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.voltar a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-medium);
+}
+
+.voltar a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .descricao {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .mensagem-ajuda {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+}
+
+
+
+

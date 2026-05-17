@@ -1,0 +1,73 @@
+@import url('/src/styles/global.css');
+@import url('/src/styles/responsive.css');
+
+/* ============ HEADER ============ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--color-white);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 5%;
+}
+
+.logo-img {
+    width: 4rem;
+    height: 4rem;
+}
+
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    font-family: var(--font-family);
+}
+
+.nav-link:hover {
+    color: #3a6b0f;
+}
+
+/* ============ CORPO DA PÁGINA ============ */
+body {
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 2rem 2rem 2rem;
+}
+
+.container select:focus {
+    border-color: var(--color-dark);
+    box-shadow: 0 0 0 3px rgba(84, 140, 28, 0.1);
+}
+
+.row-3colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+}
+
+.coluna label {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.voltar {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.voltar a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-medium);
+}
+
+.voltar a:hover {
+    text-decoration: underline;
+}
