@@ -5,82 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilos adicionais para os campos de CEP */
-        .row-cep {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .coluna-cep {
-            flex: 1;
-        }
-        
-        .endereco-bloqueado {
-            background-color: #f5f5f5;
-            cursor: not-allowed;
-        }
-        
-        .info-prototipo {
-            background-color: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 10px;
-            margin: 15px 0;
-            font-size: 12px;
-            color: #555;
-            border-radius: 4px;
-        }
-        
-        .info-prototipo strong {
-            color: #1976d2;
-        }
-        
-        .cep-exemplos {
-            display: flex;
-            gap: 10px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .cep-exemplo-btn {
-            background: #e0e0e0;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 11px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-        }
-        
-        .cep-exemplo-btn:hover {
-            background: #667eea;
-            color: white;
-        }
-        
-        .campo-obrigatorio::after {
-            content: " *";
-            color: red;
-        }
-        
-        hr {
-            margin: 15px 0;
-            border: none;
-            border-top: 1px solid #e0e0e0;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
         <div class="header-container">
             <div class="logo">
-                <img src="../assets/img/logo-1_1.png" alt="CareConnect Logo" class="logo-img">
+                <img src="../../assets/img/logo-1_1.png" alt="CareConnect Logo" class="logo-img">
             </div>
             <nav class="nav-menu">
-                <a href="#" class="nav-link">Pedidos</a>
-                <a href="#" class="nav-link">Sobre</a>
-                <a href="../tela_login/tela_login.html" class="nav-link">Login</a>
+                <a href="../lista_pedidos/lista_pedidos.html" class="nav-link">Pedidos</a>
+                <a href="../sobre_nos/sobre-nos.html" class="nav-link">Sobre Nós</a>
+                <a href="../transações/transações.html" class="nav-link nav-link--active">Login</a>
             </nav>
         </div>
     </header>
@@ -176,14 +111,19 @@
         </section>
     </div>
     <footer class="footer">
-        <div class="footer-container">
-            <span class="footer-text">
-                © 2024 CareConnect. Todos os direitos reservados.
-            </span>
-            <div class="logo">
-                <img src="../assets/img/logo-1_0.png" alt="CareConnect Logo" class="logo-img-footer">
-            </div>
+      <div class="footer-container">
+        <span class="footer-text">
+          © 2026 CareConnect. Todos os direitos reservados.<br />
+          Desenvolvido por Grupo 2 — PUC Minas
+        </span>
+        <div class="logo">
+          <img
+            src="../../assets/img/logo-1_0.png"
+            alt="CareConnect Logo"
+            class="logo-img-footer"
+          />
         </div>
+      </div>
     </footer>
 </body>
 </html>
