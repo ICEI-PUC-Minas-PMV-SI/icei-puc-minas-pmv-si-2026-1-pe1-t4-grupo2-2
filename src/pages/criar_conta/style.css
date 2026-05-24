@@ -3,6 +3,9 @@
 
 /* ============ HEADER ============ */
 
+.container {
+    padding: 5rem 0;
+}
 
 .logo-text {
     font-size: 2.2rem;
@@ -52,4 +55,67 @@
 
 .voltar a:hover {
     text-decoration: underline;
+}
+
+.row-cep {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.coluna-cep {
+    flex: 1;
+}
+
+.endereco-bloqueado {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.info-prototipo {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 12px;
+    color: #555;
+    border-radius: 4px;
+}
+
+.info-prototipo strong {
+    color: #1976d2;
+}
+
+.cep-exemplos {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.cep-exemplo-btn {
+    background: #e0e0e0;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+}
+
+.cep-exemplo-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+.campo-obrigatorio::after {
+    content: " *";
+    color: red;
+}
+
+hr {
+    margin: 15px 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
 }
