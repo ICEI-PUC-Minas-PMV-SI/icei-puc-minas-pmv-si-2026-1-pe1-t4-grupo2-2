@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transações — CareConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../assets/img/logo-1_1.png" alt="CareConnect Logo" class="logo-img">
+            </div>
+            <nav class="nav-menu">
+                <a href="../lista_pedidos/lista_pedidos.html" class="nav-link">Pedidos</a>
+                <a href="../criar_pedido/criar_pedido.html" class="nav-link">Criar Pedido</a>
+                <a href="transações.html" class="nav-link nav-link--active">Transações</a>
+                <a href="../tela_perfil/tela_perfil.html" class="nav-link">Meu Perfil</a>
+                <a href="../lista_pedidos/lista_pedidos.html" class="nav-link">Sair</a></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="page-title">Transações</h1>
+            <p class="page-desc">Acompanhe suas doações</p>
+            <a href="#modal3" class="pedido-card">
+                <div class="status-circle">✈</div>
+                <div class="info">
+                    <h3>Pedido #1027</h3>
+                    <p class="category">Cobertores</p>
+                    <p class="code">Código: BR45896323</p>
+                </div>
+                <span class="status enviado">Enviado</span>
+                <span class="card-arrow">›</span>
+            </a>
+            <a href="#modal1" class="pedido-card">
+                <div class="status-circle">↻</div>
+                <div class="info">
+                    <h3>Pedido #1025</h3>
+                    <p class="category">Roupas infantis</p>
+                    <p class="code">Código: BR45896321</p>
+                </div>
+                <span class="status transporte">Em transporte</span>
+                <span class="card-arrow">›</span>
+            </a>
+            <a href="#modal2" class="pedido-card">
+                <div class="status-circle">✔</div>
+                <div class="info">
+                    <h3>Pedido #1026</h3>
+                    <p class="category">Alimentos</p>
+                    <p class="code">Código: BR45896322</p>
+                </div>
+                <span class="status entregue">Entregue</span>
+                <span class="card-arrow">›</span>
+            </a>
+            <nav class="pagination" id="pagination" aria-label="Paginação">
+                <button class="page-btn page-arrow" id="prev-btn" aria-label="Anterior" disabled>‹</button>
+                <div id="page-numbers">
+                    <button class="page-btn active" data-page="1">1</button>
+                    <button class="page-btn" data-page="2">2</button>
+                    <button class="page-btn" data-page="3">3</button>
+                    <button class="page-btn" data-page="4">4</button>
+                </div>
+                <button class="page-btn page-arrow" id="next-btn" aria-label="Próximo">›</button>
+            </nav>
+
+        </div>
+    </main>
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <a href="#" class="fechar">×</a>
+            <p class="modal-tag">Rastreamento</p>
+            <h2>Pedido #1025</h2>
+            <div class="modal-grid">
+                <div class="modal-field"><label>Doador</label><span>João Silva</span></div>
+                <div class="modal-field"><label>Destino</label><span>ONG Esperança</span></div>
+                <div class="modal-field"><label>Código</label><span>BR45896321</span></div>
+            </div>
+            <p class="tracking-label">Histórico</p>
+            <ul class="timeline">
+                <li class="done">Pedido criado</li>
+                <li class="done">Coletado</li>
+                <li class="done">Em transporte</li>
+                <li>Entregue</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+
+
+            <a href="#" class="fechar">×</a>
+            <p class="modal-tag">Rastreamento</p>
+            <h2>Pedido #1026</h2>
+            <div class="modal-grid">
+                <div class="modal-field"><label>Doador</label><span>Maria Souza</span></div>
+                <div class="modal-field"><label>Destino</label><span>ONG Vida</span></div>
+                <div class="modal-field"><label>Código</label><span>BR45896322</span></div>
+            </div>
+            <p class="tracking-label">Histórico</p>
+            <ul class="timeline">
+                <li class="done">Pedido criado</li>
+                <li class="done">Coletado</li>
+                <li class="done">Em transporte</li>
+                <li class="done">Entregue</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <a href="#" class="fechar">×</a>
+            <p class="modal-tag">Rastreamento</p>
+            <h2>Pedido #1027</h2>
+            <div class="modal-grid">
+                <div class="modal-field"><label>Doador</label><span>Carlos Mendes</span></div>
+                <div class="modal-field"><label>Destino</label><span>ONG Mãos Unidas</span></div>
+                <div class="modal-field"><label>Código</label><span>BR45896323</span></div>
+            </div>
+            <p class="tracking-label">Histórico</p>
+            <ul class="timeline">
+                <li class="done">Pedido criado</li>
+                <li class="done">Coletado</li>
+                <li class="done">Enviado</li>
+                <li>Entregue</li>
+            </ul>
+        </div>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <a href="#" class="fechar">×</a>
+            <p class="modal-tag">Rastreamento</p>
+            <h2>Pedido #1028</h2>
+            <div class="modal-grid">
+                <div class="modal-field"><label>Doador</label><span>Carlos Mendes</span></div>
+                <div class="modal-field"><label>Destino</label><span>ONG Criança Feliz</span></div>
+                <div class="modal-field"><label>Código</label><span>BR45896324</span></div>
+            </div>
+            <p class="tracking-label">Histórico</p>
+            <ul class="timeline">
+                <li class="done">Pedido criado</li>
+                <li class="done">Coletado</li>
+                <li class="done">Em transporte</li>
+                <li>Entregue</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <a href="#" class="fechar">×</a>
+            <p class="modal-tag">Rastreamento</p>
+            <h2>Pedido #1029</h2>
+            <div class="modal-grid">
+                <div class="modal-field"><label>Doador</label><span>Ana Lima</span></div>
+                <div class="modal-field"><label>Destino</label><span>ONG Saúde</span></div>
+                <div class="modal-field"><label>Código</label><span>BR45896325</span></div>
+            </div>
+            <p class="tracking-label">Histórico</p>
+            <ul class="timeline">
+                <li class="done">Pedido criado</li>
+                <li class="done">Coletado</li>
+                <li class="done">Em transporte</li>
+                <li class="done">Entregue</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <a href="#" class="fechar">×</a>
+            <p class="modal-tag">Rastreamento</p>
+            <h2>Pedido #1030</h2>
+            <div class="modal-grid">
+                <div class="modal-field"><label>Doador</label><span>Paulo Santos</span></div>
+                <div class="modal-field"><label>Destino</label><span>ONG Saber</span></div>
+                <div class="modal-field"><label>Código</label><span>BR45896326</span></div>
+            </div>
+            <p class="tracking-label">Histórico</p>
+            <ul class="timeline">
+                <li class="done">Pedido criado</li>
+                <li class="done">Coletado</li>
+                <li class="done">Enviado</li>
+                <li>Entregue</li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <span class="footer-text">
+                © 2026 CareConnect. Todos os direitos reservados.<br>
+                Desenvolvido por Grupo 2 - PUC Minas
+            </span>
+            <div class="logo">
+                <img src="../assets/img/logo-1_0.png" alt="CareConnect Logo" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -256,3 +256,14 @@ button:active {
     transform: translateY(0);
 }
 
+.nav-link--active {
+    color: var(--color-primary-hover) !important;
+    border-bottom: .2rem solid var(--color-primary-hover);
+    padding-bottom: .2rem;
+}
+
+.footer-text {
+    font-size: var(--font-size-small);
+    color: #666;
+}
+

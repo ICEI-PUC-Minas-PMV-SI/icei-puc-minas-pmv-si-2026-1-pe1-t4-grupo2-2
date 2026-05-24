@@ -128,16 +128,6 @@ body {
   margin-top: 20px;
 }
 
-/* footer */
-.footer {
-  margin-top: auto;
-  width: 100%;
-  background: #3a3a3a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 5%;
-}
 
 /* responsivo */
 @media (max-width: 1440px) {

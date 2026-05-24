@@ -9,7 +9,7 @@ O layout padrão da página será composto por três seções principais: Header
 No header, à esquerda estará a logo do projeto (versão 1.1) e, à direita, os itens do menu de navegação. 
 
 * Para usuários não autenticados, o menu exibirá as opções: _Pedidos, Sobre e Entrar_. 
-* Já para usuários autenticados, as opções serão: _Pedidos, Transações e Sair_. 
+* Já para usuários autenticados, as opções serão: _Pedidos, Transações e Sair</a>_. 
 * Caso o usuário autenticado seja do tipo “Solicitante”, será exibida também a opção _Criar Pedido_.
 
 A seção de conteúdo apresentará as informações da página, seguindo as diretrizes visuais e de usabilidade definidas no design do projeto.

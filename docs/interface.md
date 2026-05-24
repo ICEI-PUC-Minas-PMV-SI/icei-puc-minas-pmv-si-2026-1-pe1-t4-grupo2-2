@@ -50,13 +50,13 @@ Solicitante:
 * Criar Pedido
 * Pedidos
 * Transações
-* Sair
+* Sair</a>
 
 Doador:
 
 * Pedidos
 * Transações
-* Sair
+* Sair</a>
 
 Na seção de transações, será possível acompanhar o status dos pedidos. Caso o pedido já tenha sido enviado, ao clicar nele o usuário poderá acessar informações como a localização. Se o usuário for um solicitante, também terá a opção de confirmar a entrega ou reportar o pedido.
 
