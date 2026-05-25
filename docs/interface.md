@@ -72,4 +72,4 @@ No cabeçalho (header), a logo (versão 1.1) ficará posicionada no extremo esqu
 
 No rodapé (footer), será utilizada a versão 1.0 da logo, posicionada no canto esquerdo. No lado direito, haverá uma mensagem destacando o propósito do projeto e reforçando que não há qualquer ganho financeiro por parte dos responsáveis pelo gerenciamento do CareConnect.
 
-![Wireframe](img/final_stack.png)
+![Wireframe](img/final_stack1.png)
