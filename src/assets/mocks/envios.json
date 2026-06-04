@@ -1,0 +1,13 @@
+[
+  {
+    "idEnvio": 555,
+    "idPedido": 204,
+    "idDoador": 2,
+    "codigoRastreio": "EF532353931QZ",
+    "mensagem": "Ola! A primeira remessa foi enviada hoje pelos Correios.",
+    "statusEntrega": "em_transporte",
+    "prazoReservaDias": 7,
+    "criadoEm": "2026-06-04T15:12:00Z",
+    "atualizadoEm": "2026-06-04T16:00:00Z"
+  }
+]

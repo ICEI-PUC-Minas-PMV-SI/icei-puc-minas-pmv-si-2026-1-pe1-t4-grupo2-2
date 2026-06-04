@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "slug": "categoria1",
+    "nome": "Roupas",
+    "ativo": true
+  },
+  {
+    "id": 2,
+    "slug": "categoria2",
+    "nome": "Alimentos",
+    "ativo": true
+  },
+  {
+    "id": 3,
+    "slug": "categoria3",
+    "nome": "Eletronicos",
+    "ativo": true
+  },
+  {
+    "id": 4,
+    "slug": "categoria4",
+    "nome": "Moveis",
+    "ativo": true
+  },
+  {
+    "id": 5,
+    "slug": "categoria5",
+    "nome": "Brinquedos",
+    "ativo": true
+  },
+  {
+    "id": 6,
+    "slug": "categoria6",
+    "nome": "Livros",
+    "ativo": true
+  },
+  {
+    "id": 7,
+    "slug": "categoria7",
+    "nome": "Esportes",
+    "ativo": true
+  },
+  {
+    "id": 8,
+    "slug": "categoria8",
+    "nome": "Beleza",
+    "ativo": true
+  },
+  {
+    "id": 9,
+    "slug": "categoria9",
+    "nome": "Saude",
+    "ativo": true
+  }
+]

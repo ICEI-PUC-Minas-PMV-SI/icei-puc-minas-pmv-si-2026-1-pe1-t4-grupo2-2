@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nome": "Maria Aparecida Silva",
+    "cpfCnpj": "123.456.789-10",
+    "dataNascimento": "1991-08-20",
+    "perfil": "beneficiario",
+    "email": "maria.silva@email.com",
+    "senhaHash": "$2b$10$maria.hash.exemplo",
+    "endereco": {
+      "cep": "30130-003",
+      "logradouro": "Avenida Afonso Pena",
+      "numero": "1000",
+      "complemento": "Apto 302",
+      "bairro": "Centro",
+      "cidade": "Belo Horizonte",
+      "estado": "MG"
+    },
+    "criadoEm": "2026-06-04T14:10:00Z",
+    "atualizadoEm": "2026-06-04T14:10:00Z"
+  }
+]

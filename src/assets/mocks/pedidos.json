@@ -1,0 +1,14 @@
+[
+  {
+    "idPedido": 203,
+    "idSolicitante": 1,
+    "titulo": "Preciso de roupas de frio para meus filhos",
+    "categoriaId": 1,
+    "categoriaSlug": "categoria1",
+    "categoriaNome": "Roupas",
+    "descricao": "Tenho duas criancas e estamos sem agasalhos suficientes para o inverno.",
+    "status": "aberto",
+    "criadoEm": "2026-06-04T14:20:00Z",
+    "atualizadoEm": "2026-06-04T14:20:00Z"
+  }
+]
