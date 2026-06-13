@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareConnect — Sobre Nós</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Estilos extras necessários para as animações funcionarem perfeitamente */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Pequeno delay cascata para os cards de valores aparecerem um depois do outro */
+      .value-card:nth-child(1) { transition-delay: 0.1s; }
+      .value-card:nth-child(2) { transition-delay: 0.3s; }
+      .value-card:nth-child(3) { transition-delay: 0.5s; }
+
+      /* Estilização rápida para a nova seção de estatísticas */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .stat-item h3 {
+        font-size: 3rem;
+        color: #2563eb; /* Cor padrão azul, altere conforme seu style.css */
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../../assets/img/logo-1_1.png" alt="CareConnect Logo" class="logo-img">
+            </div>
+            <nav class="nav-menu">
+                <a href="../tela_pedidos/pedidos.html" class="nav-link">Pedidos</a>
+                <a href="#" class="nav-link nav-link--active">Sobre Nós</a>
+                <a href="../tela_login/tela_login.html" class="nav-link">Login</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero__inner">
+          <div class="hero__text">
+            <span class="hero__eyebrow">Nossa história</span>
+            <h1 class="hero__title">
+              Conectando <span>corações</span><br />que querem ajudar
+            </h1>
+            <p class="hero__desc">
+              Somos uma plataforma onde solidariedade encontra tecnologia.
+              Unimos quem precisa de apoio com quem tem vontade de fazer a
+              diferença — de forma simples, transparente e humana.
+            </p>
+          </div>
+          <div class="hero__img-wrap">
+            <img
+              class="hero__img"
+              src="../../assets/img/sobre-img.jpg"
+              alt="Voluntários colaborando juntos"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section__inner">
+          <span class="section__label">Quem somos</span>
+          <h2 class="section__title">De onde viemos e para onde vamos</h2>
+          <p class="section__lead">
+            Uma ideia nascida da empatia, construída com propósito.
+          </p>
+          <div class="story-text">
+            <p>
+              Seja muito bem-vindo(a)! Nós acreditamos que a tecnologia só faz
+              sentido quando serve para aproximar as pessoas e transformar
+              realidades.
+            </p>
+            <p>
+              Nossa história começou com uma pergunta simples: como podemos usar
+              o digital para fortalecer a corrente do bem? Percebemos que muita
+              gente quer ajudar, mas não sabe como. Ao mesmo tempo, muitas ONGs
+              incríveis fazem um trabalho duro, mas não conseguem ser vistas.
+            </p>
+            <p>
+              Foi para unir esses pontos que criamos esta plataforma. Nosso
+              propósito é ser esse ponto de encontro único, onde a solidariedade
+              não encontra barreiras.
+            </p>
+            <p>
+              Aqui, você não precisa ser um expert em tecnologia para fazer a
+              diferença. Desenvolvemos um ambiente pensado para ser acolhedor,
+              simples e intuitivo, para que o foco seja sempre o impacto humano.
+            </p>
+            <p>
+              Trabalhamos para que cada conexão feita aqui seja baseada na
+              confiança e na transparência. Queremos que você sinta a segurança
+              de que sua contribuição está chegando onde realmente precisa.
+            </p>
+            <p>
+              Mais do que um site de doações, somos uma infraestrutura de
+              empatia feita por pessoas e para pessoas. Vamos juntos?
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--gray reveal">
+        <div class="section__inner">
+          <span class="section__label">Nosso Impacto</span>
+          <h2 class="section__title">A força da nossa comunidade</h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <h3 class="counter" data-target="1200">+0</h3>
+              <p>Conexões Realizadas</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="450">+0</h3>
+              <p>Voluntários Ativos</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="85">+0</h3>
+              <p>ONGs Parceiras</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__inner">
+          <span class="section__label">Nossos valores</span>
+          <h2 class="section__title">O que nos guia</h2>
+          <p class="section__lead">
+            Cada decisão que tomamos é orientada por três pilares fundamentais.
+          </p>
+          <div class="values-grid">
+            <div class="value-card reveal">
+              <div class="value-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </div>
+              <h3 class="value-card__title">Empatia</h3>
+              <p class="value-card__text">
+                Colocamo-nos no lugar de cada pessoa. Ouvir antes de agir é o
+                princípio que molda cada funcionalidade que desenvolvemos.
+              </p>
+            </div>
+
+            <div class="value-card reveal">
+              <div class="value-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <h3 class="value-card__title">Transparência</h3>
+              <p class="value-card__text">
+                Cada pedido e cada doação são rastreáveis. Acreditamos que a
+                confiança só se constrói com clareza total sobre o que acontece.
+              </p>
+            </div>
+
+            <div class="value-card reveal">
+              <div class="value-card__icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="18" cy="18" r="3" />
+                  <circle cx="6" cy="6" r="3" />
+                  <path d="M13 6h3a2 2 0 0 1 2 2v7" />
+                  <line x1="6" y1="9" x2="6" y2="21" />
+                </svg>
+              </div>
+              <h3 class="value-card__title">Conexão</h3>
+              <p class="value-card__text">
+                Eliminamos a distância entre quem quer ajudar e quem precisa.
+                Nossa tecnologia existe para que nenhum pedido fique sem
+                resposta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <h2 class="cta__title">Pronto para fazer parte?</h2>
+        <p class="cta__desc">
+          Crie sua conta gratuitamente e comece a conectar pessoas que querem
+          ajudar com quem precisa de apoio hoje.
+        </p>
+        <div class="cta__btns">
+          <a
+            href="../criar_conta/criar-conta.html"
+            class="btn-cta btn-cta--white"
+            >Criar conta</a
+          >
+          <a
+            href="../tela_pedidos/pedidos.html"
+            class="btn-cta btn-cta--outline"
+            >Ver pedidos</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <span class="footer-text">
+                ©️ 2026 CareConnect. Todos os direitos reservados.<br>
+                Desenvolvido por Grupo 2 - PUC Minas
+            </span>
+            <div class="logo">
+                <img src="../../assets/img/logo-1_0.png" alt="CareConnect Logo" class="logo-img-footer">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        
+        // 1. LÓGICA DO SCROLL REVEAL (Intersection Observer)
+        const itemsToReveal = document.querySelectorAll(".reveal");
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target); // Para a animação acontecer só uma vez
+            }
+          });
+        }, {
+          threshold: 0.15 // Ativa quando 15% do elemento estiver visível
+        });
+
+        itemsToReveal.forEach(item => revealObserver.observe(item));
+
+
+        // 2. LÓGICA DOS CONTADORES DINÂMICOS
+        const counters = document.querySelectorAll(".counter");
+        const speed = 150; // Quanto menor, mais rápido o contador se move
+
+        const startCounting = (counter) => {
+          const target = +counter.getAttribute("data-target");
+          const updateCount = () => {
+            const current = +counter.innerText.replace('+', '');
+            const increment = Math.ceil(target / speed);
+
+            if (current < target) {
+              counter.innerText = `+${current + increment}`;
+              setTimeout(updateCount, 15);
+            } else {
+              counter.innerText = `+${target}`;
+            }
+          };
+          updateCount();
+        };
+
+        // Observer para os contadores começarem a rodar apenas quando aparecerem na tela
+        const statsSection = document.querySelector(".stats-grid");
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              counters.forEach(counter => startCounting(counter));
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        if(statsSection) statsObserver.observe(statsSection);
+
+
+        // 3. INTERAÇÃO INTERATIVA NOS CARDS (Efeito de inclinação suave / Hover dinâmico)
+        const cards = document.querySelectorAll(".value-card");
+        cards.forEach(card => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - (rect.width / 2);
+            const y = e.clientY - rect.top - (rect.height / 2);
+            
+            // Aplica uma leve inclinação baseada na posição do mouse
+            card.style.transform = `perspective(1000px) rotateX(${-y / 10}deg) rotateY(${x / 10}deg) translateY(-10px)`;
+          });
+
+          card.addEventListener("mouseleave", () => {
+            // Reseta a posição quando o mouse sai de cima
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+          });
+        });
+
+      });
+    </script>
+  </body>
+</html>
