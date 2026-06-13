@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Pedido</title>
+    <link rel="icon" href="../../assets/img/logo-1_1.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <!-- Proteção de Rota: Verificar autenticação -->
+    <script type="module">
+        import { AuthGuard } from "/src/js/AuthGuard.js";
+        AuthGuard.protectPage();
+    </script>
 </head>
 <body>
     <header class="header">
@@ -12,52 +18,73 @@
             <div class="logo">
                 <img src="../../assets/img/logo-1_1.png" alt="CareConnect Logo" class="logo-img">
             </div>
+            <!-- Botão Hamburguer -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="nav-menu">
                 <a href="../tela_pedidos/pedidos.html" class="nav-link">Pedidos</a>
                 <a href="#" class="nav-link nav-link--active">Criar Pedido</a>
                 <a href="../transacoes/transações.html" class="nav-link">Transações</a>
                 <a href="../tela_perfil/tela_perfil.html" class="nav-link">Meu Perfil</a>
-                <a href="../tela_login/tela_login.html" class="nav-link">Sair</a>
+                <a href="#" class="nav-link" onclick="logout()">Sair</a>
             </nav>
         </div>
     </header>
+
     <div class="container">
         <section class="section-page">
             <h2>Criar Pedido</h2>
-            <label for="title">Título</label>
-            <input type="text" placeholder="Digite o título do pedido" id="title" required>
-            <label for="category">Categoria</label>
-            <select id="category" required>
-                <option value="" disabled selected>Selecione a categoria</option>
-                <option value="categoria1">Roupas</option>
-                <option value="categoria2">Alimentos</option>
-                <option value="categoria3">Eletrônicos</option>
-                <option value="categoria4">Móveis</option>
-                <option value="categoria5">Brinquedos</option>
-                <option value="categoria6">Livros</option>
-                <option value="categoria7">Esportes</option>
-                <option value="categoria8">Beleza</option>
-                <option value="categoria9">Saúde</option>
-            </select>
-            <label for="description">Descrição</label>
-            <textarea
-                placeholder="Digite a descrição do pedido"
-                id="description"
-                required
-            ></textarea>
-            <button type="submit">Gerar Pedido</button>
+            <form id="order-form">
+                <label for="title">Título</label>
+                <input type="text" placeholder="Digite o título do pedido" id="title" name="title" required>
+                <label for="category">Categoria</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Selecione a categoria</option>
+                    <option value="1">Roupas</option>
+                    <option value="2">Alimentos</option>
+                    <option value="3">Eletrônicos</option>
+                    <option value="4">Móveis</option>
+                    <option value="5">Brinquedos</option>
+                    <option value="6">Livros</option>
+                    <option value="7">Esportes</option>
+                    <option value="8">Beleza</option>
+                    <option value="9">Saúde</option>
+                </select>
+                <label for="description">Descrição</label>
+                <textarea
+                    placeholder="Digite a descrição do pedido"
+                    id="description"
+                    name="description"
+                    required
+                ></textarea>
+                <button type="submit">Gerar Pedido</button>
+            </form>
         </section>
     </div>
     <footer class="footer">
-        <div class="footer-container">
-            <span class="footer-text">
-                © 2026 CareConnect. Todos os direitos reservados.<br>
-                Desenvolvido por Grupo 2 - PUC Minas
-            </span>
-            <div class="logo">
-                <img src="../../assets/img/logo-1_0.png" alt="CareConnect Logo" class="logo-img-footer">
-            </div>
+      <div class="footer-container">
+        <span class="footer-text">
+          © 2026 CareConnect. Todos os direitos reservados.<br />
+          Desenvolvido por Grupo 2 — PUC Minas
+        </span>
+        <div class="logo">
+          <img
+            src="../../assets/img/logo-1_0.png"
+            alt="CareConnect Logo"
+            class="logo-img-footer"
+          />
         </div>
+      </div>
     </footer>
+    <script type="module">
+        import { AuthGuard } from "/src/js/AuthGuard.js";
+        import { Hamburger } from "/src/js/Hamburger.js";
+        window.logout = () => AuthGuard.logout();
+        new Hamburger();
+    </script>    
+    <script type="module" src="criar_pedido.js"></script>
 </body>
 </html>
