@@ -1,54 +1,133 @@
 # Introdução
 
-Imagine que você deseja apresentar este projeto para investidores que deverão decidir se investem ou não no desenvolvimento da sua ferramenta.
+Com o avanço tecnológico e a intensificação da globalização, a internet consolidou-se como uma das principais ferramentas de conexão entre pessoas, organizações e comunidades ao redor do mundo. Plataformas digitais passaram a facilitar a troca de informações, a criação de redes de apoio e o desenvolvimento de iniciativas colaborativas, permitindo que indivíduos com interesses em comum se encontrem com mais facilidade. Nesse cenário, empresas e influenciadores têm explorado amplamente o potencial do ambiente digital para ampliar sua visibilidade e alcance, utilizando estratégias estruturadas de comunicação e marketing.
 
-A **Introdução** consiste das etapas: *Contextualização -- Definição do problema -- Definição dos Objetivos -- Justificativa*, e tem como função situar o seu trabalho dentro de um contexto de mercado e mostrar a importância da sua proposta para resolver a dor de um usuário.
+Entretanto, apesar dessas oportunidades, instituições sem fins lucrativos ainda enfrentam desafios significativos para se estabelecer de forma consistente nesse meio. Muitas organizações carecem de recursos financeiros, conhecimento técnico ou planejamento estratégico para manter uma presença digital ativa, atualizada e eficiente. Como resultado, acabam perdendo visibilidade e deixando de alcançar potenciais apoiadores, o que impacta diretamente sua capacidade de atuação e de captação de recursos.
 
-A Contextualização deve situar sem projeto em um determinado contexto de mercado, a fim de fornecer informações adicionais que possam ajudar a entender melhor o assunto que você irá abordar. Serve também para definir a relevância do seu assunto, uma vez que mostra o tamanho do mercado em que se está inserido. Ela pode envolver a análise de vários aspectos, como o ambiente histórico, cultural, político e social em que o problema a ser atacado surgiu.
-
-Escreva de 2 a 3 parágrafos para contetualizar o seu projeto.
+Além disso, a desigualdade no acesso à tecnologia agrava esse cenário, especialmente entre populações em situação de vulnerabilidade social, que muitas vezes possuem acesso limitado à internet ou baixo nível de letramento digital. Essa combinação de fatores cria uma lacuna importante no ambiente digital, onde tanto quem precisa de ajuda quanto quem deseja contribuir encontram dificuldades para se conectar. Diante desse contexto, torna-se essencial pensar em soluções inclusivas e acessíveis que promovam a aproximação entre esses públicos, fortalecendo o impacto social por meio da tecnologia.
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, **não** é a hora de comentar sobre a solução/aplicação.
+De acordo com pesquisa promovida pela Fundação Salvador Arena, considerando entidades que atuam nas regiões da Baixada Santista e da Grande São Paulo, cerca de 50% das ONGs enfrentam dificuldades para se comunicar e dialogar com seu público de interesse. Segundo Sérgio Loyola, “95% das ONGs não possuem site ou mantêm páginas desatualizadas, e 30% não estão presentes nas redes sociais ou apresentam perfis igualmente desatualizados”. 
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+Sem uma presença digital consistente e de impacto, a maioria das organizações sem fins lucrativos não consegue atingir um de seus principais objetivos: estabelecer conexão com potenciais colaboradores. 
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Além disso, um levantamento realizado pelo Instituto Brasileiro de Geografia e Estatística (IBGE) em 2023 apontou que aproximadamente 12% da população brasileira, o equivalente a 22,4 milhões de pessoas com mais de 10 anos, não utilizava a internet. Um fator ainda mais preocupante é que 75,5% desse grupo não possuía instrução ou tinha apenas o ensino fundamental incompleto. 
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Esses dados evidenciam que tanto as ONGs quanto as populações de baixa renda enfrentam dificuldades para se manterem ativamente conectadas, o que limita o uso dos meios digitais como ferramenta de visibilidade, mobilização e captação de contribuições
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+As organizações não governamentais (ONGs) enfrentam diversos desafios que impactam diretamente sua atuação e sustentabilidade. Dentre esses, destacam-se as dificuldades na captação de doações, essenciais para a manutenção de suas atividades; os entraves na mensuração de impacto, que dificultam a demonstração clara e objetiva dos resultados alcançados perante a sociedade e potenciais financiadores; a dependência de trabalho voluntário, que impõe desafios relacionados à retenção e à continuidade das atividades; e as limitações em comunicação e marketing, que comprometem o engajamento do público, a visibilidade institucional e a efetiva transmissão de seus propósitos. 
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Tais dificuldades refletem diretamente na população em situação de vulnerabilidade, que frequentemente necessita de atendimento imediato, seja por meio da oferta de alimentos, vestuário, moradia ou outros recursos essenciais à sua subsistência.
+
+Nesse contexto, a solução proposta consiste na criação de um ambiente digital que funcione como um “aconchego virtual”, destinado a ampliar a visibilidade das organizações sociais por meio de sua integração em nossa plataforma dedicada. O projeto busca mitigar a competição por espaço com influenciadores e grandes empresas, a partir do desenvolvimento de uma aplicação web front-end específica para esse público. Essa plataforma atuará como elo entre ONGs, indivíduos em situação de vulnerabilidade e potenciais apoiadores, promovendo maior eficiência, agilidade e acessibilidade na prestação de auxílio.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+Em 2023, o Instituto de Pesquisa Econômica Aplicada (Ipea) apontou que o Brasil possui mais de 879 mil organizações da sociedade civil ativas, representando um crescimento de 7,8% em relação a 2021. Em consonância com esse aumento, a pesquisa Doação Brasil indicou que, em 2024, 78% dos brasileiros com mais de 18 anos e renda familiar superior a um salário mínimo realizaram ao menos um tipo de doação. 
 
-Lembre-se de pesquisar e utilizar números que justifiquem por que é importante que tal problema seja resolvido ou que mostrem o impacto do problema na vida das pessoas.
+Outro ponto fundamental é garantir maior segurança para os colaboradores. Atualmente, qualquer pessoa pode solicitar doações por meio das redes sociais, o que abre espaço para fraudes. Em 2023, por exemplo, a Polícia Civil desmascarou uma organização criminosa denominada “Alimentando Necessidades”, que vitimou cerca de 16,6 mil pessoas. O grupo alegava utilizar as doações para a produção de marmitas destinadas a pessoas carentes, mas as investigações revelaram que se tratava de um esquema fraudulento. 
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Diante desse cenário, a proposta da aplicação consiste em oferecer um ambiente estruturado e confiável que promova a conexão entre organizações que buscam ampliar sua visibilidade e doadores que, frequentemente, desistem durante o processo de realização de doações. A plataforma tem como finalidade proporcionar maior agilidade e segurança nas transações. Dessa forma, tanto os usuários quanto as ONGs poderão interagir de maneira mais segura, transparente e confiável.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+A aplicação proposta é voltada para três perfis principais de usuários: doadores, receptores (pessoas físicas em situação de vulnerabilidade) e organizações não governamentais (ONGs). Esses grupos apresentam diferentes níveis de acesso à tecnologia, necessidades específicas e objetivos distintos dentro da plataforma.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+### 1. Doadores (Pessoas Físicas)
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Os doadores são indivíduos maiores de 18 anos, de diferentes perfis socioeconômicos, que possuem interesse em contribuir com causas sociais. Em geral, já utilizam a internet e dispositivos móveis no dia a dia, mesmo que com conhecimento técnico básico.
+
+* **Características:**
+
+  * Usuários com acesso à internet (principalmente via smartphone)
+  * Familiaridade com redes sociais e aplicativos
+  * Buscam praticidade e rapidez em ações digitais
+
+* **Objetivos:**
+
+  * Realizar doações de forma simples, rápida e segura
+  * Encontrar pessoas ou instituições confiáveis para ajudar
+  * Acompanhar o destino de suas doações
+
+* **Principais dores:**
+
+  * Medo de fraudes ou golpes (como casos já registrados no Brasil)
+  * Falta de transparência sobre o uso das doações
+  * Processos complexos ou demorados para contribuir
+
+* **Nível de conhecimento tecnológico:**
+
+  * Básico a intermediário (uso de e-mail, navegação web, apps)
+
+---
+
+### 2. Receptores (Pessoas Físicas em Situação de Vulnerabilidade)
+
+Este grupo é composto por pessoas maiores de 18 anos que se encontram em situação de vulnerabilidade social e necessitam de apoio para suprir necessidades básicas.
+
+* **Características:**
+
+  * Baixa renda e, muitas vezes, baixo nível de escolaridade
+  * Acesso limitado à internet ou uso intermitente
+  * Uso predominante de dispositivos móveis
+
+* **Objetivos:**
+
+  * Solicitar ajuda de forma simples e acessível
+  * Tornar suas necessidades visíveis para potenciais doadores
+  * Receber doações de itens essenciais (alimentos, roupas, etc.)
+
+* **Principais dores:**
+
+  * Dificuldade de acesso e uso de plataformas digitais
+  * Baixa visibilidade de sua situação
+  * Barreiras tecnológicas e de conectividade
+
+* **Nível de conhecimento tecnológico:**
+
+  * Baixo (necessita de interfaces simples, intuitivas e acessíveis)
+
+---
+
+### 3. ONGs (Organizações Não Governamentais)
+
+As ONGs são instituições sem fins lucrativos que atuam em causas sociais e necessitam de apoio contínuo para manter suas atividades.
+
+* **Características:**
+
+  * Possuem atuação social comprovada e endereço fixo
+  * Contam com equipe organizacional (mesmo que reduzida)
+  * Já possuem algum nível de presença digital (ainda que limitada ou desatualizada)
+
+* **Objetivos:**
+
+  * Aumentar sua visibilidade no ambiente digital
+  * Captar doações e recursos com maior facilidade
+  * Estabelecer comunicação direta com doadores
+
+* **Principais dores:**
+
+  * Dificuldade de manter presença digital ativa e eficiente
+  * Baixo alcance nas redes sociais
+  * Falta de credibilidade percebida por novos doadores
+
+* **Nível de conhecimento tecnológico:**
+
+  * Básico a intermediário (uso de sistemas web e redes sociais)
+
+---
+
+### Considerações Gerais sobre o Público
+
+De forma geral, a plataforma deve ser projetada considerando:
+
+* Usuários com **baixo a médio nível de alfabetização digital**
+* Possível acesso à internet **limitado ou instável**
+* Necessidade de uma interface **simples, intuitiva e responsiva**
+* Importância de **transparência, segurança e validação de informações**
+
+Dessa forma, a aplicação deve priorizar a inclusão digital, reduzindo barreiras de uso e promovendo um ambiente confiável para conexão entre quem deseja ajudar e quem precisa de apoio.
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="../../assets/img/logo-1_1.png" alt="CareConnect Logo" class="logo-img">
+            </div>
+            <nav class="nav-menu">
+                <a href="../tela_pedidos/pedidos.html" class="nav-link">Pedidos</a>
+                <a href="../sobre_nos/sobre-nos.html" class="nav-link">Sobre Nós</a>
+                <a href="../tela_login/tela_login.html" class="nav-link nav-link--active">Login</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <section class="section-page">
+            <h2>Criar Conta</h2>
+            
+            <!-- Nome Completo -->
+            <label for="user">Nome Completo</label>
+            <input type="text" placeholder="Digite seu nome completo" id="user" required>
+            
+            <!-- CPF ou CNPJ -->
+            <label for="cpf_cnpj">CPF ou CNPJ</label>
+            <input type="text" placeholder="Ex: 123.456.789-11 ou 12.345.678/123-45" id="cpf_cnpj" required>
+            
+            <!-- Data de Nascimento -->
+            <label for="data-nascimento">Data de Nascimento</label>
+            <input type="date" id="data-nascimento" name="nascimento" required>
+            
+            <!-- CEP (novo campo) -->
+            <label for="cep">CEP <span style="color: #888; font-size: 12px;">(Digite o CEP)</span></label>
+            <div class="row-cep">
+                <div class="coluna-cep">
+                    <input type="text" id="cep" name="cep" placeholder="Ex: 30130-003" maxlength="9" value="">
+                </div>
+            </div>
+            
+            <!-- Logradouro (bloqueado) -->
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Av, etc" value="Avenida Afonso Pena, 1000" class="endereco-bloqueado" disabled>
+            
+            <div class="row-3colunas">
+                <div class="coluna">
+                    <label for="numero">Número</label>
+                    <input type="text" id="numero" name="numero" placeholder="Número" value="">
+                </div>
+                <div class="coluna">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" id="complemento" name="complemento" placeholder="Apto, Bloco, etc">
+                </div>
+                <div class="coluna">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro" name="bairro" placeholder="Bairro" value="Centro" class="endereco-bloqueado" disabled>
+                </div>
+            </div>
+            
+            <!-- Cidade e Estado (já existentes, mas vamos pré-preencher) -->
+            <div class="row-3colunas">
+                <div class="coluna">
+                    <label for="cidade">Cidade</label>
+                    <select id="cidade" name="cidade" disabled class="endereco-bloqueado">
+                        <option value="belo-horizonte" selected>Belo Horizonte</option>
+                        <option value="contagem">Contagem</option>
+                        <option value="sao-paulo">São Paulo</option>
+                        <option value="rio">Rio de Janeiro</option>
+                        <option value="espirito-santo">Vitória</option>
+                    </select>
+                </div>
+                <div class="coluna">
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado" disabled class="endereco-bloqueado">
+                        <option value="mg" selected>Minas Gerais</option>
+                        <option value="es">Espírito Santo</option>
+                        <option value="sao-paulo">São Paulo</option>
+                        <option value="rio">Rio de Janeiro</option>
+                    </select>
+                </div>
+                <div class="coluna">
+                    <label for="perfil">Perfil</label>
+                    <select id="perfil" name="perfil">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="beneficiarios">Beneficiário</option>
+                        <option value="ong">ONG</option>
+                        <option value="doador">Doador</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- E-mail -->
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="user@gmail.com" id="email" required>
+            
+            <!-- Senha -->
+            <label for="password">Senha</label>
+            <div class="password-container">
+                <input type="password" placeholder="***********" id="password" required>
+            </div>
+            
+            <button type="submit">Cadastrar</button>
+            <div class="voltar">
+                <a href="../tela_login/tela_login.html">Voltar para a tela de login</a>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <span class="footer-text">
+          © 2026 CareConnect. Todos os direitos reservados.<br />
+          Desenvolvido por Grupo 2 — PUC Minas
+        </span>
+        <div class="logo">
+          <img
+            src="../../assets/img/logo-1_0.png"
+            alt="CareConnect Logo"
+            class="logo-img-footer"
+          />
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

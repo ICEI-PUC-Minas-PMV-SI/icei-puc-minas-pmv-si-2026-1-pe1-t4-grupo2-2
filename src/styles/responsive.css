@@ -1,0 +1,111 @@
+/* ============ TABLETS GRANDES (max-width: 900px) ============ */
+@media (max-width: 900px) {
+    .header {
+        padding: 1.2rem 4%;
+    }
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .nav-link {
+        font-size: var(--font-size-label);
+    }
+
+    .logo-img {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+}
+
+/* ============ TABLETS (max-width: 768px) ============ */
+@media (max-width: 768px) {
+    .header {
+        padding: 1.2rem 2rem;
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+
+    .logo-img {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+    }
+
+    .logo-img-footer {
+        display: none;
+    }
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .nav-link {
+        font-size: var(--font-size-label);
+    }
+
+    .section-page {
+        padding: 3rem;
+        max-width: 40rem;
+    }
+}
+
+/* ============ CELULARES (max-width: 480px) ============ */
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-img {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .logo-text {
+        font-size: var(--font-size-text);
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: var(--font-size-small);
+    }
+
+    .container h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .container label {
+        font-size: var(--font-size-small);
+        margin-top: 1.5rem;
+    }
+
+    .container input {
+        padding: 1rem 1.2rem;
+        font-size: var(--font-size-small);
+    }
+
+    button {
+        padding: 1rem;
+        font-size: var(--font-size-label);
+        margin-top: 2rem;
+    }
+}

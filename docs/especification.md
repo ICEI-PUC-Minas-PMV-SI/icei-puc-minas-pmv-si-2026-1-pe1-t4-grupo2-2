@@ -1,44 +1,105 @@
-# Especificações do Projeto
+# Especificações CareConnect
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto.
-
-Caso deseje atribuir uma imagem a sua persona, utilize o site https://thispersondoesnotexist.com/
+Esta seção apresenta a programação das funcionalidades da aplicação web desenvolvida para conectar doadores a pessoas afetadas por desastres naturais. Serão descritas as implementações realizadas com base nos requisitos definidos, as funcionalidades e os artefatos criados.
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+### 1. João Carlos (Doador)
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+João Carlos tem 34 anos, é analista de sistemas e mora em Belo Horizonte. Possui renda estável e utiliza a internet diariamente, principalmente pelo celular. Costuma acompanhar notícias e causas sociais pelas redes sociais e já realizou algumas doações pontuais via Pix, mas ficou receoso após ver notícias de golpes envolvendo falsas campanhas.
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+Ele deseja ajudar pessoas e instituições de forma mais frequente, mas busca uma plataforma que ofereça segurança, transparência e praticidade no processo de doação. João valoriza soluções rápidas, confiáveis e que permitam acompanhar o destino de sua contribuição.
 
-## Histórias de Usuários
+---
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+### 2. Maria Aparecida (Pessoa em Situação de Vulnerabilidade)
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+Maria Aparecida tem 42 anos, mora na periferia e está desempregada. Possui ensino fundamental incompleto e utiliza um celular simples com acesso limitado à internet. Seu principal uso digital é para mensagens (como WhatsApp) e redes sociais básicas.
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+Ela enfrenta dificuldades para suprir necessidades básicas, como alimentação e roupas para sua família. Maria gostaria de uma forma simples de solicitar ajuda, sem burocracia e sem precisar de conhecimentos técnicos avançados. Ela precisa de uma plataforma acessível, fácil de usar e que aumente a visibilidade da sua situação.
 
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+---
+
+### 3. Ana Souza (Coordenadora de ONG)
+
+Ana Souza tem 38 anos, é coordenadora de uma ONG que atua na distribuição de alimentos para famílias carentes. Sua organização possui poucos recursos e uma presença digital limitada, com redes sociais pouco atualizadas e sem site próprio.
+
+Ela utiliza o computador e o celular para gerenciar atividades da ONG, mas enfrenta dificuldades para alcançar novos doadores e manter uma comunicação eficiente com o público. Ana busca uma plataforma que aumente a visibilidade da instituição, facilite a captação de doações e transmita credibilidade para possíveis apoiadores.
+
+---
+
+## Histórias de Usuário
+
+Com base na análise das personas, foram identificadas as seguintes histórias de usuário, organizadas por contexto:
+
+---
+
+### 🔹 Contexto: Cadastro e Acesso
+
+| EU COMO...                        | QUERO/PRECISO...                          | PARA...                           |
+| --------------------------------- | ----------------------------------------- | --------------------------------- |
+| Doador (João)                     | me cadastrar na plataforma                | começar a realizar doações        |
+| Pessoa em vulnerabilidade (Maria) | me cadastrar facilmente                   | poder solicitar ajuda             |
+| ONG (Ana)                         | cadastrar minha instituição com validação | garantir credibilidade            |
+| Usuário                           | fazer login no sistema                    | acessar minha conta com segurança |
+| Usuário                           | recuperar minha senha                     | não perder acesso à plataforma    |
+
+---
+
+### 🔹 Contexto: Doação
+
+| EU COMO...    | QUERO/PRECISO...                  | PARA...                        |
+| ------------- | --------------------------------- | ------------------------------ |
+| Doador (João) | visualizar pedidos de ajuda       | escolher quem ajudar           |
+| Doador (João) | filtrar solicitações por região   | encontrar causas próximas      |
+| Doador (João) | visualizar informações detalhadas | tomar decisões com confiança   |
+| Doador (João) | realizar doações de forma rápida  | não perder tempo no processo   |
+| Doador (João) | acompanhar a entrega da doação    | garantir que chegou ao destino |
+
+---
+
+### 🔹 Contexto: Solicitação de Ajuda
+
+| EU COMO...                        | QUERO/PRECISO...              | PARA...                          |
+| --------------------------------- | ----------------------------- | -------------------------------- |
+| Pessoa em vulnerabilidade (Maria) | criar um pedido de ajuda      | receber doações                  |
+| Pessoa em vulnerabilidade (Maria) | descrever minhas necessidades | receber ajuda adequada           |
+| Pessoa em vulnerabilidade (Maria) | ser encontrada facilmente     | aumentar minhas chances de ajuda |
+| Pessoa em vulnerabilidade (Maria) | confirmar recebimento         | informar que fui atendida        |
+
+---
+
+### 🔹 Contexto: ONG
+
+| EU COMO... | QUERO/PRECISO...              | PARA...               |
+| ---------- | ----------------------------- | --------------------- |
+| ONG (Ana)  | divulgar minha organização    | aumentar visibilidade |
+| ONG (Ana)  | publicar pedidos de doação    | captar recursos       |
+| ONG (Ana)  | comprovar minha autenticidade | transmitir confiança  |
+| ONG (Ana)  | me comunicar com doadores     | manter relacionamento |
+
+---
+
+### 🔹 Contexto: Segurança e Confiança
+
+| EU COMO...    | QUERO/PRECISO...                     | PARA...                      |
+| ------------- | ------------------------------------ | ---------------------------- |
+| Doador (João) | ter dados verificados dos receptores | evitar fraudes               |
+| Usuário       | ter meus dados protegidos            | garantir privacidade         |
+| Usuário       | confiar na plataforma                | utilizá-la com tranquilidade |
+
+---
+
+## Considerações
+
+As histórias de usuário refletem diretamente as necessidades dos diferentes perfis identificados, garantindo que a aplicação seja:
+
+* Simples e acessível (especialmente para usuários com baixa familiaridade digital)
+* Segura e confiável (reduzindo riscos de fraude)
+* Eficiente na conexão entre doadores e receptores
+
+Esses elementos são fundamentais para o sucesso da solução proposta.
+
 
 ## Requisitos
 
@@ -48,44 +109,33 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade | 
 |------|-----------------------------------------|----| 
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | ALTA |  
-|RF-002| A aplicação deve permitir a emissão de um relatório de tarefas realizadas no mês   | MÉDIA | 
-
+|RF-001| O sistema deve permitir o cadastro de usuários. | Alta |
+|RF-002| O sistema deve permitir o login de usuários. | Alta |
+|RF-003| O sistema deve disponibilizar uma lista de pedidos/solicitações para que os doadores possam visualizar e escolher qual desejam atender. | Alta |
+|RF-004| O sistema deve exigir o envio de dados de validação (endereço, telefone ou CPF/CNPJ) no momento do cadastro para garantir a procedência dos usuários. | Alta |
+|RF-005| O sistema deve permitir que o usuário acompanhe a entrega do produto via código de rastreio. | Média |
+|RF-006| O sistema deve permitir que o receptor confirme o recebimento do produto. | Média |
+|RF-007| O sistema deve permitir a redefinição de senha e e-mail do usuário. | Média |
+|RF-008| O sistema deve permitir filtrar as doações disponíveis por região. | Média |
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|ID    | Descrição do Requisito  | Prioridade | 
+|------|-----------------------------------------|----| 
+|RNF-001| O sistema deve ser responsivo, garantindo o acesso e usabilidade em dispositivos móveis (telas menores). | Alta |
+|RNF-002| O sistema deve criptografar as informações sensíveis dos usuários armazenadas no banco de dados. | Alta |
+|RNF-003| O sistema deve possuir uma interface intuitiva, focada na facilidade de navegação para o usuário final. | Alta |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
-O projeto está restrito pelos itens apresentados na tabela a seguir.
-
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|01| O sistema deve ser desenvolvido utilizando a tríade de tecnologias web: HTML5, CSS3 e JavaScript. |
+|02| O sistema deve ser hospedado em um servidor gratuito (ex: GitHub Pages ou o próprio deploy do Apps Script). |
+|03| O sistema deve priorizar o uso de APIs gratuitas e seguras para funcionalidades externas. |
+|04| O sistema deve ser leve, evitando o uso excessivo de mídias (imagens/vídeos) para garantir carregamento rápido em conexões lentas. |
+|05| O sistema deve utilizar Google Sheets (Planilhas) como base de dados para o armazenamento das informações. |
 
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
