@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
+    <link rel="icon" href="../../assets/img/logo-1_1.png" type="image/png">
     <link rel="stylesheet" href="perfil.css" />
+    <!-- Proteção de Rota: Verificar autenticação -->
+    <script type="module">
+        import { AuthGuard } from "/src/js/AuthGuard.js";
+        document.title = 'CareConnect - Perfil';
+        AuthGuard.protectPage();
+    </script>
   </head>
   <body>
     <header class="header">
@@ -15,12 +22,18 @@
             alt="CareConnect Logo"
             class="logo-img"/>
         </div>
+        <!-- Botão Hamburguer -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <nav class="nav-menu">
-          <a href="../sobre_nos/sobre-nos.html" class="nav-link">Sobre</a>
-          <a href="../tela_pedidos/pedidos.html" class="nav-link"
-            >Pedidos</a>
+          <a href="../tela_pedidos/pedidos.html" class="nav-link">Pedidos</a>
+          <a href="../criar_pedido/criar_pedido.html" class="nav-link">Criar Pedido</a>
           <a href="../transacoes/transações.html" class="nav-link">Transações</a>
-          <a href="../tela_login/tela_login.html" class="nav-link">Sair</a></a>
+          <a href="#" class="nav-link nav-link--active">Meu Perfil</a>
+          <a href="#" class="nav-link" onclick="logout()">Sair</a>
         </nav>
       </div>
     </header>
@@ -143,7 +156,8 @@
     <footer class="footer">
       <div class="footer-container">
         <span class="footer-text">
-          © 2026 CareConnect. Todos os direitos reservados.
+          © 2026 CareConnect. Todos os direitos reservados.<br />
+          Desenvolvido por Grupo 2 — PUC Minas
         </span>
         <div class="logo">
           <img
@@ -154,6 +168,12 @@
         </div>
       </div>
     </footer>
+    <script type="module">
+        import { AuthGuard } from "/src/js/AuthGuard.js";
+        import { Hamburger } from "/src/js/Hamburger.js";
+        window.logout = () => AuthGuard.logout();
+        new Hamburger();
+    </script>
   </body>
 </html>
 

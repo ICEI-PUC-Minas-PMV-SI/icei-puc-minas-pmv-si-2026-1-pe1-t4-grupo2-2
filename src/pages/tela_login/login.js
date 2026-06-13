@@ -2,8 +2,12 @@
 // SISTEMA DE LOGIN COM LOCALSTORAGE
 // ============================================
 
+document.title = 'CareConnect - Login';
+
 // Chave para armazenar usuários no LocalStorage
 const STORAGE_KEY = 'careconnect_usuarios';
+const STORAGE_USUARIO_LOGADO_ID = 'careconnect_usuario_logado_id';
+const STORAGE_USUARIO_LOGADO = 'careconnect_usuario_logado';
 
 // ============================================
 // DADOS MOCK (exemplo para teste)
@@ -137,19 +141,32 @@ function fazerLogin(login, senha) {
 
 // Verificar se usuário está logado (para páginas protegidas)
 function usuarioEstaLogado() {
-    const usuarioLogado = sessionStorage.getItem('careconnect_usuario_logado');
-    return usuarioLogado !== null;
+    return sessionStorage.getItem(STORAGE_USUARIO_LOGADO_ID) !== null;
 }
 
 // Obter dados do usuário logado
 function getUsuarioLogado() {
-    const usuarioLogado = sessionStorage.getItem('careconnect_usuario_logado');
-    return usuarioLogado ? JSON.parse(usuarioLogado) : null;
+    const idLogado = Number(sessionStorage.getItem(STORAGE_USUARIO_LOGADO_ID));
+    if (!idLogado) {
+        return null;
+    }
+
+    const usuarios = getUsuarios();
+    const usuario = usuarios.find(u => u.id === idLogado);
+    if (!usuario) {
+        sessionStorage.removeItem(STORAGE_USUARIO_LOGADO_ID);
+        sessionStorage.removeItem(STORAGE_USUARIO_LOGADO);
+        return null;
+    }
+
+    const { senha: _, ...usuarioSemSenha } = usuario;
+    return usuarioSemSenha;
 }
 
 // Fazer logout
 function fazerLogout() {
-    sessionStorage.removeItem('careconnect_usuario_logado');
+    sessionStorage.removeItem(STORAGE_USUARIO_LOGADO_ID);
+    sessionStorage.removeItem(STORAGE_USUARIO_LOGADO);
     window.location.href = '../tela_login/tela_login.html';
 }
 
@@ -173,7 +190,7 @@ function criarElementoMensagem() {
         `;
         
         // Inserir antes do botão
-        const button = document.querySelector('button');
+        const button = document.querySelector('.section-page button');
         if (button) {
             button.parentNode.insertBefore(mensagemDiv, button);
         }
@@ -217,13 +234,12 @@ function initTelaLogin() {
     
     // Verificar se já está logado
     if (usuarioEstaLogado()) {
-        // Redirecionar para página principal (dashboard)
-        window.location.href = '../dashboard/dashboard.html';
+        window.location.href = '../tela_pedidos/pedidos.html';
         return;
     }
     
     // Adicionar evento ao botão de login
-    const button = document.querySelector('button');
+    const button = document.querySelector('.section-page button');
     const inputUser = document.getElementById('user');
     const inputPassword = document.getElementById('password');
     
@@ -244,13 +260,14 @@ function initTelaLogin() {
             const resultado = fazerLogin(login, senha);
             
             if (resultado.sucesso) {
-                // Salvar usuário logado na sessão
-                sessionStorage.setItem('careconnect_usuario_logado', JSON.stringify(resultado.usuario));
+                // Salvar o usuário atual para rastrear ações (criar/pegar pedidos etc.).
+                sessionStorage.setItem(STORAGE_USUARIO_LOGADO_ID, String(resultado.usuario.id));
+                sessionStorage.setItem(STORAGE_USUARIO_LOGADO, JSON.stringify(resultado.usuario));
                 mostrarMensagem(`Bem-vindo(a), ${resultado.usuario.nomeCompleto}! Redirecionando...`, 'sucesso');
                 
                 // Redirecionar após 1.5 segundos
                 setTimeout(() => {
-                    window.location.href = '../dashboard/dashboard.html';
+                    window.location.href = '../tela_pedidos/pedidos.html';
                 }, 1500);
             } else {
                 mostrarMensagem(resultado.mensagem, 'erro');

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos de Doação — CareConnect</title>
+    <link rel="icon" href="../../assets/img/logo-1_1.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,12 +15,27 @@
             <div class="logo">
                 <img src="../../assets/img/logo-1_1.png" alt="CareConnect Logo" class="logo-img">
             </div>
-            <nav class="nav-menu">
+            
+            <!-- Botão Hamburguer -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav-menu" id="nav-authenticated">
+                <a href="#" class="nav-link nav-link--active">Pedidos</a>
                 <a href="../criar_pedido/criar_pedido.html" class="nav-link">Criar Pedido</a>
-                <a href="#" class="nav-link">Pedidos</a>
                 <a href="../transacoes/transações.html" class="nav-link">Transações</a>
-                <a href="../tela_perfil/tela_perfil.html" class="nav-link">Perfil</a>
-                <a href="../tela_login/tela_login.html" class="nav-link">Sair</a>
+                <a href="../tela_perfil/tela_perfil.html" class="nav-link">Meu Perfil</a>
+                <a href="#" class="nav-link" onclick="logout()">Sair</a>
+            </nav>
+
+            <!-- Menu para usuário NÃO AUTENTICADO -->
+            <nav class="nav-menu" id="nav-unauthenticated">
+                <a href="#" class="nav-link nav-link--active">Pedidos</a>
+                <a href="../sobre_nos/sobre-nos.html" class="nav-link">Sobre Nós</a>
+                <a href="../tela_login/tela_login.html" class="nav-link">Login</a>
             </nav>
         </div>
     </header>
@@ -44,235 +60,33 @@
                     id="search-input"
                     class="search-bar__input"
                     placeholder="Pesquisar por nome, local ou categoria..."
-                    oninput="filtrarPedidos(this.value)"
+                    oninput="filterOrders(this.value)"
                 >
             </div>
         </div>
-
-        <!-- LISTA DE PEDIDOS -->
         <div class="pedidos-grid" id="pedidos-grid">
-
-            <!-- CARD 1 -->
-            <article class="pedido-card" data-busca="maria silva belo horizonte minas gerais roupas">
-                <div class="pedido-card__header">
-                    <h2 class="pedido-card__titulo">Pedido de Maria Silva</h2>
-                    <span class="pedido-card__categoria">Roupas</span>
-                </div>
-                <div class="pedido-card__meta">
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        Maria Silva
-                    </span>
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Belo Horizonte, MG
-                    </span>
-                </div>
-                <p class="pedido-card__texto">
-                    Preciso de roupas de inverno para meus três filhos, com idades entre 5 e 10 anos. 
-                    Passamos por uma situação financeira difícil nos últimos meses e infelizmente não 
-                    conseguimos comprar agasalhos para o frio que está chegando. Qualquer peça será 
-                    muito bem-vinda e vai fazer uma grande diferença na vida dos meus filhos...
-                </p>
-                <div class="pedido-card__acoes">
-                    <button class="btn btn--outline" onclick="abrirModal(1)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        Ler pedido completo
-                    </button>
-                    <button class="btn btn--primary" onclick="pegarPedido(1, 'Maria Silva')">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Pegar pedido
-                    </button>
-                </div>
-            </article>
-
-            <!-- CARD 2 -->
-            <article class="pedido-card" data-busca="joão santos são paulo são paulo alimentos">
-                <div class="pedido-card__header">
-                    <h2 class="pedido-card__titulo">Pedido de João Santos</h2>
-                    <span class="pedido-card__categoria">Alimentos</span>
-                </div>
-                <div class="pedido-card__meta">
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        João Santos
-                    </span>
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        São Paulo, SP
-                    </span>
-                </div>
-                <p class="pedido-card__texto">
-                    Minha família está passando por um momento muito delicado. Perdi meu emprego há 
-                    dois meses e ainda não consegui uma nova colocação. Temos uma despensa praticamente 
-                    vazia e duas crianças para alimentar. Preciso de alimentos não perecíveis como 
-                    arroz, feijão, macarrão e óleo para conseguir passar os próximos dias...
-                </p>
-                <div class="pedido-card__acoes">
-                    <button class="btn btn--outline" onclick="abrirModal(2)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        Ler pedido completo
-                    </button>
-                    <button class="btn btn--primary" onclick="pegarPedido(2, 'João Santos')">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Pegar pedido
-                    </button>
-                </div>
-            </article>
-
-            <!-- CARD 3 -->
-            <article class="pedido-card" data-busca="ana costa curitiba paraná móveis">
-                <div class="pedido-card__header">
-                    <h2 class="pedido-card__titulo">Pedido de Ana Costa</h2>
-                    <span class="pedido-card__categoria">Móveis</span>
-                </div>
-                <div class="pedido-card__meta">
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        Ana Costa
-                    </span>
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Curitiba, PR
-                    </span>
-                </div>
-                <p class="pedido-card__texto">
-                    Recentemente me mudei para um apartamento novo com minha filha de 4 anos após 
-                    separação. Saí de casa apenas com o essencial e estou precisando de móveis básicos 
-                    como uma cama de solteiro, um berço ou colchonete para minha filha, e uma mesa 
-                    simples para refeições. Qualquer ajuda será recebida com muito amor e gratidão...
-                </p>
-                <div class="pedido-card__acoes">
-                    <button class="btn btn--outline" onclick="abrirModal(3)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        Ler pedido completo
-                    </button>
-                    <button class="btn btn--primary" onclick="pegarPedido(3, 'Ana Costa')">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Pegar pedido
-                    </button>
-                </div>
-            </article>
-
-            <!-- CARD 4 -->
-            <article class="pedido-card" data-busca="pedro lima recife pernambuco brinquedos">
-                <div class="pedido-card__header">
-                    <h2 class="pedido-card__titulo">Pedido de Pedro Lima</h2>
-                    <span class="pedido-card__categoria">Brinquedos</span>
-                </div>
-                <div class="pedido-card__meta">
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        Pedro Lima
-                    </span>
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Recife, PE
-                    </span>
-                </div>
-                <p class="pedido-card__texto">
-                    Sou responsável por uma pequena instituição comunitária que cuida de crianças 
-                    carentes no meu bairro. Com o Natal se aproximando, gostaríamos muito de proporcionar 
-                    uma experiência especial para as 20 crianças que atendemos. Brinquedos usados em bom 
-                    estado ou novos serão doados diretamente para elas na nossa festa de fim de ano...
-                </p>
-                <div class="pedido-card__acoes">
-                    <button class="btn btn--outline" onclick="abrirModal(4)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        Ler pedido completo
-                    </button>
-                    <button class="btn btn--primary" onclick="pegarPedido(4, 'Pedro Lima')">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Pegar pedido
-                    </button>
-                </div>
-            </article>
-
-            <!-- CARD 5 -->
-            <article class="pedido-card" data-busca="lucia ferreira porto alegre rio grande do sul livros">
-                <div class="pedido-card__header">
-                    <h2 class="pedido-card__titulo">Pedido de Lúcia Ferreira</h2>
-                    <span class="pedido-card__categoria">Livros</span>
-                </div>
-                <div class="pedido-card__meta">
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        Lúcia Ferreira
-                    </span>
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Porto Alegre, RS
-                    </span>
-                </div>
-                <p class="pedido-card__texto">
-                    Coordeno uma pequena biblioteca comunitária em um bairro periférico de Porto Alegre. 
-                    Nosso acervo é muito limitado e as crianças e adolescentes da região têm muito interesse 
-                    em leitura, mas não têm acesso a livros. Aceitamos qualquer tipo de livro: didáticos, 
-                    infantis, romances, histórias em quadrinhos — tudo é bem-vindo para alimentar a imaginação...
-                </p>
-                <div class="pedido-card__acoes">
-                    <button class="btn btn--outline" onclick="abrirModal(5)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        Ler pedido completo
-                    </button>
-                    <button class="btn btn--primary" onclick="pegarPedido(5, 'Lúcia Ferreira')">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Pegar pedido
-                    </button>
-                </div>
-            </article>
-
-            <!-- CARD 6 -->
-            <article class="pedido-card" data-busca="carlos oliveira salvador bahia saúde">
-                <div class="pedido-card__header">
-                    <h2 class="pedido-card__titulo">Pedido de Carlos Oliveira</h2>
-                    <span class="pedido-card__categoria">Saúde</span>
-                </div>
-                <div class="pedido-card__meta">
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        Carlos Oliveira
-                    </span>
-                    <span class="pedido-card__meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Salvador, BA
-                    </span>
-                </div>
-                <p class="pedido-card__texto">
-                    Minha mãe, de 68 anos, precisa de cadeira de rodas para se locomover. 
-                    Ela sofreu um acidente e a recuperação será longa. Não temos condições financeiras 
-                    de comprar uma cadeira nova, e o SUS tem uma fila muito longa para concessão. 
-                    Se alguém tiver uma cadeira de rodas em bom estado para doação, ficaremos eternamente gratos...
-                </p>
-                <div class="pedido-card__acoes">
-                    <button class="btn btn--outline" onclick="abrirModal(6)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        Ler pedido completo
-                    </button>
-                    <button class="btn btn--primary" onclick="pegarPedido(6, 'Carlos Oliveira')">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Pegar pedido
-                    </button>
-                </div>
-            </article>
-
-            <!-- ESTADO VAZIO (visível apenas quando a busca não retorna resultados) -->
             <div class="empty-state" id="empty-state" style="display: none;">
                 <p class="empty-state__icon">🔍</p>
-                <p class="empty-state__msg">Nenhum pedido encontrado para "<span id="empty-query"></span>".</p>
+                <p class="empty-state__msg" id="empty-msg"></p>
             </div>
-
         </div>
+
+        <!-- PAGINAÇÃO -->
+        <nav class="pagination" id="pagination" aria-label="Paginação">
+            <button class="page-btn page-arrow" id="prev-btn" aria-label="Anterior" disabled>‹</button>
+            <div id="page-numbers">
+                <button class="page-btn active" data-page="1">1</button>
+            </div>
+            <button class="page-btn page-arrow" id="next-btn" aria-label="Próximo">›</button>
+        </nav>
     </main>
 
-    <!-- MODAL (estrutura pronta para uso futuro) -->
-    <div class="modal-overlay" id="modal-overlay" onclick="fecharModal()">
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
         <div class="modal" onclick="event.stopPropagation()">
-            <button class="modal__fechar" onclick="fecharModal()" aria-label="Fechar">
+            <button class="modal__fechar" onclick="closeModal()" aria-label="Fechar">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </button>
             <div class="modal__conteudo" id="modal-conteudo">
-                <!-- Preenchido via JS -->
             </div>
             <button class="btn btn--primary modal__btn-pegar" id="modal-btn-pegar">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -281,146 +95,33 @@
         </div>
     </div>
 
+    <!-- Modal de Sucesso ao capturar pedido -->
+    <div class="success-modal" id="success-modal">
+        <div class="success-modal__content">
+            <div class="success-modal__icon">✓</div>
+            <h2 class="success-modal__title" id="success-modal-title">Pedido capturado com sucesso!</h2>
+            <p class="success-modal__message" id="success-modal-message">Entraremos em contato com mais detalhes sobre a doação.</p>
+            <button class="btn btn--primary success-modal__btn" onclick="closeSuccessModal()">Voltar aos pedidos</button>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-container">
-            <span class="footer-text">
-                © 2024 CareConnect. Todos os direitos reservados.
-            </span>
-            <div class="logo">
-                <img src="../../assets/img/logo-1_0.png" alt="CareConnect Logo" class="logo-img-footer">
-            </div>
+      <div class="footer-container">
+        <span class="footer-text">
+          © 2026 CareConnect. Todos os direitos reservados.<br />
+          Desenvolvido por Grupo 2 — PUC Minas
+        </span>
+        <div class="logo">
+          <img
+            src="../../assets/img/logo-1_0.png"
+            alt="CareConnect Logo"
+            class="logo-img-footer"
+          />
         </div>
+      </div>
     </footer>
-
-    <!-- <script>
-        // ─── Filtro de busca ─────────────────────────────────────────────────────
-        function filtrarPedidos(query) {
-            const q = query.toLowerCase().trim();
-            const cards = document.querySelectorAll('.pedido-card');
-            let visiveis = 0;
-
-            cards.forEach(card => {
-                const busca = card.getAttribute('data-busca') || '';
-                const titulo = card.querySelector('.pedido-card__titulo')?.textContent.toLowerCase() || '';
-                const texto = card.querySelector('.pedido-card__texto')?.textContent.toLowerCase() || '';
-                const match = !q || busca.includes(q) || titulo.includes(q) || texto.includes(q);
-                card.style.display = match ? '' : 'none';
-                if (match) visiveis++;
-            });
-
-            const emptyState = document.getElementById('empty-state');
-            document.getElementById('empty-query').textContent = query;
-            emptyState.style.display = visiveis === 0 ? 'flex' : 'none';
-        }
-
-        // ─── Modal ───────────────────────────────────────────────────────────────
-        Dados completos dos pedidos (protótipo)
-        const pedidosData = {
-            1: {
-                nome: 'Maria Silva',
-                local: 'Belo Horizonte, MG',
-                categoria: 'Roupas',
-                texto: `Preciso de roupas de inverno para meus três filhos, com idades entre 5 e 10 anos. Passamos por uma situação financeira difícil nos últimos meses após eu perder meu emprego de doméstica. Infelizmente não conseguimos comprar agasalhos para o frio que está chegando neste inverno.
-
-Aceito qualquer peça: casacos, blusas de lã, calças grossas, meias e botas. As crianças são menino de 10 anos (tamanho 12), menina de 7 anos (tamanho 8) e menino de 5 anos (tamanho 6). Qualquer peça será muito bem-vinda e vai fazer uma grande diferença na vida dos meus filhos neste período tão difícil.
-
-Moro no bairro Venda Nova e posso combinar a retirada das peças ou buscar, caso o doador fique próximo. Muito obrigada pela atenção e generosidade de quem puder ajudar.`
-            },
-            2: {
-                nome: 'João Santos',
-                local: 'São Paulo, SP',
-                categoria: 'Alimentos',
-                texto: `Minha família está passando por um momento muito delicado. Perdi meu emprego há dois meses em uma empresa de logística e ainda não consegui uma nova colocação. Tenho esposa e duas crianças de 3 e 6 anos para sustentar.
-
-Temos uma despensa praticamente vazia e estou precisando muito de alimentos não perecíveis para conseguir dar alimentação digna à minha família. Arroz, feijão, macarrão, óleo, farinha de trigo e leite em pó seriam os itens mais urgentes no momento.
-
-Moro na zona leste de São Paulo, no bairro Itaquera. Estou buscando todo e qualquer tipo de ajuda enquanto não consigo me recolocar no mercado de trabalho. Qualquer doação de alimento será utilizada com muito cuidado e gratidão.`
-            },
-            3: {
-                nome: 'Ana Costa',
-                local: 'Curitiba, PR',
-                categoria: 'Móveis',
-                texto: `Recentemente me mudei para um apartamento novo com minha filha de 4 anos após uma separação difícil. Saí da casa do meu ex-marido apenas com roupas e documentos, pois ele ficou com todos os móveis.
-
-Estou precisando de móveis básicos para montar o mínimo necessário no apartamento. Os itens mais urgentes são: uma cama de solteiro ou casal, um berço ou colchonete para minha filha, uma mesa simples com cadeiras para as refeições, e se possível um sofá ou cadeira para a sala.
-
-Estou em Curitiba, no bairro Portão. Tenho como ajudar no transporte se o doador ficar na região. Qualquer ajuda será recebida com muito amor, gratidão e cuidado — prometo zelar muito bem por tudo que receber.`
-            },
-            4: {
-                nome: 'Pedro Lima',
-                local: 'Recife, PE',
-                categoria: 'Brinquedos',
-                texto: `Sou responsável por uma pequena instituição comunitária chamada "Raízes do Futuro" que cuida e acompanha crianças carentes no bairro Ibura, em Recife. Atendemos atualmente 20 crianças entre 4 e 12 anos, filhos de famílias em situação de vulnerabilidade social.
-
-Com o Natal se aproximando, gostaríamos muito de proporcionar uma experiência especial para essas crianças. Muitas delas nunca receberam um presente sequer. Brinquedos usados em bom estado ou novos serão doados diretamente para elas na nossa festa de fim de ano, que acontece no dia 20 de dezembro.
-
-Aceitamos qualquer tipo de brinquedo adequado para a faixa etária: bonecas, carrinhos, jogos de tabuleiro, bolas, quebra-cabeças. Para maiores informações ou para combinar a doação, entre em contato pelo e-mail da instituição disponível no perfil.`
-            },
-            5: {
-                nome: 'Lúcia Ferreira',
-                local: 'Porto Alegre, RS',
-                categoria: 'Livros',
-                texto: `Coordeno voluntariamente uma pequena biblioteca comunitária chamada "Espaço Leitura Viva" em um bairro periférico de Porto Alegre, no bairro Restinga. A biblioteca foi fundada há 3 anos com doações de amigos e hoje é um ponto de encontro importante para crianças e adolescentes da região.
-
-Nosso acervo é muito limitado e as crianças e adolescentes da região têm muito interesse em leitura, mas não têm acesso a livros em casa. Aceitamos qualquer tipo de livro: didáticos, infantis, romances, histórias em quadrinhos, enciclopédias — tudo é bem-vindo para alimentar a imaginação e o conhecimento desses jovens.
-
-O espaço funciona de terça a sábado, das 9h às 17h. As doações podem ser entregues diretamente no local ou podemos combinar a retirada para quem estiver na grande Porto Alegre. Cada livro doado transforma uma vida.`
-            },
-            6: {
-                nome: 'Carlos Oliveira',
-                local: 'Salvador, BA',
-                categoria: 'Saúde',
-                texto: `Minha mãe, Dona Benedita, de 68 anos, sofreu uma queda em casa mês passado e fraturou o quadril. Após a cirurgia, os médicos indicaram que ela precisará de cadeira de rodas por pelo menos 6 meses durante a recuperação, e possivelmente de forma permanente dependendo da evolução.
-
-Não temos condições financeiras de comprar uma cadeira de rodas nova, que custa em torno de R$ 800 a R$ 1.200. Recorremos ao SUS mas a fila de concessão está muito longa, com previsão de mais de 3 meses de espera. Minha mãe está dependendo de todos para se locomover dentro de casa, o que é muito difícil para ela e para a família.
-
-Se alguém tiver uma cadeira de rodas em bom estado para doação ou empréstimo, ficaremos eternamente gratos. Moramos no bairro Cajazeiras e podemos ir buscar em qualquer lugar de Salvador.`
-            }
-        };
-
-        function abrirModal(id) {
-            const pedido = pedidosData[id];
-            if (!pedido) return;
-
-            const conteudo = document.getElementById('modal-conteudo');
-            conteudo.innerHTML = `
-                <div class="modal__categoria">${pedido.categoria}</div>
-                <h2 class="modal__titulo">Pedido de ${pedido.nome}</h2>
-                <div class="modal__meta">
-                    <span>${pedido.nome}</span>
-                    <span>·</span>
-                    <span>${pedido.local}</span>
-                </div>
-                <div class="modal__texto">${pedido.texto.replace(/\n\n/g, '</p><p>').replace(/^/, '<p>').replace(/$/, '</p>')}</div>
-            `;
-
-            const btnPegar = document.getElementById('modal-btn-pegar');
-            btnPegar.onclick = () => {
-                fecharModal();
-                pegarPedido(id, pedido.nome);
-            };
-
-            document.getElementById('modal-overlay').classList.add('modal-overlay--visivel');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function fecharModal() {
-            document.getElementById('modal-overlay').classList.remove('modal-overlay--visivel');
-            document.body.style.overflow = '';
-        }
-
-       // ─── Pegar pedido ────────────────────────────────────────────────────────
-        function pegarPedido(id, nome) {
-            // Protótipo: exibe confirmação simples
-            alert(`Pedido de ${nome} capturado com sucesso!\nEntraremos em contato com mais detalhes sobre a doação.`);
-        }
-
-        // Fechar modal com ESC
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') fecharModal();
-        });
-    </script> -->
+    <script type="module" src="pedidos.js"></script>
 </body>
 </html>
 
