@@ -6,7 +6,7 @@
     <title>CareConnect — Sobre Nós</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* Estilos extras necessários para as animações funcionarem perfeitamente */
+      
       .reveal {
         opacity: 0;
         transform: translateY(40px);
@@ -16,12 +16,12 @@
         opacity: 1;
         transform: translateY(0);
       }
-      /* Pequeno delay cascata para os cards de valores aparecerem um depois do outro */
+      
       .value-card:nth-child(1) { transition-delay: 0.1s; }
       .value-card:nth-child(2) { transition-delay: 0.3s; }
       .value-card:nth-child(3) { transition-delay: 0.5s; }
 
-      /* Estilização rápida para a nova seção de estatísticas */
+      
       .stats-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -31,7 +31,7 @@
       }
       .stat-item h3 {
         font-size: 3rem;
-        color: #2563eb; /* Cor padrão azul, altere conforme seu style.css */
+        color: #2563eb;
         margin-bottom: 0.5rem;
       }
     </style>
@@ -252,7 +252,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         
-        // 1. LÓGICA DO SCROLL REVEAL (Intersection Observer)
+        
         const itemsToReveal = document.querySelectorAll(".reveal");
 
         const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -263,13 +263,13 @@
             }
           });
         }, {
-          threshold: 0.15 // Ativa quando 15% do elemento estiver visível
+          threshold: 0.15 
         });
 
         itemsToReveal.forEach(item => revealObserver.observe(item));
 
 
-        // 2. LÓGICA DOS CONTADORES DINÂMICOS
+        
         const counters = document.querySelectorAll(".counter");
         const speed = 150; // Quanto menor, mais rápido o contador se move
 
@@ -289,7 +289,7 @@
           updateCount();
         };
 
-        // Observer para os contadores começarem a rodar apenas quando aparecerem na tela
+        
         const statsSection = document.querySelector(".stats-grid");
         const statsObserver = new IntersectionObserver((entries, observer) => {
           entries.forEach(entry => {
@@ -303,7 +303,7 @@
         if(statsSection) statsObserver.observe(statsSection);
 
 
-        // 3. INTERAÇÃO INTERATIVA NOS CARDS (Efeito de inclinação suave / Hover dinâmico)
+        
         const cards = document.querySelectorAll(".value-card");
         cards.forEach(card => {
           card.addEventListener("mousemove", (e) => {
@@ -311,12 +311,12 @@
             const x = e.clientX - rect.left - (rect.width / 2);
             const y = e.clientY - rect.top - (rect.height / 2);
             
-            // Aplica uma leve inclinação baseada na posição do mouse
+            
             card.style.transform = `perspective(1000px) rotateX(${-y / 10}deg) rotateY(${x / 10}deg) translateY(-10px)`;
           });
 
           card.addEventListener("mouseleave", () => {
-            // Reseta a posição quando o mouse sai de cima
+            
             card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
           });
         });
