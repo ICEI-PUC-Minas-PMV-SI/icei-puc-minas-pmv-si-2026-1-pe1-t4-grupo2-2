@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CareConnect — Sobre Nós</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .value-card:nth-child(1) { transition-delay: 0.1s; }
+      .value-card:nth-child(2) { transition-delay: 0.3s; }
+      .value-card:nth-child(3) { transition-delay: 0.5s; }
+
+      
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .stat-item h3 {
+        font-size: 3rem;
+        color: #2563eb;
+        margin-bottom: 0.5rem;
+      }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -42,7 +72,8 @@
           </div>
         </div>
       </section>
-      <section class="section">
+
+      <section class="section reveal">
         <div class="section__inner">
           <span class="section__label">Quem somos</span>
           <h2 class="section__title">De onde viemos e para onde vamos</h2>
@@ -83,7 +114,29 @@
           </div>
         </div>
       </section>
-      <section class="section section--gray">
+
+      <section class="section section--gray reveal">
+        <div class="section__inner">
+          <span class="section__label">Nosso Impacto</span>
+          <h2 class="section__title">A força da nossa comunidade</h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <h3 class="counter" data-target="1200">+0</h3>
+              <p>Conexões Realizadas</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="450">+0</h3>
+              <p>Voluntários Ativos</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="counter" data-target="85">+0</h3>
+              <p>ONGs Parceiras</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="section__inner">
           <span class="section__label">Nossos valores</span>
           <h2 class="section__title">O que nos guia</h2>
@@ -91,7 +144,7 @@
             Cada decisão que tomamos é orientada por três pilares fundamentais.
           </p>
           <div class="values-grid">
-            <div class="value-card">
+            <div class="value-card reveal">
               <div class="value-card__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +167,7 @@
               </p>
             </div>
 
-            <div class="value-card">
+            <div class="value-card reveal">
               <div class="value-card__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +189,7 @@
               </p>
             </div>
 
-            <div class="value-card">
+            <div class="value-card reveal">
               <div class="value-card__icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +229,7 @@
             >Criar conta</a
           >
           <a
-            href="../tela_pedidos/pedidos.html.html"
+            href="../tela_pedidos/pedidos.html"
             class="btn-cta btn-cta--outline"
             >Ver pedidos</a
           >
@@ -186,7 +239,7 @@
     <footer class="footer">
         <div class="footer-container">
             <span class="footer-text">
-                © 2026 CareConnect. Todos os direitos reservados.<br>
+                ©️ 2026 CareConnect. Todos os direitos reservados.<br>
                 Desenvolvido por Grupo 2 - PUC Minas
             </span>
             <div class="logo">
@@ -194,5 +247,80 @@
             </div>
         </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        
+        
+        const itemsToReveal = document.querySelectorAll(".reveal");
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target); // Para a animação acontecer só uma vez
+            }
+          });
+        }, {
+          threshold: 0.15 
+        });
+
+        itemsToReveal.forEach(item => revealObserver.observe(item));
+
+
+        
+        const counters = document.querySelectorAll(".counter");
+        const speed = 150; // Quanto menor, mais rápido o contador se move
+
+        const startCounting = (counter) => {
+          const target = +counter.getAttribute("data-target");
+          const updateCount = () => {
+            const current = +counter.innerText.replace('+', '');
+            const increment = Math.ceil(target / speed);
+
+            if (current < target) {
+              counter.innerText = `+${current + increment}`;
+              setTimeout(updateCount, 15);
+            } else {
+              counter.innerText = `+${target}`;
+            }
+          };
+          updateCount();
+        };
+
+        
+        const statsSection = document.querySelector(".stats-grid");
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              counters.forEach(counter => startCounting(counter));
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        if(statsSection) statsObserver.observe(statsSection);
+
+
+        
+        const cards = document.querySelectorAll(".value-card");
+        cards.forEach(card => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - (rect.width / 2);
+            const y = e.clientY - rect.top - (rect.height / 2);
+            
+            
+            card.style.transform = `perspective(1000px) rotateX(${-y / 10}deg) rotateY(${x / 10}deg) translateY(-10px)`;
+          });
+
+          card.addEventListener("mouseleave", () => {
+            
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+          });
+        });
+
+      });
+    </script>
   </body>
 </html>

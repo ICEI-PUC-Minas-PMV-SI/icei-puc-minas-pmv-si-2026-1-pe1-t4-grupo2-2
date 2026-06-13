@@ -325,3 +325,20 @@
     font-size: 1.8rem;
     font-weight: 500;
 }
+
+.status.aberto {
+    background-color: #e0f7fa;
+    color: #006064;
+}
+.status.cancelado {
+    background-color: #ffebee;
+    color: #c62828;
+}
+.status.concluido {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+.status.andamento {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
