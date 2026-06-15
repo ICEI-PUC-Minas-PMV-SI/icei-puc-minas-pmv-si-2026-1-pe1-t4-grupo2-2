@@ -1,90 +1,218 @@
-// 1. FUNÇÃO DE SIMULAÇÃO DE DADOS - PARA TESTES E DEMONSTRAÇÃO
+import { ManagerLocalStorage } from '../../js/ManagerLocalStorage.js';
+import { AuthGuard } from '../../js/AuthGuard.js';
 
-function simularDadosDoGrupo() {
-    const doadorFicticio = { idDoador: 456, nome: "Carlos Mendes" };
-    localStorage.setItem('usuarioLogado', JSON.stringify(doadorFicticio));
+function getUsuarioLogado() {
+    if (AuthGuard.isUserLoggedIn()) {
+        return AuthGuard.getLoggedInUser();
+    }
 
-    
-    const pedidosFicticios = [
-        { idPedido: 1027, idDoador: 456, item: "Cobertores", status: "enviado", statusTexto: "Enviado", icone: "✈️", codigo: "BR45896323", destino: "ONG Mãos Unidas", passos: ["done", "done", "done", ""] },
-        { idPedido: 1025, idDoador: 456, item: "Roupas infantis", status: "transporte", statusTexto: "Em transporte", icone: "↻", codigo: "BR45896321", destino: "ONG Esperança", passos: ["done", "done", "done", ""] },
-        { idPedido: 1026, idDoador: 456, item: "Alimentos", status: "entregue", statusTexto: "Entregue", icone: "✔", codigo: "BR45896322", destino: "ONG Vida", passos: ["done", "done", "done", "done"] },
-        
-        
-        { idPedido: 1031, idDoador: 456, item: "Kits de Higiene", status: "aberto", statusTexto: "Aberto", icone: "📄", codigo: "BR45896327", destino: "Aguardando Coleta", passos: ["done", "", "", ""] },
-        { idPedido: 1032, idDoador: 456, item: "Brinquedos", status: "cancelado", statusTexto: "Cancelado", icone: "❌", codigo: "BR45896328", destino: "Recusado", passos: ["done", "", "", ""] },
-        { idPedido: 1033, idDoador: 456, item: "Cadeiras de Rodas", status: "concluido", statusTexto: "Concluído", icone: "🎉", codigo: "BR45896329", destino: "Asilo São Vicente", passos: ["done", "done", "done", "done"] },
-        { idPedido: 1034, idDoador: 456, item: "Calçados", status: "andamento", statusTexto: "Em andamento", icone: "⏳", codigo: "BR45896330", destino: "Triagem Central", passos: ["done", "done", "", ""] }
-    ];
-    
-    
-    localStorage.setItem('todosPedidos', JSON.stringify(pedidosFicticios));
+    const idSession = sessionStorage.getItem('careconnect_usuario_logado_id');
+    const userSession = sessionStorage.getItem('careconnect_usuario_logado');
+    if (idSession && userSession) {
+        try {
+            return JSON.parse(userSession);
+        } catch (e) {
+            // ignora
+        }
+    }
+
+    const chaves = ['usuarioLogado', 'usuario', 'currentUser', 'user', 'loggedUser'];
+
+    for (const chave of chaves) {
+        const valor = localStorage.getItem(chave);
+        if (!valor) continue;
+
+        try {
+            const usuario = JSON.parse(valor);
+            if (usuario && (usuario.id || usuario.email || usuario.nome || usuario.name || usuario.userId)) {
+                return usuario;
+            }
+        } catch (e) {
+            continue;
+        }
+    }
+
+    return null;
 }
 
-// Simular dados ao carregar o módulo
-simularDadosDoGrupo();
+function getIdUsuario(usuario) {
+    return usuario?.id ?? usuario?.idUsuario ?? usuario?.idDoador ?? usuario?.userId ?? usuario?.usuarioId;
+}
+
+function getIdDoadorPedido(pedido) {
+    return pedido?.idDoador ?? pedido?.doadorId ?? pedido?.idUsuarioDoador ?? pedido?.idUsuario ?? pedido?.userId;
+}
+
+function getIdSolicitantePedido(pedido) {
+    return pedido?.idSolicitante ?? pedido?.idUsuarioSolicitante ?? pedido?.idReceptor ?? pedido?.idUsuarioReceptor ?? pedido?.solicitanteId;
+}
+
+function normalizarStatus(status) {
+    return String(status || '').trim().toLowerCase();
+}
+
+function isPedidoEmAndamento(pedido) {
+    const status = normalizarStatus(pedido.status);
+    return status === 'andamento' || status === 'em andamento' || status === 'em-andamento';
+}
+
+function getStatusTexto(pedido) {
+    const status = normalizarStatus(pedido.status);
+
+    if (status === 'andamento' || status === 'em andamento' || status === 'em-andamento') {
+        return 'Em andamento';
+    }
+
+    return pedido?.statusTexto || pedido?.status || 'Em andamento';
+}
+
+function getNomeUsuario(usuario) {
+    return usuario?.nomeCompleto || usuario?.nome || usuario?.name || 'Usuário não encontrado';
+}
+
+function getCategoriaPedido(pedido) {
+    return pedido?.categoria?.nome || pedido?.categoria || pedido?.item || 'Sem categoria';
+}
+
+function getDescricaoPedido(pedido) {
+    return pedido?.descricao || pedido?.item || 'Detalhes não informados';
+}
+
+function getTodosPedidos() {
+    const chavesPossiveis = ['pedidos', 'todosPedidos', 'pedidosCriados', 'pedido'];
+
+    for (const chave of chavesPossiveis) {
+        const lista = ManagerLocalStorage.getItem(chave);
+        if (Array.isArray(lista) && lista.length > 0) {
+            return lista;
+        }
+
+        const raw = localStorage.getItem(chave);
+        if (raw) {
+            try {
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    return parsed;
+                }
+            } catch (e) {
+                // ignora chave inválida
+            }
+        }
+    }
+
+    return [];
+}
+
+function getTodosUsuarios() {
+    const chavesPossiveis = ['careconnect_usuarios', 'usuarios', 'usuariosCadastrados', 'usuariosSalvos', 'users', 'contas'];
+
+    for (const chave of chavesPossiveis) {
+        const lista = ManagerLocalStorage.getItem(chave);
+        if (Array.isArray(lista) && lista.length > 0) {
+            return lista;
+        }
+
+        const raw = localStorage.getItem(chave);
+        if (raw) {
+            try {
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    return parsed;
+                }
+            } catch (e) {
+                // ignora chave inválida
+            }
+        }
+    }
+
+    return [];
+}
+
+function encontrarUsuarioPorId(idUsuario, usuarios) {
+    if (!idUsuario) return null;
+
+    return usuarios.find(usuario => {
+        const id = usuario?.id ?? usuario?.idUsuario ?? usuario?.idDoador ?? usuario?.userId ?? usuario?.usuarioId;
+        return Number(id) === Number(idUsuario);
+    }) || null;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const containerPedidos = document.getElementById('container-pedidos');
     const containerModais = document.getElementById('container-modais');
 
-    const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
-    const todosPedidos = JSON.parse(localStorage.getItem('todosPedidos')) || [];
-
+    const usuarioLogado = getUsuarioLogado();
     if (!usuarioLogado) {
-        alert("Nenhum doador logado encontrado! Voltando ao Login.");
-        window.location.href = "../tela_login/tela_login.html";
+        containerPedidos.innerHTML = '<p class="page-desc">Faça login para ver os pedidos em andamento.</p>';
         return;
     }
 
-    const meusPedidos = todosPedidos.filter(pedido => pedido.idDoador === usuarioLogado.idDoador);
+    const meuId = getIdUsuario(usuarioLogado);
+    const pedidos = getTodosPedidos();
+    const usuarios = getTodosUsuarios();
 
-    if (meusPedidos.length === 0) {
-        containerPedidos.innerHTML = `<p class="page-desc">Você ainda não realizou nenhuma doação.</p>`;
+    const pedidosEmAndamento = pedidos.filter(pedido => {
+        if (!isPedidoEmAndamento(pedido)) return false;
+
+        const idDoador = getIdDoadorPedido(pedido);
+        const idSolicitante = getIdSolicitantePedido(pedido);
+
+        return Number(idDoador) === Number(meuId) ||
+               Number(idSolicitante) === Number(meuId);
+    });
+
+    if (pedidosEmAndamento.length === 0) {
+        containerPedidos.innerHTML = '<p class="page-desc">Nenhum pedido em andamento encontrado para você.</p>';
         return;
     }
 
-    containerPedidos.innerHTML = "";
-    containerModais.innerHTML = "";
+    containerPedidos.innerHTML = '';
+    containerModais.innerHTML = '';
 
-    meusPedidos.forEach(pedido => {
-        
+    pedidosEmAndamento.forEach(pedido => {
+        const doador = encontrarUsuarioPorId(getIdDoadorPedido(pedido), usuarios);
+        const solicitante = encontrarUsuarioPorId(getIdSolicitantePedido(pedido), usuarios);
+
+        const nomeDoador = getNomeUsuario(doador) || 'Doador não encontrado';
+        const nomeSolicitante = getNomeUsuario(solicitante) || 'Solicitante não encontrado';
+        const idPedido = pedido.idPedido || pedido.id || '—';
+        const categoria = getCategoriaPedido(pedido);
+        const descricao = getDescricaoPedido(pedido);
+        const statusTexto = getStatusTexto(pedido);
+
         const cardHTML = `
-            <a href="#modal${pedido.idPedido}" class="pedido-card">
-                <div class="status-circle">${pedido.icone}</div>
+            <a href="#modal${idPedido}" class="pedido-card">
+                <div class="status-circle">⏳</div>
                 <div class="info">
-                    <h3>Pedido #${pedido.idPedido}</h3>
-                    <p class="category">${pedido.item}</p>
-                    <p class="code">Código: ${pedido.codigo}</p>
+                    <h3>Pedido #${idPedido}</h3>
+                    <p class="category">${categoria}</p>
+                    <p class="code">${descricao}</p>
+                    <p class="code">Doador: ${nomeDoador}</p>
+                    <p class="code">Solicitante: ${nomeSolicitante}</p>
                 </div>
-                <span class="status ${pedido.status}">${pedido.statusTexto}</span>
+                <span class="status ${normalizarStatus(pedido.status) || 'andamento'}">${statusTexto}</span>
                 <span class="card-arrow">›</span>
             </a>
         `;
-        containerPedidos.innerHTML += cardHTML;
 
-        
         const modalHTML = `
-            <div id="modal${pedido.idPedido}" class="modal">
+            <div id="modal${idPedido}" class="modal">
                 <div class="modal-content">
                     <a href="#" class="fechar">×</a>
                     <p class="modal-tag">Rastreamento</p>
-                    <h2>Pedido #${pedido.idPedido}</h2>
+                    <h2>Pedido #${idPedido}</h2>
                     <div class="modal-grid">
-                        <div class="modal-field"><label>Doador</label><span>${usuarioLogado.nome}</span></div>
-                        <div class="modal-field"><label>Destino</label><span>${pedido.destino}</span></div>
-                        <div class="modal-field"><label>Código</label><span>${pedido.codigo}</span></div>
+                        <div class="modal-field"><label>Doador</label><span>${nomeDoador}</span></div>
+                        <div class="modal-field"><label>Solicitante</label><span>${nomeSolicitante}</span></div>
+                        <div class="modal-field"><label>Categoria</label><span>${categoria}</span></div>
+                        <div class="modal-field"><label>Status</label><span>${statusTexto}</span></div>
+                        <div class="modal-field"><label>Descrição</label><span>${descricao}</span></div>
                     </div>
-                    <p class="tracking-label">Histórico</p>
-                    <ul class="timeline">
-                        <li class="${pedido.passos[0]}">Pedido criado</li>
-                        <li class="${pedido.passos[1]}">Coletado</li>
-                        <li class="${pedido.passos[2]}">Em rota</li>
-                        <li class="${pedido.passos[3]}">${pedido.statusTexto === 'Cancelado' ? 'Cancelado' : 'Entregue'}</li>
-                    </ul>
                 </div>
             </div>
         `;
+
+        containerPedidos.innerHTML += cardHTML;
         containerModais.innerHTML += modalHTML;
     });
 });
