@@ -38,9 +38,7 @@
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.pedido-card:has(.enviado)    { border-left-color: #4caf50; }
-.pedido-card:has(.transporte) { border-left-color: var(--color-accent); }
-.pedido-card:has(.entregue)   { border-left-color: #42a5f5; }
+.pedido-card:has(.andamento)  { border-left-color: #ef6c00; }
 
 .pedido-card:hover {
     transform: translateY(-.3rem);
@@ -59,9 +57,7 @@
     border: .2rem solid transparent;
 }
 
-.pedido-card:has(.enviado)    .status-circle { background: #e8f5e9; border-color: #4caf50;             color: #2e7d32; }
-.pedido-card:has(.transporte) .status-circle { background: #fff8e1; border-color: var(--color-accent); color: #e65100; }
-.pedido-card:has(.entregue)   .status-circle { background: #e3f2fd; border-color: #42a5f5;             color: #1565c0; }
+.pedido-card:has(.andamento)  .status-circle { background: #fff3e0; border-color: #ef6c00; color: #ef6c00; }
 
 .info {
     flex: 1;
