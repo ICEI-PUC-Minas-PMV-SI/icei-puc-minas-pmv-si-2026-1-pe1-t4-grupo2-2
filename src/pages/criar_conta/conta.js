@@ -2,6 +2,8 @@
 // SISTEMA DE CADASTRO COM BUSCA DE CEP AUTOMÁTICA
 // ============================================
 
+document.title = 'CareConnect - Criar Conta';
+
 // Chave para armazenar usuários no LocalStorage
 const STORAGE_KEY = 'careconnect_usuarios';
 

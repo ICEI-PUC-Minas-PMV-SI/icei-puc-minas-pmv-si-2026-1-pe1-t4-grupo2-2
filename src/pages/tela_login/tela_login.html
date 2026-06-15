@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Login</title>
+    <link rel="icon" href="../../assets/img/logo-1_1.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,6 +13,12 @@
             <div class="logo">
                 <img src="../../assets/img/logo-1_1.png" alt="CareConnect Logo" class="logo-img">
             </div>
+            <!-- Botão Hamburguer -->
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="nav-menu">
                 <a href="../tela_pedidos/pedidos.html" class="nav-link">Pedidos</a>
                 <a href="../sobre_nos/sobre-nos.html" class="nav-link">Sobre Nós</a>
@@ -41,15 +48,24 @@
         </section>
     </div>
     <footer class="footer">
-        <div class="footer-container">
-            <span class="footer-text">
-                © 2026 CareConnect. Todos os direitos reservados.<br>
-                Desenvolvido por Grupo 2 - PUC Minas
-            </span>
-            <div class="logo">
-                <img src="../../assets/img/logo-1_0.png" alt="CareConnect Logo" class="logo-img-footer">
-            </div>
+      <div class="footer-container">
+        <span class="footer-text">
+          © 2026 CareConnect. Todos os direitos reservados.<br />
+          Desenvolvido por Grupo 2 — PUC Minas
+        </span>
+        <div class="logo">
+          <img
+            src="../../assets/img/logo-1_0.png"
+            alt="CareConnect Logo"
+            class="logo-img-footer"
+          />
         </div>
+      </div>
     </footer>
+    <script type="module">
+        import { Hamburger } from "/src/js/Hamburger.js";
+        new Hamburger();
+    </script>
+    <script src="login.js"></script>
 </body>
 </html>

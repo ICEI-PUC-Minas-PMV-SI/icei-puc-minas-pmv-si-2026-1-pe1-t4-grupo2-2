@@ -1,13 +1,11 @@
 @import url("/src/styles/global.css");
 @import url("/src/styles/responsive.css");
 
-
 .box {
   width: 85%;
   margin: 5% 5% 10% 8%;
   /* border: #548c1c 3px solid; */
 }
-
 
 /* Estilização das abas */
 .abas {
@@ -31,7 +29,6 @@
   font-weight: bold;
 }
 
-
 /* Abas - Controle */
 .perfil-area,
 .pedidos-area {
@@ -50,7 +47,7 @@
   border: 0.6rem solid #548c1c;
 }
 .box:has(#pedidos:checked) .content {
-  transition: 0.5s; 
+  transition: 0.5s;
   border: 0.6rem solid #548c1c;
   border-radius: 2rem;
 }
@@ -61,7 +58,6 @@
   display: block;
 }
 
-
 /* Areas de conteudo */
 .content {
   width: 100%;
@@ -70,7 +66,6 @@
   padding: 2rem;
   border-radius: 0rem 2rem 2rem 2rem;
 }
-
 
 /* Perfil do usuário */
 .perfil-box {
@@ -103,7 +98,6 @@
   gap: 1.5rem;
 }
 
-
 /* Inputs */
 .input-group {
   display: flex;
@@ -131,7 +125,6 @@ textarea {
   width: 100%;
 }
 
-
 /* Tamanhos */
 .w45 {
   width: 45%;
@@ -145,7 +138,6 @@ textarea {
 .full {
   width: 100%;
 }
-
 
 /* Area dos Pedidos */
 .filtro-pedidos {
@@ -196,18 +188,16 @@ textarea {
   color: red;
 }
 
-
 /* Adaptar para dispositivos móveis */
 @media (max-width: 1920px) {
   .imagem-perfil img {
     height: 35rem;
     width: 50%;
   }
-  .pedidos-lista{
+  .pedidos-lista {
     margin-top: 10rem;
   }
 }
-
 
 @media (max-width: 1440px) {
   .imagem-perfil img {
@@ -218,11 +208,10 @@ textarea {
     margin: 10% 5% 20% 5%;
     /* border: #548c1c 3px solid; */
   }
-   .pedidos-lista{
+  .pedidos-lista {
     margin-top: 10rem;
   }
 }
-
 
 @media (max-width: 1024px) {
   .box {
@@ -257,7 +246,6 @@ textarea {
     height: 35rem;
   }
 }
-  
 
 @media (max-width: 768px) {
   .box {
@@ -265,7 +253,7 @@ textarea {
     margin: 10% 0 10% 8%;
     /* border: #548c1c 3px solid; */
   }
-  .content{
+  .content {
     border-radius: 0 0 1rem 1rem;
   }
   .abas {
@@ -283,9 +271,8 @@ textarea {
   }
   .box:has(#pedidos:checked) .content {
     border-radius: 0rem 0rem 2rem 2rem;
-  } 
+  }
 }
-
 
 @media (max-width: 425px) {
   .box {
@@ -296,7 +283,7 @@ textarea {
   .imagem-perfil img {
     width: 80%;
   }
-  .aba{
+  .aba {
     width: 50%;
   }
   .btn-buscar {
@@ -310,5 +297,79 @@ textarea {
   }
 }
 
+/* --- ESTILOS DO DROPDOWN DE PEDIDOS --- */
+.pedido-dropdown-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s;
+}
 
+/* Bordas de Status */
+.borda-amarela { border-left: 3px solid #ffcc00 !important; }
+.borda-verde { border-left: 3px solid #28a745 !important; }
+.borda-vermelha { border-left: 3px solid #dc3545 !important; }
 
+.pedido-dropdown-header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fdfdfd;
+  border-bottom: 1px solid transparent;
+}
+
+.pedido-dropdown-header:hover {
+  background-color: #f1f1f1;
+}
+
+.pedido-info-resumo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pedido-info-resumo strong {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.pedido-info-resumo span {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.pedido-dropdown-body {
+  padding: 2rem;
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+}
+
+.pedido-dropdown-body select {
+  padding: 1rem;
+  border: 0.1rem solid #000000;
+  background-color: #eeeeee;
+  border-radius: 0.8rem;
+  width: 100%;
+  font-family: inherit;
+}
+
+.btn-salvar-pedido {
+  margin-top: 1.5rem;
+  padding: 1.2rem 2rem;
+  background-color: #548c1c;
+  color: white;
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.btn-salvar-pedido:hover {
+  background-color: #437016;
+}

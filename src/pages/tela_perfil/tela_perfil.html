@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
+    <link rel="icon" href="../../assets/img/logo-1_1.png" type="image/png" />
     <link rel="stylesheet" href="perfil.css" />
+    <script src="perfil.js" defer></script>
+    <script type="module">
+      import { AuthGuard } from "/src/js/AuthGuard.js";
+      document.title = "CareConnect - Perfil";
+      AuthGuard.protectPage();
+    </script>
   </head>
   <body>
     <header class="header">
@@ -13,137 +20,121 @@
           <img
             src="../../assets/img/logo-1_1.png"
             alt="CareConnect Logo"
-            class="logo-img"/>
+            class="logo-img"
+          />
         </div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="nav-menu">
-          <a href="../sobre_nos/sobre-nos.html" class="nav-link">Sobre</a>
-          <a href="../tela_pedidos/pedidos.html" class="nav-link"
-            >Pedidos</a>
-          <a href="../transacoes/transações.html" class="nav-link">Transações</a>
-          <a href="../tela_login/tela_login.html" class="nav-link">Sair</a></a>
+          <a href="../tela_pedidos/pedidos.html" class="nav-link">Pedidos</a>
+          <a href="../criar_pedido/criar_pedido.html" class="nav-link"
+            >Criar Pedido</a
+          >
+          <a href="../transacoes/transações.html" class="nav-link"
+            >Transações</a
+          >
+          <a href="#" class="nav-link nav-link--active">Meu Perfil</a>
+          <a href="#" class="nav-link" onclick="logout()">Sair</a>
         </nav>
       </div>
     </header>
 
     <div class="box">
-      <!-- Abas -->
       <div class="abas">
         <input type="radio" name="aba" id="perfil" checked />
         <label for="perfil" class="aba prf">Perfil</label>
-
         <input type="radio" name="aba" id="pedidos" />
         <label for="pedidos" class="aba pdd">Pedidos</label>
       </div>
       <div class="content">
-        <!-- Perfil do Usuário -->
         <div class="area perfil-area">
           <div class="perfil-box">
-            <!-- Lado esquerdo do Perfil -->
             <div class="perfil-left">
               <div class="imagem-perfil">
                 <img src="../../assets/img/3x4.jpg" alt="Perfil" />
               </div>
             </div>
-
-            <!-- Lado direito do Perfil -->
             <div class="perfil-right">
               <div class="form-grid">
                 <div class="input-group w45">
-                  <label>Nome</label>
-                  <input type="text" />
+                  <label>Nome</label><input type="text" id="perfil-nome" />
                 </div>
                 <div class="input-group w45">
-                  <label>Data</label>
-                  <input type="date" />
+                  <label>Data</label><input type="date" id="perfil-data" />
                 </div>
                 <div class="input-group w45">
-                  <label>Email</label>
-                  <input type="email" />
+                  <label>Email</label><input type="email" id="perfil-email" />
                 </div>
                 <div class="input-group w25">
-                  <label>Telefone</label>
-                  <input type="text" />
+                  <label>Telefone</label
+                  ><input type="text" id="perfil-telefone" />
                 </div>
                 <div class="input-group w25">
-                  <label>CNPJ/CPF</label>
-                  <input type="text" />
+                  <label>CNPJ/CPF</label><input type="text" id="perfil-cpf" />
                 </div>
                 <div class="input-group w25">
-                  <label>Estado</label>
-                  <input type="text" />
+                  <label>Estado</label><input type="text" id="perfil-estado" />
                 </div>
                 <div class="input-group w25">
-                  <label>Cidade</label>
-                  <input type="text" />
+                  <label>Cidade</label><input type="text" id="perfil-cidade" />
                 </div>
                 <div class="input-group w25">
-                  <label>CEP</label>
-                  <input type="text" />
+                  <label>CEP</label><input type="text" id="perfil-cep" />
                 </div>
                 <div class="input-group w45">
-                  <label>Rua</label>
-                  <input type="text" />
+                  <label>Rua</label><input type="text" id="perfil-rua" />
                 </div>
                 <div class="input-group w10">
-                  <label>Número</label>
-                  <input type="text" />
+                  <label>Número</label><input type="text" id="perfil-numero" />
                 </div>
                 <div class="input-group w10">
-                  <label>Apto</label>
-                  <input type="text" />
+                  <label>Apto</label><input type="text" id="perfil-apto" />
                 </div>
               </div>
             </div>
           </div>
-          <!-- Parte inferior do Perfil -->
           <div class="textareas">
             <div class="input-group full">
-              <label>Motivações</label>
-              <textarea></textarea>
+              <label>Motivações</label
+              ><textarea id="perfil-motivacoes"></textarea>
             </div>
             <div class="input-group full">
-              <label>Objetivos</label>
-              <textarea></textarea>
+              <label>Objetivos</label
+              ><textarea id="perfil-objetivos"></textarea>
             </div>
             <div class="input-group full">
-              <label>Bio</label>
-              <textarea></textarea>
+              <label>Bio</label><textarea id="perfil-bio"></textarea>
             </div>
+
+            <button class="btn-salvar" id="btn-salvar-perfil">
+              SALVAR ALTERAÇÕES
+            </button>
           </div>
         </div>
 
-        <!-- Histórico de Pedidos -->
         <div class="area pedidos-area">
           <div class="filtro-pedidos">
             <div class="input-group data-group">
-              <label>De:</label>
-              <input type="date" />
+              <label>De:</label><input type="date" id="filtro-data-de" />
             </div>
             <div class="input-group data-group">
-              <label>Até:</label>
-              <input type="date" />
+              <label>Até:</label><input type="date" id="filtro-data-ate" />
             </div>
             <button class="btn-buscar">Buscar Pedidos</button>
           </div>
-
-          <div class="pedidos-lista">
-            <div class="pedido andamento">Em Andamento</div><div class="pedido andamento">Em Andamento</div><div class="pedido andamento">Em Andamento</div><div class="pedido andamento">Em Andamento</div>
-            <div class="pedido entregue">Pedido Entregue</div>
-            <div class="pedido cancelado">Pedido Cancelado</div>
-            <div class="pedido entregue">Pedido Entregue</div>
-            <div class="pedido cancelado">Pedido Cancelado</div>
-            <div class="pedido entregue">Pedido Entregue</div>
-            <div class="pedido cancelado">Pedido Cancelado</div>
-          </div>
+          <div class="pedidos-lista"></div>
         </div>
       </div>
     </div>
-
-    <!-- Rodapé -->
+  <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-container">
         <span class="footer-text">
-          © 2026 CareConnect. Todos os direitos reservados.
+          © 2026 CareConnect. Todos os direitos reservados.<br />
+          Desenvolvido por Grupo 2 — PUC Minas
         </span>
         <div class="logo">
           <img
@@ -154,8 +145,7 @@
         </div>
       </div>
     </footer>
-  </body>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="pedidos.js"></script>
+</body>
 </html>
-
-
-

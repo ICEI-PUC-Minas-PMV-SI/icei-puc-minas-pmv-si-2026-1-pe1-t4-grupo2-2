@@ -2,6 +2,8 @@
 // SISTEMA DE RECUPERAÇÃO DE SENHA COM LOCALSTORAGE
 // ============================================
 
+document.title = 'CareConnect - Recuperar Senha';
+
 // Chave para armazenar usuários no LocalStorage (mesma das outras telas)
 const STORAGE_KEY = 'careconnect_usuarios';
 
