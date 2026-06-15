@@ -286,13 +286,14 @@ function renderizarPedidos() {
 }
 
 window.salvarEdicaoPedido = function(idPedido) {
+    const idNumerico = Number(idPedido);
     let todosPedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
-    let indexPedido = todosPedidos.findIndex(p => p.idPedido === idPedido);
+    let indexPedido = todosPedidos.findIndex(p => p.idPedido === idNumerico);
     
     if(indexPedido !== -1) {
-        const catSelect = document.getElementById(`cat-${idPedido}`);
-        const descArea = document.getElementById(`desc-${idPedido}`);
-        const destInput = document.getElementById(`dest-${idPedido}`);
+        const catSelect = document.getElementById(`cat-${idNumerico}`);
+        const descArea = document.getElementById(`desc-${idNumerico}`);
+        const destInput = document.getElementById(`dest-${idNumerico}`);
 
         const categoriasDict = {
             "1": { id: 1, slug: "categoria1", nome: "Roupas" },
@@ -306,15 +307,19 @@ window.salvarEdicaoPedido = function(idPedido) {
             "9": { id: 9, slug: "categoria9", nome: "Saúde" }
         };
 
-        todosPedidos[indexPedido].categoria = categoriasDict[catSelect.value];
-        todosPedidos[indexPedido].descricao = descArea.value;
-        todosPedidos[indexPedido].enderecoDestino = destInput.value; // Nova chave injetada
-        todosPedidos[indexPedido].atualizadoEm = new Date().toISOString();
+        todosPedidos[indexPedido] = {
+            ...todosPedidos[indexPedido],
+            categoria: categoriasDict[catSelect.value],
+            descricao: descArea.value,
+            enderecoDestino: destInput.value,
+            atualizadoEm: new Date().toISOString()
+        };
 
         localStorage.setItem('pedidos', JSON.stringify(todosPedidos));
+        
         alert('✅ Pedido atualizado com sucesso!');
         renderizarPedidos();
     } else {
-        alert('❌ Erro: Pedido não encontrado.');
+        alert('❌ Erro: Pedido não encontrado no banco de dados.');
     }
 }
