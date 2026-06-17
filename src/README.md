@@ -6,7 +6,7 @@ Esta pasta contém todo o código-fonte da aplicação web **CareConnect**, dese
 
 ```
 src/
-├── pages/                      # Páginas da aplicação
+├── pages/                     # Páginas da aplicação
 │   ├── tela_login/            # Autenticação e login
 │   ├── criar_conta/           # Cadastro de novos usuários
 │   ├── esqueceu_senha/        # Recuperação de senha
@@ -88,6 +88,14 @@ Funções utilitárias reutilizáveis.
 - Validação de dados
 - Funções de manipulação de strings
 
+### CEPManager.js
+Gerencia buscas de endereço através de API de CEP (viaCEP).
+- Busca de endereço completo por CEP
+- Validação e formatação de CEP
+- Preenchimento automático de formulários
+- Tratamento de erros robusto
+- Uso: `import { CEPManager } from './CEPManager.js'`
+
 ## 🎨 Sistema de Estilos
 
 O projeto utiliza um sistema de variáveis CSS para manter consistência visual:
@@ -151,6 +159,15 @@ http://localhost:8000
 - Use seu e-mail e senha cadastrados
 - A sessão é mantida em localStorage
 
+#### Perfil do Usuário
+- Visualize e edite suas informações pessoais
+- **🌐 Busca automática de endereço por CEP**:
+  - Digite o CEP (formato: 12345-678)
+  - Pressione Enter ou clique no botão 🔍
+  - Rua, cidade e estado são preenchidos automaticamente
+  - Funcionalidade baseada na API viaCEP
+  - Todos os campos podem ser editados manualmente
+
 #### Para Doadores
 - Visualize a lista de pedidos disponíveis
 - Filtre por categoria
@@ -184,6 +201,38 @@ A aplicação é totalmente responsiva e funciona em:
 - **CSS3** - Estilos responsivos e variáveis
 - **JavaScript (ES6+)** - Lógica e interatividade
 - **localStorage API** - Persistência de dados do cliente
+
+## 🌐 APIs Externas
+
+### viaCEP - Busca de Endereço por CEP
+A aplicação utiliza a API pública do **viaCEP** para buscar endereços a partir do CEP.
+
+**Documentação**: https://viacep.com.br/
+
+**Utilização**:
+- Página: Edição de Perfil
+- Funcionalidade: Preenchimento automático de endereço
+- Módulo: `CEPManager.js`
+
+**Exemplo de uso**:
+```javascript
+import { CEPManager } from './js/CEPManager.js';
+
+// Buscar endereço por CEP
+CEPManager.buscarEnderecoPorCEP('12345-678')
+  .then(dados => {
+    console.log(dados.logradouro);  // Nome da rua
+    console.log(dados.localidade);  // Cidade
+    console.log(dados.uf);          // Estado
+  })
+  .catch(erro => console.error(erro));
+```
+
+**Recursos da API**:
+- ✅ Sem autenticação necessária
+- ✅ Sem limite de requisições (para uso educacional)
+- ✅ Retorna dados em JSON
+- ✅ Rápida e confiável
 
 ## 📝 Convenções de Código
 
