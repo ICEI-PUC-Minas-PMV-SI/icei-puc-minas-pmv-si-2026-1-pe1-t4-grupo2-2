@@ -1,6 +1,8 @@
 import { ManagerLocalStorage } from '../../js/ManagerLocalStorage.js';
 import { AuthGuard } from '../../js/AuthGuard.js';
 
+// ============ UTILITÁRIOS ============
+
 function getUsuarioLogado() {
     if (AuthGuard.isUserLoggedIn()) {
         return AuthGuard.getLoggedInUser();
@@ -51,16 +53,19 @@ function normalizarStatus(status) {
     return String(status || '').trim().toLowerCase();
 }
 
-function isPedidoEmAndamento(pedido) {
-    const status = normalizarStatus(pedido.status);
-    return status === 'andamento' || status === 'em andamento' || status === 'em-andamento';
-}
-
 function getStatusTexto(pedido) {
     const status = normalizarStatus(pedido.status);
 
     if (status === 'andamento' || status === 'em andamento' || status === 'em-andamento') {
         return 'Em andamento';
+    }
+
+    if (status === 'concluído' || status === 'concluido' || status === 'entregue') {
+        return 'Concluído';
+    }
+
+    if (status === 'pendente') {
+        return 'Pendente';
     }
 
     return pedido?.statusTexto || pedido?.status || 'Em andamento';
@@ -137,23 +142,149 @@ function encontrarUsuarioPorId(idUsuario, usuarios) {
     }) || null;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// ============ PAGINAÇÃO ============
+
+let paginaAtual = 1;
+const ITENS_POR_PAGINA = 6;
+let todasAsTransacoes = [];
+
+function mostrarPagina(pagina) {
+    paginaAtual = pagina;
+    const inicio = (pagina - 1) * ITENS_POR_PAGINA;
+    const fim = inicio + ITENS_POR_PAGINA;
+    const transacoesPagina = todasAsTransacoes.slice(inicio, fim);
+
     const containerPedidos = document.getElementById('container-pedidos');
     const containerModais = document.getElementById('container-modais');
+    
+    containerPedidos.innerHTML = '';
+    containerModais.innerHTML = '';
+
+    transacoesPagina.forEach(pedido => {
+        criarCardTransacao(pedido, containerPedidos, containerModais);
+    });
+}
+
+function criarCardTransacao(pedido, containerPedidos, containerModais) {
+    const usuarios = getTodosUsuarios();
+    const doador = encontrarUsuarioPorId(getIdDoadorPedido(pedido), usuarios);
+    const solicitante = encontrarUsuarioPorId(getIdSolicitantePedido(pedido), usuarios);
+
+    const nomeDoador = getNomeUsuario(doador) || 'Doador não encontrado';
+    const nomeSolicitante = getNomeUsuario(solicitante) || 'Solicitante não encontrado';
+    const idPedido = pedido.idPedido || pedido.id || '—';
+    const categoria = getCategoriaPedido(pedido);
+    const descricao = getDescricaoPedido(pedido);
+    const statusTexto = getStatusTexto(pedido);
+    const status = normalizarStatus(pedido.status);
+
+    // Determinar ícone baseado no status
+    let statusIcon = '⏳';
+    if (status === 'concluído' || status === 'concluido' || status === 'entregue') {
+        statusIcon = '✅';
+    } else if (status === 'pendente') {
+        statusIcon = '⏱️';
+    }
+
+    const cardHTML = `
+        <a href="#modal${idPedido}" class="pedido-card">
+            <div class="status-circle">${statusIcon}</div>
+            <div class="info">
+                <h3>Pedido #${idPedido}</h3>
+                <p class="category">${categoria}</p>
+                <p class="code">${descricao}</p>
+                <p class="code">Doador: ${nomeDoador}</p>
+                <p class="code">Solicitante: ${nomeSolicitante}</p>
+            </div>
+            <span class="status ${status || 'andamento'}">${statusTexto}</span>
+            <span class="card-arrow">›</span>
+        </a>
+    `;
+
+    const modalHTML = `
+        <div id="modal${idPedido}" class="modal">
+            <div class="modal-content">
+                <a href="#" class="fechar">×</a>
+                <p class="modal-tag">Rastreamento</p>
+                <h2>Pedido #${idPedido}</h2>
+                <div class="modal-grid">
+                    <div class="modal-field"><label>Doador</label><span>${nomeDoador}</span></div>
+                    <div class="modal-field"><label>Solicitante</label><span>${nomeSolicitante}</span></div>
+                    <div class="modal-field"><label>Categoria</label><span>${categoria}</span></div>
+                    <div class="modal-field"><label>Status</label><span>${statusTexto}</span></div>
+                    <div class="modal-field"><label>Descrição</label><span>${descricao}</span></div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    containerPedidos.innerHTML += cardHTML;
+    containerModais.innerHTML += modalHTML;
+}
+
+function atualizarPaginacao() {
+    const paginationElement = document.getElementById('pagination');
+    const totalPaginas = Math.ceil(todasAsTransacoes.length / ITENS_POR_PAGINA);
+
+    // Remover paginação se houver menos de 6 resultados
+    if (todasAsTransacoes.length < ITENS_POR_PAGINA) {
+        if (paginationElement) {
+            paginationElement.style.display = 'none !important';
+        }
+        return;
+    }
+
+    if (paginationElement) {
+        paginationElement.style.display = 'flex !important';
+    }
+
+    // Atualizar botões de navegação
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    if (prevBtn) prevBtn.disabled = paginaAtual === 1;
+    if (nextBtn) nextBtn.disabled = paginaAtual === totalPaginas;
+
+    // Atualizar números de página
+    const pageNumbers = document.getElementById('page-numbers');
+    if (pageNumbers) {
+        pageNumbers.innerHTML = '';
+        
+        for (let i = 1; i <= Math.min(totalPaginas, 4); i++) {
+            const btn = document.createElement('button');
+            btn.className = `page-btn ${i === paginaAtual ? 'active' : ''}`;
+            btn.textContent = i;
+            btn.dataset.page = i;
+            btn.addEventListener('click', () => {
+                mostrarPagina(i);
+                atualizarPaginacao();
+            });
+            pageNumbers.appendChild(btn);
+        }
+    }
+}
+
+// ============ INICIALIZAÇÃO ============
+
+document.addEventListener('DOMContentLoaded', () => {
+    const containerPedidos = document.getElementById('container-pedidos');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const paginationElement = document.getElementById('pagination');
 
     const usuarioLogado = getUsuarioLogado();
     if (!usuarioLogado) {
-        containerPedidos.innerHTML = '<p class="page-desc">Faça login para ver os pedidos em andamento.</p>';
+        containerPedidos.innerHTML = '<p class="page-desc">Faça login para ver suas transações.</p>';
+        if (paginationElement) paginationElement.style.display = 'none !important';
         return;
     }
 
     const meuId = getIdUsuario(usuarioLogado);
     const pedidos = getTodosPedidos();
-    const usuarios = getTodosUsuarios();
 
-    const pedidosEmAndamento = pedidos.filter(pedido => {
-        if (!isPedidoEmAndamento(pedido)) return false;
-
+    // FILTRAR: Mostrar TODAS as transações que envolvem o usuário (como doador ou solicitante)
+    // Não filtra mais apenas por status "em andamento"
+    todasAsTransacoes = pedidos.filter(pedido => {
         const idDoador = getIdDoadorPedido(pedido);
         const idSolicitante = getIdSolicitantePedido(pedido);
 
@@ -161,58 +292,31 @@ document.addEventListener('DOMContentLoaded', () => {
                Number(idSolicitante) === Number(meuId);
     });
 
-    if (pedidosEmAndamento.length === 0) {
-        containerPedidos.innerHTML = '<p class="page-desc">Nenhum pedido em andamento encontrado para você.</p>';
+    if (todasAsTransacoes.length === 0) {
+        containerPedidos.innerHTML = '<p class="page-desc">Você ainda não possui nenhuma transação.</p>';
+        if (paginationElement) paginationElement.style.display = 'none !important';
         return;
     }
 
-    containerPedidos.innerHTML = '';
-    containerModais.innerHTML = '';
+    // Mostrar primeira página e atualizar paginação
+    mostrarPagina(1);
+    atualizarPaginacao();
 
-    pedidosEmAndamento.forEach(pedido => {
-        const doador = encontrarUsuarioPorId(getIdDoadorPedido(pedido), usuarios);
-        const solicitante = encontrarUsuarioPorId(getIdSolicitantePedido(pedido), usuarios);
+    // Eventos dos botões de paginação (apenas se houver paginação)
+    if (prevBtn && nextBtn && todasAsTransacoes.length >= ITENS_POR_PAGINA) {
+        prevBtn.addEventListener('click', () => {
+            if (paginaAtual > 1) {
+                mostrarPagina(paginaAtual - 1);
+                atualizarPaginacao();
+            }
+        });
 
-        const nomeDoador = getNomeUsuario(doador) || 'Doador não encontrado';
-        const nomeSolicitante = getNomeUsuario(solicitante) || 'Solicitante não encontrado';
-        const idPedido = pedido.idPedido || pedido.id || '—';
-        const categoria = getCategoriaPedido(pedido);
-        const descricao = getDescricaoPedido(pedido);
-        const statusTexto = getStatusTexto(pedido);
-
-        const cardHTML = `
-            <a href="#modal${idPedido}" class="pedido-card">
-                <div class="status-circle">⏳</div>
-                <div class="info">
-                    <h3>Pedido #${idPedido}</h3>
-                    <p class="category">${categoria}</p>
-                    <p class="code">${descricao}</p>
-                    <p class="code">Doador: ${nomeDoador}</p>
-                    <p class="code">Solicitante: ${nomeSolicitante}</p>
-                </div>
-                <span class="status ${normalizarStatus(pedido.status) || 'andamento'}">${statusTexto}</span>
-                <span class="card-arrow">›</span>
-            </a>
-        `;
-
-        const modalHTML = `
-            <div id="modal${idPedido}" class="modal">
-                <div class="modal-content">
-                    <a href="#" class="fechar">×</a>
-                    <p class="modal-tag">Rastreamento</p>
-                    <h2>Pedido #${idPedido}</h2>
-                    <div class="modal-grid">
-                        <div class="modal-field"><label>Doador</label><span>${nomeDoador}</span></div>
-                        <div class="modal-field"><label>Solicitante</label><span>${nomeSolicitante}</span></div>
-                        <div class="modal-field"><label>Categoria</label><span>${categoria}</span></div>
-                        <div class="modal-field"><label>Status</label><span>${statusTexto}</span></div>
-                        <div class="modal-field"><label>Descrição</label><span>${descricao}</span></div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        containerPedidos.innerHTML += cardHTML;
-        containerModais.innerHTML += modalHTML;
-    });
+        nextBtn.addEventListener('click', () => {
+            const totalPaginas = Math.ceil(todasAsTransacoes.length / ITENS_POR_PAGINA);
+            if (paginaAtual < totalPaginas) {
+                mostrarPagina(paginaAtual + 1);
+                atualizarPaginacao();
+            }
+        });
+    }
 });
