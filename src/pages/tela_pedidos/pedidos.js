@@ -1,8 +1,8 @@
 
 
-import { Order } from "/src/js/Order.js";
-import { AuthGuard } from "/src/js/AuthGuard.js";
-import { Hamburger } from "/src/js/Hamburger.js";
+import { Order } from "../../js/Order.js";
+import { AuthGuard } from "../../js/AuthGuard.js";
+import { Hamburger } from "../../js/Hamburger.js";
 
 
 class ManagerOrder {

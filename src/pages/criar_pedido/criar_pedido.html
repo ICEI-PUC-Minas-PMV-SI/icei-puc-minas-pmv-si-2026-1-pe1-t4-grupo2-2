@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Proteção de Rota: Verificar autenticação -->
     <script type="module">
-        import { AuthGuard } from "/src/js/AuthGuard.js";
+        import { AuthGuard } from "../../js/AuthGuard.js";
         AuthGuard.protectPage();
     </script>
 </head>
@@ -80,8 +80,8 @@
       </div>
     </footer>
     <script type="module">
-        import { AuthGuard } from "/src/js/AuthGuard.js";
-        import { Hamburger } from "/src/js/Hamburger.js";
+        import { AuthGuard } from "../../js/AuthGuard.js";
+        import { Hamburger } from "../../js/Hamburger.js";
         window.logout = () => AuthGuard.logout();
         new Hamburger();
     </script>    

@@ -1,5 +1,5 @@
-import { ManagerLocalStorage } from "/src/js/ManagerLocalStorage.js";
-import { Utils } from "/src/js/Utils.js";
+import { ManagerLocalStorage } from "./ManagerLocalStorage.js";
+import { Utils } from "./Utils.js";
 
 export class Order {
 

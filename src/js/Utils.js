@@ -1,4 +1,4 @@
-import { ManagerLocalStorage } from "/src/js/ManagerLocalStorage.js";
+import { ManagerLocalStorage } from "./ManagerLocalStorage.js";
 
 export class Utils {
     static generateUniqueId = () => {

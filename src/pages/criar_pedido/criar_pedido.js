@@ -1,4 +1,4 @@
-import { Order } from "/src/js/Order.js";
+import { Order } from "../../js/Order.js";
 
 document.title = 'CareConnect - Criar Pedido';
 
