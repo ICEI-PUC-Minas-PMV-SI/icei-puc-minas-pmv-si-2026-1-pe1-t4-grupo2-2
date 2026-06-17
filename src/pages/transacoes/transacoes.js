@@ -154,45 +154,28 @@ function mostrarPagina(pagina) {
     const fim = inicio + ITENS_POR_PAGINA;
     const transacoesPagina = todasAsTransacoes.slice(inicio, fim);
 
-    console.log(`📄 Mostrando página ${pagina}: início=${inicio}, fim=${fim}, transações na página=${transacoesPagina.length}`);
-
     const containerPedidos = document.getElementById('container-pedidos');
     const containerModais = document.getElementById('container-modais');
     
     if (!containerPedidos) {
-        console.error('❌ container-pedidos NÃO ENCONTRADO!');
         return;
     }
     if (!containerModais) {
-        console.error('❌ container-modais NÃO ENCONTRADO!');
         return;
     }
 
-    console.log(`✅ Containers encontrados. Limpando...`);
-    
     containerPedidos.innerHTML = '';
     containerModais.innerHTML = '';
 
-    console.log(`🔄 Renderizando ${transacoesPagina.length} transações...`);
     transacoesPagina.forEach((pedido, index) => {
-        console.log(`   [${index}] Renderizando pedido #${pedido.idPedido}`);
         criarCardTransacao(pedido, containerPedidos, containerModais);
     });
-    
-    console.log(`✅ Página ${pagina} renderizada. Total de HTML: ${containerPedidos.innerHTML.length} chars`);
 }
 
 function criarCardTransacao(pedido, containerPedidos, containerModais) {
-    console.log(`🎨 Criando card para pedido:`, pedido);
-    
     const usuarios = getTodosUsuarios();
-    console.log(`   Usuários disponíveis: ${usuarios.length}`);
-    
     const doador = encontrarUsuarioPorId(getIdDoadorPedido(pedido), usuarios);
     const solicitante = encontrarUsuarioPorId(getIdSolicitantePedido(pedido), usuarios);
-
-    console.log(`   Doador encontrado:`, doador?.nomeCompleto || 'NÃO ENCONTRADO');
-    console.log(`   Solicitante encontrado:`, solicitante?.nomeCompleto || 'NÃO ENCONTRADO');
 
     const nomeDoador = getNomeUsuario(doador) || 'Doador não encontrado';
     const nomeSolicitante = getNomeUsuario(solicitante) || 'Solicitante não encontrado';
@@ -296,13 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('next-btn');
     const paginationElement = document.getElementById('pagination');
 
-    console.log('🔍 DOMContentLoaded - Iniciando...');
-    console.log('containerPedidos:', containerPedidos);
-    console.log('paginationElement:', paginationElement);
-
     const usuarioLogado = getUsuarioLogado();
-    console.log('usuarioLogado:', usuarioLogado);
-    
     if (!usuarioLogado) {
         containerPedidos.innerHTML = '<p class="page-desc">Faça login para ver suas transações.</p>';
         if (paginationElement) paginationElement.style.display = 'none !important';
@@ -311,8 +288,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const meuId = getIdUsuario(usuarioLogado);
     const pedidos = getTodosPedidos();
-    console.log('meuId:', meuId);
-    console.log('Total de pedidos:', pedidos.length);
 
     // FILTRAR: Mostrar TODAS as transações que envolvem o usuário (como doador ou solicitante)
     // Não filtra mais apenas por status "em andamento"
@@ -323,8 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return Number(idDoador) === Number(meuId) ||
                Number(idSolicitante) === Number(meuId);
     });
-
-    console.log('todasAsTransacoes (após filtro):', todasAsTransacoes.length);
 
     if (todasAsTransacoes.length === 0) {
         containerPedidos.innerHTML = '<p class="page-desc">Você ainda não possui nenhuma transação.</p>';
