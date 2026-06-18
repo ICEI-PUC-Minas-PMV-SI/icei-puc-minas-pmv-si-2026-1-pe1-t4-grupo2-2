@@ -136,7 +136,7 @@ export class Order {
             const novoPedidoId = this.#insertInfoLocalStorage(obj);
 
             form.reset();
-            window.location.href = `/src/pages/tela_pedidos/pedidos.html?novo=${novoPedidoId}`;
+            window.location.href = `../tela_pedidos/pedidos.html?novo=${novoPedidoId}`;
         });
     }
 }

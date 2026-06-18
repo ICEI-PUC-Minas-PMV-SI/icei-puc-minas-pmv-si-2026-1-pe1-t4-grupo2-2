@@ -60,6 +60,10 @@ function getStatusTexto(pedido) {
         return 'Em andamento';
     }
 
+    if (status === 'enviado') {
+        return 'Enviado';
+    }
+
     if (status === 'concluído' || status === 'concluido' || status === 'entregue') {
         return 'Concluído';
     }
@@ -142,13 +146,182 @@ function encontrarUsuarioPorId(idUsuario, usuarios) {
     }) || null;
 }
 
+// ============ RASTREAMENTO E REPORTE ============
+
+function verificarSeEhDoador(pedido, meuId) {
+    const idDoador = getIdDoadorPedido(pedido);
+    return Number(idDoador) === Number(meuId);
+}
+
+function verificarSeEhSolicitante(pedido, meuId) {
+    const idSolicitante = getIdSolicitantePedido(pedido);
+    return Number(idSolicitante) === Number(meuId);
+}
+
+function abrirModalRastreio(pedido, meuId) {
+    const codigoExistente = pedido.codigoRastreio || '';
+    const idPedido = pedido.idPedido || pedido.id;
+    
+    const html = `
+        <div id="modal-rastreio-overlay" class="modal-overlay">
+            <div class="modal-rastreio-content">
+                <h3>Inserir Código de Rastreio</h3>
+                <p class="modal-subtitle">Pedido #${idPedido}</p>
+                <div class="form-group">
+                    <label>Código de Rastreio:</label>
+                    <input 
+                        type="text" 
+                        id="input-rastreio" 
+                        placeholder="Ex: BR123456789AB" 
+                        value="${codigoExistente}"
+                        ${codigoExistente ? 'disabled' : ''}
+                        maxlength="50"
+                    />
+                </div>
+                <div class="modal-buttons">
+                    <button onclick="document.getElementById('modal-rastreio-overlay').remove()">Cancelar</button>
+                    ${!codigoExistente ? `<button onclick="salvarRastreio(${idPedido})" class="btn-primary">Salvar</button>` : '<button disabled>Já inserido</button>'}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', html);
+}
+
+function salvarRastreio(idPedido) {
+    const inputRastreio = document.getElementById('input-rastreio');
+    const codigo = inputRastreio?.value?.trim();
+    
+    if (!codigo) {
+        alert('Por favor, insira um código de rastreio');
+        return;
+    }
+    
+    const pedidos = getTodosPedidos();
+    const pedidoIndex = pedidos.findIndex(p => (p.idPedido || p.id) === idPedido);
+    
+    if (pedidoIndex !== -1) {
+        pedidos[pedidoIndex].codigoRastreio = codigo;
+        pedidos[pedidoIndex].status = 'enviado';
+        ManagerLocalStorage.setItem('pedidos', pedidos);
+        
+        document.getElementById('modal-rastreio-overlay').remove();
+        alert('Código de rastreio salvo com sucesso!');
+        location.reload();
+    }
+}
+
+function abrirModalReporte(pedido, meuId) {
+    const idPedido = pedido.idPedido || pedido.id;
+    const ehDoador = verificarSeEhDoador(pedido, meuId);
+    const ehSolicitante = verificarSeEhSolicitante(pedido, meuId);
+    
+    let opcoes = '';
+    
+    if (ehDoador) {
+        opcoes = `
+            <div class="radio-group">
+                <label><input type="radio" name="motivo-reporte" value="impossibilidade-envio"> Impossibilidade do envio</label>
+                <label><input type="radio" name="motivo-reporte" value="engano"> Pedido selecionado por engano</label>
+            </div>
+        `;
+    } else if (ehSolicitante) {
+        opcoes = `
+            <div class="radio-group">
+                <label><input type="radio" name="motivo-reporte" value="demora-doador"> Demora por parte do doador para realizar o envio</label>
+                <label><input type="radio" name="motivo-reporte" value="cancelar"> Cancelar solicitação</label>
+            </div>
+        `;
+    }
+    
+    const html = `
+        <div id="modal-reporte-overlay" class="modal-overlay">
+            <div class="modal-reporte-content">
+                <h3>Reportar Transação</h3>
+                <p class="modal-subtitle">Pedido #${idPedido}</p>
+                ${opcoes}
+                <div class="modal-buttons">
+                    <button class="btn-cancel"onclick="document.getElementById('modal-reporte-overlay').remove()">Cancelar</button>
+                    <button onclick="processarReporte(${idPedido})" class="btn-danger">Reportar</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', html);
+}
+
+function processarReporte(idPedido) {
+    const selectedMotivo = document.querySelector('input[name="motivo-reporte"]:checked');
+    
+    if (!selectedMotivo) {
+        alert('Por favor, selecione um motivo');
+        return;
+    }
+    
+    const motivo = selectedMotivo.value;
+    const pedidos = getTodosPedidos();
+    const pedidoIndex = pedidos.findIndex(p => (p.idPedido || p.id) === idPedido);
+    
+    if (pedidoIndex !== -1) {
+        const pedido = pedidos[pedidoIndex];
+        
+        if (motivo === 'impossibilidade-envio' || motivo === 'engano' || motivo === 'demora-doador') {
+            pedidos[pedidoIndex].status = 'Aberto';
+            pedidos[pedidoIndex].motivo_reporte = motivo;
+            // Limpar ID do doador anterior quando volta para aberto
+            pedidos[pedidoIndex].idDoador = null;
+            pedidos[pedidoIndex].doadorId = null;
+            pedidos[pedidoIndex].idUsuarioDoador = null;
+        } else if (motivo === 'cancelar') {
+            pedidos[pedidoIndex].status = 'cancelado';
+            pedidos[pedidoIndex].motivo_reporte = motivo;
+        }
+        
+        ManagerLocalStorage.setItem('pedidos', pedidos);
+        
+        document.getElementById('modal-reporte-overlay').remove();
+        alert('Reporte registrado com sucesso! Você será redirecionado.');
+        
+        setTimeout(() => {
+            window.location.href = '../tela_pedidos/pedidos.html';
+        }, 1500);
+    }
+}
+
+function confirmarEntrega(idPedido) {
+    const pedidos = getTodosPedidos();
+    const idx = pedidos.findIndex(p => String(p.idPedido || p.id) === String(idPedido));
+
+    if (idx !== -1) {
+        pedidos[idx].status = 'concluido';
+        pedidos[idx].atualizadoEm = new Date().toISOString();
+        ManagerLocalStorage.setItem('pedidos', pedidos);
+        fecharModal(`modal${idPedido}`);
+        alert('Entrega confirmada com sucesso! Obrigado por usar o CareConnect.');
+        location.reload();
+    }
+}
+
+// ===== Expor funções globalmente para onclick do HTML =====
+window.abrirModalRastreio = abrirModalRastreio;
+window.abrirModalReporte = abrirModalReporte;
+window.abrirModal = abrirModal;
+window.fecharModal = fecharModal;
+window.salvarRastreio = salvarRastreio;
+window.processarReporte = processarReporte;
+window.confirmarEntrega = confirmarEntrega;
+// ======================================================
+
 // ============ PAGINAÇÃO ============
 
 let paginaAtual = 1;
 const ITENS_POR_PAGINA = 6;
 let todasAsTransacoes = [];
+let meuIdGlobal = null;
 
-function mostrarPagina(pagina) {
+function mostrarPagina(pagina, meuId) {
     paginaAtual = pagina;
     const inicio = (pagina - 1) * ITENS_POR_PAGINA;
     const fim = inicio + ITENS_POR_PAGINA;
@@ -168,50 +341,91 @@ function mostrarPagina(pagina) {
     containerModais.innerHTML = '';
 
     transacoesPagina.forEach((pedido, index) => {
-        criarCardTransacao(pedido, containerPedidos, containerModais);
+        criarCardTransacao(pedido, containerPedidos, containerModais, meuId);
     });
 }
 
-function criarCardTransacao(pedido, containerPedidos, containerModais) {
+function criarCardTransacao(pedido, containerPedidos, containerModais, meuId) {
     const usuarios = getTodosUsuarios();
-    const doador = encontrarUsuarioPorId(getIdDoadorPedido(pedido), usuarios);
-    const solicitante = encontrarUsuarioPorId(getIdSolicitantePedido(pedido), usuarios);
+    const idDoador = getIdDoadorPedido(pedido);
+    const idSolicitante = getIdSolicitantePedido(pedido);
+    
+    const doador = encontrarUsuarioPorId(idDoador, usuarios);
+    const solicitante = encontrarUsuarioPorId(idSolicitante, usuarios);
 
-    const nomeDoador = getNomeUsuario(doador) || 'Doador não encontrado';
-    const nomeSolicitante = getNomeUsuario(solicitante) || 'Solicitante não encontrado';
+    const nomeDoador = getNomeUsuario(doador) || `Usuário #${idDoador}`;
+    const nomeSolicitante = getNomeUsuario(solicitante) || `Usuário #${idSolicitante}`;
     const idPedido = pedido.idPedido || pedido.id || '—';
     const categoria = getCategoriaPedido(pedido);
     const descricao = getDescricaoPedido(pedido);
     const statusTexto = getStatusTexto(pedido);
     const status = normalizarStatus(pedido.status);
+    const codigoRastreio = pedido.codigoRastreio || '';
 
     // Determinar ícone baseado no status
-    let statusIcon = '⏳';
-    if (status === 'concluído' || status === 'concluido' || status === 'entregue') {
-        statusIcon = '✅';
+    let statusIcon = '<img src="../../assets/img/loader-transition.svg" alt="Em andamento" style="width: 2.5rem; height: auto;">';
+    if (status === 'enviado') {
+        statusIcon = '<img src="../../assets/img/send-transition.svg" alt="Enviado" style="width: 2.5rem; height: auto;">';
+    } else if (status === 'concluído' || status === 'concluido' || status === 'entregue') {
+        statusIcon = '<img src="../../assets/img/confirm-transition.svg" alt="Concluído" style="width: 2.5rem; height: auto;">';
     } else if (status === 'pendente') {
         statusIcon = '⏱️';
+    } else if (status === 'cancelado') {
+        statusIcon = '❌';
+    }
+
+    const ehDoador = verificarSeEhDoador(pedido, meuId);
+    const ehSolicitante = verificarSeEhSolicitante(pedido, meuId);
+
+    // Criar botões dinamicamente
+    let botoesCard = '';
+    botoesCard += `<button class="btn-card btn-danger" onclick="event.stopPropagation(); abrirModalReporte(${JSON.stringify(pedido).replace(/"/g, '&quot;')}, ${meuId})" ${codigoRastreio ? 'disabled title="Código de rastreio já foi inserido"' : ''}>Reportar</button>`;
+    if (ehDoador && status !== 'cancelado') {
+        botoesCard += `<button class="btn-card" onclick="event.stopPropagation(); abrirModalRastreio(${JSON.stringify(pedido).replace(/"/g, '&quot;')}, ${meuId})" ${codigoRastreio ? 'disabled title="Código já foi inserido"' : ''}>Rastreio</button>`;
+    }
+    if (ehSolicitante && status === 'enviado') {
+        botoesCard += `<button class="btn-card btn-success" onclick="event.stopPropagation(); confirmarEntrega('${idPedido}')">Confirmar entrega</button>`;
     }
 
     const cardHTML = `
-        <a href="#modal${idPedido}" class="pedido-card">
-            <div class="status-circle">${statusIcon}</div>
-            <div class="info">
-                <h3>Pedido #${idPedido}</h3>
-                <p class="category">${categoria}</p>
-                <p class="code">${descricao}</p>
-                <p class="code">Doador: ${nomeDoador}</p>
-                <p class="code">Solicitante: ${nomeSolicitante}</p>
+        <div class="pedido-card" onclick="abrirModal('modal${idPedido}')">
+            <div class="card-left">
+                <div class="status-circle">${statusIcon}</div>
+                <div class="info">
+                    <h3>Pedido #${idPedido}</h3>
+                    <p class="category">${categoria}</p>
+                    <p class="code">${descricao}</p>
+                    <p class="code">Doador: ${nomeDoador}</p>
+                    <p class="code">Solicitante: ${nomeSolicitante}</p>
+                </div>
             </div>
-            <span class="status ${status || 'andamento'}">${statusTexto}</span>
-            <span class="card-arrow">›</span>
-        </a>
+            <div class="card-right">
+                <span class="status ${status || 'andamento'}">${statusTexto}</span>
+                <div class="card-buttons">
+                    ${botoesCard}
+                </div>
+            </div>
+        </div>
     `;
+
+    const codigoRastreioHTML = codigoRastreio ? `
+        <div class="modal-field">
+            <label>Código de Rastreio</label>
+            <span>${codigoRastreio}</span>
+        </div>
+    ` : '';
+
+    const confirmarEntregaHTML = (ehSolicitante && status === 'enviado') ? `
+        <div class="modal-confirm-entrega">
+            <p class="modal-confirm-msg">Você recebeu a doação? Confirme o recebimento para concluir a transação.</p>
+            <button class="btn-confirm-entrega" onclick="confirmarEntrega('${idPedido}')">✅ Confirmar recebimento</button>
+        </div>
+    ` : '';
 
     const modalHTML = `
         <div id="modal${idPedido}" class="modal">
             <div class="modal-content">
-                <a href="#" class="fechar">×</a>
+                <a href="#" class="fechar" onclick="fecharModal('modal${idPedido}')">×</a>
                 <p class="modal-tag">Rastreamento</p>
                 <h2>Pedido #${idPedido}</h2>
                 <div class="modal-grid">
@@ -220,7 +434,9 @@ function criarCardTransacao(pedido, containerPedidos, containerModais) {
                     <div class="modal-field"><label>Categoria</label><span>${categoria}</span></div>
                     <div class="modal-field"><label>Status</label><span>${statusTexto}</span></div>
                     <div class="modal-field"><label>Descrição</label><span>${descricao}</span></div>
+                    ${codigoRastreioHTML}
                 </div>
+                ${confirmarEntregaHTML}
             </div>
         </div>
     `;
@@ -229,20 +445,34 @@ function criarCardTransacao(pedido, containerPedidos, containerModais) {
     containerModais.innerHTML += modalHTML;
 }
 
-function atualizarPaginacao() {
+function abrirModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('modal-open');
+    }
+}
+
+function fecharModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('modal-open');
+    }
+}
+
+function atualizarPaginacao(meuId) {
     const paginationElement = document.getElementById('pagination');
     const totalPaginas = Math.ceil(todasAsTransacoes.length / ITENS_POR_PAGINA);
 
     // Remover paginação se houver menos de 6 resultados
     if (todasAsTransacoes.length < ITENS_POR_PAGINA) {
         if (paginationElement) {
-            paginationElement.style.display = 'none !important';
+            paginationElement.classList.add('hidden');
         }
         return;
     }
 
     if (paginationElement) {
-        paginationElement.style.display = 'flex !important';
+        paginationElement.classList.remove('hidden');
     }
 
     // Atualizar botões de navegação
@@ -263,8 +493,8 @@ function atualizarPaginacao() {
             btn.textContent = i;
             btn.dataset.page = i;
             btn.addEventListener('click', () => {
-                mostrarPagina(i);
-                atualizarPaginacao();
+                mostrarPagina(i, meuId);
+                atualizarPaginacao(meuId);
             });
             pageNumbers.appendChild(btn);
         }
@@ -282,47 +512,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const usuarioLogado = getUsuarioLogado();
     if (!usuarioLogado) {
         containerPedidos.innerHTML = '<p class="page-desc">Faça login para ver suas transações.</p>';
-        if (paginationElement) paginationElement.style.display = 'none !important';
+        if (paginationElement) paginationElement.classList.add('hidden');
         return;
     }
 
-    const meuId = getIdUsuario(usuarioLogado);
+    meuIdGlobal = getIdUsuario(usuarioLogado);
     const pedidos = getTodosPedidos();
 
     // FILTRAR: Mostrar TODAS as transações que envolvem o usuário (como doador ou solicitante)
-    // Não filtra mais apenas por status "em andamento"
+    // MAS excluir pedidos com status "aberto" (esses voltam para a lista de pedidos)
     todasAsTransacoes = pedidos.filter(pedido => {
         const idDoador = getIdDoadorPedido(pedido);
         const idSolicitante = getIdSolicitantePedido(pedido);
+        const status = normalizarStatus(pedido.status);
 
-        return Number(idDoador) === Number(meuId) ||
-               Number(idSolicitante) === Number(meuId);
+        // Excluir pedidos com status "aberto"
+        if (status === 'aberto') {
+            return false;
+        }
+
+        return Number(idDoador) === Number(meuIdGlobal) ||
+               Number(idSolicitante) === Number(meuIdGlobal);
     });
 
     if (todasAsTransacoes.length === 0) {
         containerPedidos.innerHTML = '<p class="page-desc">Você ainda não possui nenhuma transação.</p>';
-        if (paginationElement) paginationElement.style.display = 'none !important';
+        if (paginationElement) paginationElement.classList.add('hidden');
         return;
     }
 
     // Mostrar primeira página e atualizar paginação
-    mostrarPagina(1);
-    atualizarPaginacao();
+    mostrarPagina(1, meuIdGlobal);
+    atualizarPaginacao(meuIdGlobal);
 
     // Eventos dos botões de paginação (apenas se houver paginação)
     if (prevBtn && nextBtn && todasAsTransacoes.length >= ITENS_POR_PAGINA) {
         prevBtn.addEventListener('click', () => {
             if (paginaAtual > 1) {
-                mostrarPagina(paginaAtual - 1);
-                atualizarPaginacao();
+                mostrarPagina(paginaAtual - 1, meuIdGlobal);
+                atualizarPaginacao(meuIdGlobal);
             }
         });
 
         nextBtn.addEventListener('click', () => {
             const totalPaginas = Math.ceil(todasAsTransacoes.length / ITENS_POR_PAGINA);
             if (paginaAtual < totalPaginas) {
-                mostrarPagina(paginaAtual + 1);
-                atualizarPaginacao();
+                mostrarPagina(paginaAtual + 1, meuIdGlobal);
+                atualizarPaginacao(meuIdGlobal);
             }
         });
     }
